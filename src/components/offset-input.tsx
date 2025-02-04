@@ -3,7 +3,7 @@ const OffsetInput = ({value, onChange}: { value: number; onChange: (offset: numb
         <div className="form-control">
             <label className="label">
                 <span className="label-text">Enter level offset (-10 to +10)</span>
-                <span className="label-text-alt">{value}</span>
+                <span className="label-text-alt">{value > 0 ? `+${value}` : value}</span>
             </label>
             <input
                 type="range"
