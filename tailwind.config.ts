@@ -19,6 +19,21 @@ export default {
         daisyui
     ],
     daisyui: {
-        themes: ["retro"]
+        themes: [
+            "retro",
+            {
+                brighter: {
+                    "primary": "#E1D752",
+                    "secondary": "#D9D3BA",
+                    "accent": "#51B0DE",
+                    "neutral": "#164e63",
+                    "base-100": "#143140",
+                    "info": "#51B0DE",
+                    "success": "#10b981",
+                    "warning": "#DDA85C",
+                    "error": "#f43f5e",
+                },
+            },
+        ]
     }
 } satisfies Config;

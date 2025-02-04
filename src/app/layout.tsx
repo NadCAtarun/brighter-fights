@@ -20,9 +20,9 @@ const lora = Lora({
 
 export default function RootLayout({children,}: Readonly<{ children: ReactNode; }>) {
     return (
-        <html lang="en" data-theme="retro">
+        <html lang="en" data-theme="brighter">
         <body className={`${roboto.variable} ${lora.variable} antialiased`}>
-        <main className="font-title" data-theme="retro">
+        <main className="font-title" data-theme="brighter">
             {children}
         </main>
         </body>
