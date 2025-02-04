@@ -97,7 +97,7 @@ export default function Home() {
                     }}
                 />
             </div>
-            <button className="btn btn-primary mt-4 mb-8 text-xl" onClick={handleSubmit}>
+            <button className="btn btn-primary mt-8 mb-8 text-xl" onClick={handleSubmit}>
                 Calculate or update recommendations
             </button>
             {results && <Results {...results} />}
