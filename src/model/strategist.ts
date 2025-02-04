@@ -27,10 +27,11 @@ export function findIdealWeaponCategory(factionCategories: EquipmentCategory[], 
     const eligibleCategories = factionCategories.filter((c) => c.type === type);
 
     if (strategy === 'vulnerability') {
-        const bestWeaponCategory =
-            eligibleCategories.find((c) => c.element === enemy.vulnerability);
-        if (bestWeaponCategory !== undefined) {
-            return bestWeaponCategory;
+        const bestWeaponCategories = eligibleCategories
+            .filter((c) => c.element === enemy.vulnerability)
+            .sort((a, b) => a.speedTier - b.speedTier);
+        if (bestWeaponCategories.length > 0) {
+            return bestWeaponCategories[0];
         }
     }
 
@@ -54,8 +55,6 @@ export function findIdealWeapon(weaponCategory: EquipmentCategory | null, factio
     ).sort((a, b) => a.craftingLevel - b.craftingLevel);
 
     const minCraftingLevel = Math.min(...eligibleWeapons.map((e) => e.craftingLevel));
-
-    console.log(minCraftingLevel);
 
     if (minCraftingLevel > craftingLevel) {
         return `You must level up ${craftingProfession} to at least ${minCraftingLevel}`;
