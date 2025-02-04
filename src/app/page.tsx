@@ -12,9 +12,10 @@ import {enemiesByName} from "@/model/profession";
 import {Enemy} from "@/model/enemy";
 
 export default function Home() {
-    const [faction, setFaction] = useState('Guardian');
     const [profession, setProfession] = useState('Guard');
-    const [level, setLevel] = useState(0);
+    const [userLevel, setUserLevel] = useState(0);
+    const [faction, setFaction] = useState('Guardian');
+    const [factionLevel, setFactionLevel] = useState(0);
     const [offset, setOffset] = useState(0);
     const [strategy, setStrategy] = useState('');
     const [results, setResults] = useState<{
@@ -27,7 +28,7 @@ export default function Home() {
     const handleSubmit = () => {
         //TODO: replace by actual logic
         const calculatedResults = {
-            enemy: findIdealEnemy(enemiesByName(profession), level, offset),
+            enemy: findIdealEnemy(enemiesByName(profession), userLevel, offset),
             meleeWeapon: 'Sample Melee Weapon',
             rangedWeapon: 'Sample Ranged Weapon',
             shield: 'Sample Shield',
@@ -42,11 +43,12 @@ export default function Home() {
             <h2 className="text-2xl font-bold font-title mb-8">Combat companion app for Brighter Shores</h2>
 
             <div className="grid grid-cols-2 gap-4">
-                <FactionSelector onSelect={setFaction}/>
                 <ProfessionSelector onSelect={setProfession}/>
-                <LevelInput value={level} onChange={setLevel}/>
-                <OffsetInput value={offset} onChange={setOffset}/>
+                <LevelInput value={userLevel} onChange={setUserLevel}/>
+                <FactionSelector onSelect={setFaction}/>
+                <LevelInput value={factionLevel} onChange={setFactionLevel}/>
                 <StrategySelector onSelect={setStrategy}/>
+                <OffsetInput value={offset} onChange={setOffset}/>
             </div>
             <button className="btn btn-primary mt-4 mb-8" onClick={handleSubmit}>
                 Calculate or update recommendations
