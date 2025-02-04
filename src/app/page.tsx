@@ -7,10 +7,12 @@ import LevelInput from "@/components/level-input";
 import OffsetInput from "@/components/offset-input";
 import StrategySelector from "@/components/strategy-selector";
 import Results from "@/components/results";
-import {findIdealEnemy} from "@/model/strategist";
-import {enemiesByName} from "@/model/profession";
+import {getRecommendations} from "@/model/strategist";
 import {Enemy} from "@/model/enemy";
-import {craftingProfessionByFactionName} from "@/model/faction";
+import {
+    craftingProfessionByFactionName,
+} from "@/model/faction";
+import {Equipment} from "@/model/equipment";
 
 export default function Home() {
     const [profession, setProfession] = useState('Guard');
@@ -21,38 +23,49 @@ export default function Home() {
     const [strategy, setStrategy] = useState('vulnerability');
     const [results, setResults] = useState<{
         enemy: Enemy | null;
-        meleeWeapon: string;
-        rangedWeapon: string;
-        shield: string;
+        meleeWeapon: Equipment | string;
+        rangedWeapon: Equipment | string;
+        shield: Equipment | string;
     } | null>(null);
 
     const handleSubmit = (() => {
-        const calculatedResults = {
-            enemy: findIdealEnemy(enemiesByName(profession), userLevel, offset),
-            meleeWeapon: 'Sample Melee Weapon',
-            rangedWeapon: 'Sample Ranged Weapon',
-            shield: 'Sample Shield',
-        };
-        setResults(calculatedResults);
+        setResults(getRecommendations(
+            profession,
+            userLevel,
+            offset,
+            faction,
+            factionLevel,
+            strategy,
+        ));
     });
 
     useEffect(() => {
         const profession = localStorage.getItem('profession') || 'Guard';
         setProfession(profession || 'Guard');
+
         const userLevel = parseInt(localStorage.getItem('userLevel') || '0');
         setUserLevel(userLevel);
-        setFaction(localStorage.getItem('faction') || 'Cryoknight');
+
+        const faction = localStorage.getItem('faction') || 'Cryoknight';
+        setFaction(faction || 'Cryoknight');
+
+        const factionLevel = parseInt(localStorage.getItem('factionLevel') || '0');
         setFactionLevel(parseInt(localStorage.getItem('factionLevel') || '0'));
+
         const offset = parseInt(localStorage.getItem('offset') || '0');
         setOffset(offset);
+
+        const strategy = localStorage.getItem('strategy') || 'vulnerability';
         setStrategy(localStorage.getItem('strategy') || 'vulnerability');
-        const calculatedResults = {
-            enemy: findIdealEnemy(enemiesByName(profession), userLevel, offset),
-            meleeWeapon: 'Sample Melee Weapon',
-            rangedWeapon: 'Sample Ranged Weapon',
-            shield: 'Sample Shield',
-        };
-        setResults(calculatedResults);
+
+        setResults(getRecommendations(
+            profession,
+            userLevel,
+            offset,
+            faction,
+            factionLevel,
+            strategy,
+        ));
     }, [])
 
     return (

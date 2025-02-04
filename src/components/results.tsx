@@ -1,27 +1,34 @@
-import {Enemy} from "@/model/enemy";
 import {ExternalLinkIcon} from "lucide-react";
+import {Recommendations} from "@/model/strategist";
 
-const Results = ({enemy, meleeWeapon, rangedWeapon, shield}: {
-    enemy: Enemy | null;
-    meleeWeapon: string;
-    rangedWeapon: string;
-    shield: string;
-}) => {
-    if (enemy) {
+const Results = (recs: Recommendations) => {
+    if (recs.enemy) {
         return (
             <>
                 <h2 className="text-2xl font-bold font-title mb-8">Recommendations</h2>
                 <p className="text-xl">
                     You should grind on
                     <a
-                        href={enemy.url}
+                        href={recs.enemy.url}
                         className="link link-primary mx-2 font-bold"
                         target="_blank"
                         rel="noopener noreferrer">
-                        {enemy.name}
+                        {recs.enemy.name}
                         <ExternalLinkIcon className="w-4 h-4 inline"/>
                     </a>
                 </p>
+                {typeof recs.meleeWeapon === 'string' && (<p className="text-xl">{recs.meleeWeapon}</p>)}
+                {typeof recs.meleeWeapon === 'object' && (<p className="text-xl">
+                    Melee weapon to craft:
+                    <a
+                        href={recs.meleeWeapon.url}
+                        className="link link-primary mx-2 font-bold"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        {recs.meleeWeapon.name}
+                        <ExternalLinkIcon className="w-4 h-4 inline"/>
+                    </a>
+                </p>)}
             </>
         )
     } else {
