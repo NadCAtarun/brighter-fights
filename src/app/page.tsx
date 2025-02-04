@@ -60,7 +60,7 @@ export default function Home() {
             <h1 className="text-4xl font-bold font-title mb-8">Brighter Fights</h1>
             <h2 className="text-2xl font-bold font-title mb-8">Combat companion app for Brighter Shores</h2>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <ProfessionSelector
                     value={profession}
                     onSelect={(p: string) => {
