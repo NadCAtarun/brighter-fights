@@ -92,7 +92,17 @@ export function getRecommendations(
             factionLevel,
             craftingProfessionByFactionName(faction),
         ),
-        rangedWeapon: 'Sample Ranged Weapon',
+        rangedWeapon: findIdealWeapon(
+            findIdealWeaponCategory(
+                equipmentCategoriesByFactionName(faction),
+                'ranged',
+                enemy,
+                strategy),
+            equipmentByFactionName(faction),
+            userLevel,
+            factionLevel,
+            craftingProfessionByFactionName(faction),
+        ),
         shield: 'Sample Shield',
     };
 }

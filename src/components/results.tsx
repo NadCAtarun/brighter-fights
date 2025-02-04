@@ -6,6 +6,7 @@ const Results = (recs: Recommendations) => {
         return (
             <>
                 <h2 className="text-2xl font-bold font-title mb-8">Recommendations</h2>
+
                 <p className="text-xl">
                     You should grind on
                     <a
@@ -17,6 +18,7 @@ const Results = (recs: Recommendations) => {
                         <ExternalLinkIcon className="w-4 h-4 inline"/>
                     </a>
                 </p>
+
                 {typeof recs.meleeWeapon === 'string' && (<p className="text-xl">{recs.meleeWeapon}</p>)}
                 {typeof recs.meleeWeapon === 'object' && (<p className="text-xl">
                     Melee weapon to craft:
@@ -26,6 +28,32 @@ const Results = (recs: Recommendations) => {
                         target="_blank"
                         rel="noopener noreferrer">
                         {recs.meleeWeapon.name}
+                        <ExternalLinkIcon className="w-4 h-4 inline"/>
+                    </a>
+                </p>)}
+
+                {typeof recs.rangedWeapon === 'string' && (<p className="text-xl">{recs.rangedWeapon}</p>)}
+                {typeof recs.rangedWeapon === 'object' && (<p className="text-xl">
+                    Ranged weapon to craft:
+                    <a
+                        href={recs.rangedWeapon.url}
+                        className="link link-primary mx-2 font-bold"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        {recs.rangedWeapon.name}
+                        <ExternalLinkIcon className="w-4 h-4 inline"/>
+                    </a>
+                </p>)}
+
+                {typeof recs.shield === 'string' && (<p className="text-xl">{recs.shield}</p>)}
+                {typeof recs.shield === 'object' && (<p className="text-xl">
+                    Shield to craft:
+                    <a
+                        href={recs.shield.url}
+                        className="link link-primary mx-2 font-bold"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        {recs.shield.name}
                         <ExternalLinkIcon className="w-4 h-4 inline"/>
                     </a>
                 </p>)}
