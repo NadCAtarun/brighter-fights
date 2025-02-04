@@ -1,9 +1,10 @@
-const LevelInput = ({value, onChange}: { value: number; onChange: (level: number) => void }) => {
+const LevelInput = ({value, onChange, targetProfession}:
+                    { value: number; onChange: (level: number) => void, targetProfession: string }) => {
     return (
         <div className="form-control">
             <label className="label">
-                <span className="label-text">Enter your level (0-500)</span>
-                <span className="label-text-alt">{value}</span>
+                <span className="label-text">Enter your <strong>{targetProfession}</strong> level</span>
+                <span className="label-text-alt font-bold">{value}</span>
             </label>
             <input
                 type="range"

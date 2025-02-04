@@ -10,6 +10,7 @@ import Results from "@/components/results";
 import {findIdealEnemy} from "@/model/strategist";
 import {enemiesByName} from "@/model/profession";
 import {Enemy} from "@/model/enemy";
+import {craftingProfessionByFactionName} from "@/model/faction";
 
 export default function Home() {
     const [profession, setProfession] = useState('Guard');
@@ -44,9 +45,13 @@ export default function Home() {
 
             <div className="grid grid-cols-2 gap-4">
                 <ProfessionSelector onSelect={setProfession}/>
-                <LevelInput value={userLevel} onChange={setUserLevel}/>
+                <LevelInput value={userLevel} onChange={setUserLevel} targetProfession={profession}/>
                 <FactionSelector onSelect={setFaction}/>
-                <LevelInput value={factionLevel} onChange={setFactionLevel}/>
+                <LevelInput
+                    value={factionLevel}
+                    onChange={setFactionLevel}
+                    targetProfession={craftingProfessionByFactionName(faction)}
+                />
                 <StrategySelector onSelect={setStrategy}/>
                 <OffsetInput value={offset} onChange={setOffset}/>
             </div>

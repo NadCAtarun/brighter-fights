@@ -1,6 +1,6 @@
-const FactionSelector = ({onSelect}: { onSelect: (faction: string) => void }) => {
-    const factions = ['Guardian', 'Cryoknight', 'Hammermage'];
+import {factions} from "@/model/faction";
 
+const FactionSelector = ({onSelect}: { onSelect: (faction: string) => void }) => {
     return (
         <div className="form-control">
             <label className="label">
@@ -11,8 +11,8 @@ const FactionSelector = ({onSelect}: { onSelect: (faction: string) => void }) =>
                 onChange={(e) => onSelect(e.target.value)}
             >
                 {factions.map((faction) => (
-                    <option key={faction} value={faction}>
-                        {faction}
+                    <option key={faction.name} value={faction.name}>
+                        {faction.name}
                     </option>
                 ))}
             </select>
