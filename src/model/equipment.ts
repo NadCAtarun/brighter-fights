@@ -107,11 +107,11 @@ export interface Equipment {
     url: string;
 }
 
-export const cryoknightEquipments: Equipment[] = [];
+export const cryoknightEquipment: Equipment[] = [];
 
-export const guardianEquipments: Equipment[] = [];
+export const guardianEquipment: Equipment[] = [];
 
-export const hammermageEquipments: Equipment[] = [
+export const hammermageEquipment: Equipment[] = [
     {
         "name": "Hammerfist (basic)",
         "category": "Hammerfist",
