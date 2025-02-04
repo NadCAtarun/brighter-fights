@@ -5,12 +5,14 @@ import FactionSelector from "@/components/faction-selector";
 import ProfessionSelector from "@/components/profession-selector";
 import LevelInput from "@/components/level-input";
 import OffsetInput from "@/components/offset-input";
+import StrategySelector from "@/components/strategy-selector";
 
 export default function Home() {
     const [faction, setFaction] = useState('');
     const [profession, setProfession] = useState('');
     const [level, setLevel] = useState(0);
     const [offset, setOffset] = useState(0);
+    const [strategy, setStrategy] = useState('');
 
     return (
         <div className="container mx-auto p-4 font-text">
@@ -28,6 +30,9 @@ export default function Home() {
 
             <OffsetInput onChange={setOffset}/>
             {<p>Level offset: {offset}</p>}
+
+            <StrategySelector onSelect={setStrategy}/>
+            {strategy && <p>Selected strategy: {strategy}</p>}
         </div>
     );
 }
