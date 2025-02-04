@@ -7,6 +7,7 @@ console.log(
             const cells = row.querySelectorAll("td");
             return {
                 name: cells[3]?.textContent?.trim() || "",
+                url: cells[3]?.querySelector("a")?.href || "",
                 unlockLevel: parseInt(cells[0]?.textContent?.trim() || ""),
                 combatLevel: parseInt(cells[1]?.textContent?.trim() || ""),
                 vulnerability: `elements.${cells[6]?.textContent?.trim().toLowerCase() || ""}`,
