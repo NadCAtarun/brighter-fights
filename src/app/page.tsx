@@ -1,6 +1,6 @@
 "use client";
 
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import FactionSelector from "@/components/faction-selector";
 import ProfessionSelector from "@/components/profession-selector";
 import LevelInput from "@/components/level-input";
@@ -15,10 +15,10 @@ import {craftingProfessionByFactionName} from "@/model/faction";
 export default function Home() {
     const [profession, setProfession] = useState('Guard');
     const [userLevel, setUserLevel] = useState(0);
-    const [faction, setFaction] = useState('Guardian');
+    const [faction, setFaction] = useState('Cryoknight');
     const [factionLevel, setFactionLevel] = useState(0);
     const [offset, setOffset] = useState(0);
-    const [strategy, setStrategy] = useState('');
+    const [strategy, setStrategy] = useState('vulnerability');
     const [results, setResults] = useState<{
         enemy: Enemy | null;
         meleeWeapon: string;
@@ -26,8 +26,16 @@ export default function Home() {
         shield: string;
     } | null>(null);
 
+    useEffect(() => {
+        setProfession(localStorage.getItem('profession') || 'Guard');
+        setUserLevel(parseInt(localStorage.getItem('userLevel') || '0'));
+        setFaction(localStorage.getItem('faction') || 'Cryoknight');
+        setFactionLevel(parseInt(localStorage.getItem('factionLevel') || '0'));
+        setOffset(parseInt(localStorage.getItem('offset') || '0'));
+        setStrategy(localStorage.getItem('strategy') || 'vulnerability');
+    }, [])
+
     const handleSubmit = () => {
-        //TODO: replace by actual logic
         const calculatedResults = {
             enemy: findIdealEnemy(enemiesByName(profession), userLevel, offset),
             meleeWeapon: 'Sample Melee Weapon',
@@ -44,16 +52,50 @@ export default function Home() {
             <h2 className="text-2xl font-bold font-title mb-8">Combat companion app for Brighter Shores</h2>
 
             <div className="grid grid-cols-2 gap-4">
-                <ProfessionSelector onSelect={setProfession}/>
-                <LevelInput value={userLevel} onChange={setUserLevel} targetProfession={profession}/>
-                <FactionSelector onSelect={setFaction}/>
+                <ProfessionSelector
+                    value={profession}
+                    onSelect={(p: string) => {
+                        localStorage.setItem('profession', p);
+                        setProfession(p);
+                    }}
+                />
+                <LevelInput
+                    value={userLevel}
+                    onChange={(ul: number) => {
+                        localStorage.setItem('userLevel', ul.toString());
+                        setUserLevel(ul);
+                    }}
+                    targetProfession={profession}
+                />
+                <FactionSelector
+                    value={faction}
+                    onSelect={(f: string) => {
+                        localStorage.setItem('faction', f);
+                        setFaction(f);
+                    }}
+                />
                 <LevelInput
                     value={factionLevel}
-                    onChange={setFactionLevel}
+                    onChange={(fl: number) => {
+                        localStorage.setItem('factionLevel', fl.toString());
+                        setFactionLevel(fl);
+                    }}
                     targetProfession={craftingProfessionByFactionName(faction)}
                 />
-                <StrategySelector onSelect={setStrategy}/>
-                <OffsetInput value={offset} onChange={setOffset}/>
+                <StrategySelector
+                    value={strategy}
+                    onSelect={(s: string) => {
+                        localStorage.setItem('strategy', s);
+                        setStrategy(s);
+                    }}
+                />
+                <OffsetInput
+                    value={offset}
+                    onChange={(o: number) => {
+                        localStorage.setItem('offset', o.toString());
+                        setOffset(o);
+                    }}
+                />
             </div>
             <button className="btn btn-primary mt-4 mb-8 text-xl" onClick={handleSubmit}>
                 Calculate or update recommendations

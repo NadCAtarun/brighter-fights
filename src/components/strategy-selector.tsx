@@ -1,6 +1,6 @@
-const StrategySelector = ({onSelect}: { onSelect: (strategy: string) => void }) => {
-    const strategies = ['Exploit elemental vulnerability', 'Quickest weapon avoiding immunity'];
+import {strategies} from "@/model/strategy";
 
+const StrategySelector = ({value, onSelect}: { value: string, onSelect: (strategy: string) => void }) => {
     return (
         <div className="form-control">
             <label className="label">
@@ -8,11 +8,12 @@ const StrategySelector = ({onSelect}: { onSelect: (strategy: string) => void }) 
             </label>
             <select
                 className="select select-bordered text-xl bg-base-200"
+                value={value}
                 onChange={(e) => onSelect(e.target.value)}
             >
                 {strategies.map((strategy) => (
-                    <option key={strategy} value={strategy}>
-                        {strategy}
+                    <option key={strategy.name} value={strategy.name}>
+                        {strategy.description}
                     </option>
                 ))}
             </select>

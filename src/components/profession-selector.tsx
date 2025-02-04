@@ -1,6 +1,6 @@
 import {Profession, professions} from "@/model/profession";
 
-const ProfessionSelector = ({onSelect}: { onSelect: (profession: string) => void }) => {
+const ProfessionSelector = ({value, onSelect}: { value: string, onSelect: (profession: string) => void }) => {
     return (
         <div className="form-control">
             <label className="label">
@@ -8,6 +8,7 @@ const ProfessionSelector = ({onSelect}: { onSelect: (profession: string) => void
             </label>
             <select
                 className="select select-bordered text-xl bg-base-200"
+                value={value}
                 onChange={(e) => onSelect(e.target.value)}
             >
                 {professions.map((p: Profession) => (
