@@ -1,6 +1,6 @@
 "use client";
 
-import {useCallback, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import FactionSelector from "@/components/faction-selector";
 import ProfessionSelector from "@/components/profession-selector";
 import LevelInput from "@/components/level-input";
