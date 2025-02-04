@@ -1,6 +1,6 @@
 "use client";
 
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 import FactionSelector from "@/components/faction-selector";
 import ProfessionSelector from "@/components/profession-selector";
 import LevelInput from "@/components/level-input";
@@ -26,16 +26,7 @@ export default function Home() {
         shield: string;
     } | null>(null);
 
-    useEffect(() => {
-        setProfession(localStorage.getItem('profession') || 'Guard');
-        setUserLevel(parseInt(localStorage.getItem('userLevel') || '0'));
-        setFaction(localStorage.getItem('faction') || 'Cryoknight');
-        setFactionLevel(parseInt(localStorage.getItem('factionLevel') || '0'));
-        setOffset(parseInt(localStorage.getItem('offset') || '0'));
-        setStrategy(localStorage.getItem('strategy') || 'vulnerability');
-    }, [])
-
-    const handleSubmit = () => {
+    const handleSubmit = (() => {
         const calculatedResults = {
             enemy: findIdealEnemy(enemiesByName(profession), userLevel, offset),
             meleeWeapon: 'Sample Melee Weapon',
@@ -43,8 +34,26 @@ export default function Home() {
             shield: 'Sample Shield',
         };
         setResults(calculatedResults);
-    };
+    });
 
+    useEffect(() => {
+        const profession = localStorage.getItem('profession') || 'Guard';
+        setProfession(profession || 'Guard');
+        const userLevel = parseInt(localStorage.getItem('userLevel') || '0');
+        setUserLevel(userLevel);
+        setFaction(localStorage.getItem('faction') || 'Cryoknight');
+        setFactionLevel(parseInt(localStorage.getItem('factionLevel') || '0'));
+        const offset = parseInt(localStorage.getItem('offset') || '0');
+        setOffset(offset);
+        setStrategy(localStorage.getItem('strategy') || 'vulnerability');
+        const calculatedResults = {
+            enemy: findIdealEnemy(enemiesByName(profession), userLevel, offset),
+            meleeWeapon: 'Sample Melee Weapon',
+            rangedWeapon: 'Sample Ranged Weapon',
+            shield: 'Sample Shield',
+        };
+        setResults(calculatedResults);
+    }, [])
 
     return (
         <div className="container mx-auto p-4 font-text">

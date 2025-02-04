@@ -1,4 +1,5 @@
 import {Enemy} from "@/model/enemy";
+import {ExternalLinkIcon} from "lucide-react";
 
 const Results = ({enemy, meleeWeapon, rangedWeapon, shield}: {
     enemy: Enemy | null;
@@ -10,7 +11,17 @@ const Results = ({enemy, meleeWeapon, rangedWeapon, shield}: {
         return (
             <>
                 <h2 className="text-2xl font-bold font-title mb-8">Recommendations</h2>
-                <p className="text-xl">You should grind on <strong>{enemy.name}</strong></p>
+                <p className="text-xl">
+                    You should grind on
+                    <a
+                        href={enemy.url}
+                        className="link link-primary mx-2 font-bold"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        {enemy.name}
+                        <ExternalLinkIcon className="w-4 h-4 inline"/>
+                    </a>
+                </p>
             </>
         )
     } else {
