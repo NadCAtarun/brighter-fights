@@ -8,7 +8,7 @@ export interface Enemy {
     immunity: Element | null; // Elemental immunity
 }
 
-const guardEnemies: Enemy[] = [
+export const guardEnemies: Enemy[] = [
     {
         "name": "Recruit Sparring Guard",
         "unlockLevel": 0,
@@ -382,7 +382,7 @@ const guardEnemies: Enemy[] = [
     }
 ];
 
-const scoutEnemies: Enemy[] = [
+export const scoutEnemies: Enemy[] = [
     {
         "name": "Ragged Outlaw",
         "unlockLevel": 0,
@@ -763,7 +763,7 @@ const scoutEnemies: Enemy[] = [
     }
 ];
 
-const mineEnemies: Enemy[] = [
+export const mineEnemies: Enemy[] = [
     {
         "name": "Haggard Minecrawler",
         "unlockLevel": 0,
@@ -1249,7 +1249,7 @@ const mineEnemies: Enemy[] = [
     }
 ];
 
-const watchEnemies: Enemy[] = [
+export const watchEnemies: Enemy[] = [
     {
         "name": "Whitepaw Sabertooth Tiger",
         "unlockLevel": 0,
@@ -1623,9 +1623,3 @@ const watchEnemies: Enemy[] = [
     }
 ];
 
-export const enemies = {
-    'guard': guardEnemies,
-    'scout': scoutEnemies,
-    'minefighter': mineEnemies,
-    'watchperson': watchEnemies,
-};

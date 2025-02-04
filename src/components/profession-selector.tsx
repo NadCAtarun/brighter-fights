@@ -1,6 +1,6 @@
-const ProfessionSelector = ({onSelect}: { onSelect: (profession: string) => void }) => {
-    const professions = ['Guard', 'Scout', 'Minefighter', 'Watchperson'];
+import {Profession, professions} from "@/model/profession";
 
+const ProfessionSelector = ({onSelect}: { onSelect: (profession: string) => void }) => {
     return (
         <div className="form-control">
             <label className="label">
@@ -10,9 +10,9 @@ const ProfessionSelector = ({onSelect}: { onSelect: (profession: string) => void
                 className="select select-bordered"
                 onChange={(e) => onSelect(e.target.value)}
             >
-                {professions.map((profession) => (
-                    <option key={profession} value={profession}>
-                        {profession}
+                {Object.values(professions).map((p: Profession) => (
+                    <option key={p.name} value={p.name}>
+                        {p.name}
                     </option>
                 ))}
             </select>
