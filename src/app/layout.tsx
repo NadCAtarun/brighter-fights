@@ -1,34 +1,29 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type {Metadata} from "next";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import {ReactNode} from "react";
+import {Lora, Roboto} from "next/font/google";
 
 export const metadata: Metadata = {
     title: "Brighter Fights",
     description: "Combat companion app for Brighter Shores",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en" data-theme="retro">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+const roboto = Roboto({
+    subsets: ['latin'],
+    variable: '--font-text',
+    weight: '300',
+});
+const lora = Lora({
+    subsets: ['latin'],
+    variable: '--font-title',
+});
+
+export default function RootLayout({children,}: Readonly<{ children: ReactNode; }>) {
+    return (
+        <html lang="en" data-theme="retro">
+        <body className={`${roboto.variable} ${lora.variable} antialiased`}>
         {children}
-      </body>
-    </html>
-  );
+        </body>
+        </html>
+    );
 }
