@@ -3,10 +3,11 @@ import {strategies} from "@/model/strategy";
 const StrategySelector = ({value, onSelect}: { value: string, onSelect: (strategy: string) => void }) => {
     return (
         <div className="form-control">
-            <label className="label">
+            <label className="label" htmlFor="strategy">
                 <span className="label-text text-xl">Choose your strategy:</span>
             </label>
             <select
+                id="strategy"
                 className="select select-bordered text-xl bg-base-200"
                 value={value}
                 onChange={(e) => onSelect(e.target.value)}

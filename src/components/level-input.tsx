@@ -2,11 +2,12 @@ const LevelInput = ({value, onChange, targetProfession}:
                     { value: number; onChange: (level: number) => void, targetProfession: string }) => {
     return (
         <div className="form-control">
-            <label className="label">
+            <label className="label" htmlFor={`${targetProfession}-level`}>
                 <span className="label-text text-xl">Your <strong>{targetProfession}</strong> level:</span>
                 <span className="label-text-alt font-bold text-xl">{value}</span>
             </label>
             <input
+                id={`${targetProfession}-level`}
                 type="range"
                 min="0"
                 max="500"

@@ -3,10 +3,11 @@ import {Profession, professions} from "@/model/profession";
 const ProfessionSelector = ({value, onSelect}: { value: string, onSelect: (profession: string) => void }) => {
     return (
         <div className="form-control">
-            <label className="label">
+            <label className="label" htmlFor="profession">
                 <span className="label-text text-xl">Choose your profession:</span>
             </label>
             <select
+                id="profession"
                 className="select select-bordered text-xl bg-base-200"
                 value={value}
                 onChange={(e) => onSelect(e.target.value)}
