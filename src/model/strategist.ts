@@ -63,6 +63,21 @@ function findIdealWeapon(weaponCategory: EquipmentCategory | null, factionEquipm
     return eligibleWeapons[0];
 }
 
+function findIdealShield(factionEquipment: Equipment[], userLevel: number,
+                         craftingLevel: number, craftingProfession: string): Equipment | string {
+    const eligibleShields = factionEquipment.filter((e) =>
+        e.name.includes('Shield') && e.maxLevel >= userLevel
+    ).sort((a, b) => a.craftingLevel - b.craftingLevel);
+
+    const minCraftingLevel = Math.min(...eligibleShields.map((e) => e.craftingLevel));
+
+    if (minCraftingLevel > craftingLevel) {
+        return `You must level up ${craftingProfession} to at least ${minCraftingLevel}`;
+    }
+
+    return eligibleShields[0];
+}
+
 export interface Recommendations {
     enemy: Enemy | null;
     meleeWeapon: Equipment | string;
@@ -79,30 +94,41 @@ export function getRecommendations(
     strategy: string,
 ): Recommendations {
     const enemy = findIdealEnemy(enemiesByName(profession), userLevel, offset);
+
+    const meleeWeaponCategory = findIdealWeaponCategory(
+        equipmentCategoriesByFactionName(faction),
+        'melee',
+        enemy,
+        strategy);
+    const meleeWeapon = findIdealWeapon(
+        meleeWeaponCategory,
+        equipmentByFactionName(faction),
+        userLevel,
+        factionLevel,
+        craftingProfessionByFactionName(faction),
+    );
+
+    const rangedWeaponCategory = findIdealWeaponCategory(
+        equipmentCategoriesByFactionName(faction),
+        'ranged',
+        enemy,
+        strategy);
+    const rangedWeapon = findIdealWeapon(
+        rangedWeaponCategory,
+        equipmentByFactionName(faction),
+        userLevel,
+        factionLevel,
+        craftingProfessionByFactionName(faction),
+    );
+
+    const shield = 1 === meleeWeaponCategory?.hands || 1 === rangedWeaponCategory?.hands
+        ? findIdealShield(equipmentByFactionName(faction), userLevel, factionLevel, craftingProfessionByFactionName(faction))
+        : 'No need for a shield, both weapons suggested are two-handed'
+
     return {
         enemy: enemy,
-        meleeWeapon: findIdealWeapon(
-            findIdealWeaponCategory(
-                equipmentCategoriesByFactionName(faction),
-                'melee',
-                enemy,
-                strategy),
-            equipmentByFactionName(faction),
-            userLevel,
-            factionLevel,
-            craftingProfessionByFactionName(faction),
-        ),
-        rangedWeapon: findIdealWeapon(
-            findIdealWeaponCategory(
-                equipmentCategoriesByFactionName(faction),
-                'ranged',
-                enemy,
-                strategy),
-            equipmentByFactionName(faction),
-            userLevel,
-            factionLevel,
-            craftingProfessionByFactionName(faction),
-        ),
-        shield: 'Sample Shield',
+        meleeWeapon: meleeWeapon,
+        rangedWeapon: rangedWeapon,
+        shield: shield,
     };
 }
