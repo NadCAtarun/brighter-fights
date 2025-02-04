@@ -22,7 +22,9 @@ export default function RootLayout({children,}: Readonly<{ children: ReactNode; 
     return (
         <html lang="en" data-theme="retro">
         <body className={`${roboto.variable} ${lora.variable} antialiased`}>
-        {children}
+        <main className="font-title" data-theme="retro">
+            {children}
+        </main>
         </body>
         </html>
     );
