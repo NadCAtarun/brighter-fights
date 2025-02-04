@@ -7,7 +7,7 @@ import {
     equipmentCategoriesByFactionName
 } from "@/model/faction";
 
-export function findIdealEnemy(enemies: Enemy[], userLevel: number, offset: number): Enemy | null {
+function findIdealEnemy(enemies: Enemy[], userLevel: number, offset: number): Enemy | null {
     const eligibleEnemies = enemies.filter(
         enemy => enemy.unlockLevel <= userLevel && enemy.combatLevel <= Math.max(0, userLevel + offset));
 
@@ -18,8 +18,8 @@ export function findIdealEnemy(enemies: Enemy[], userLevel: number, offset: numb
     return eligibleEnemies[eligibleEnemies.length - 1];
 }
 
-export function findIdealWeaponCategory(factionCategories: EquipmentCategory[], type: 'melee' | 'ranged',
-                                        enemy: Enemy | null, strategy: string): EquipmentCategory | null {
+function findIdealWeaponCategory(factionCategories: EquipmentCategory[], type: 'melee' | 'ranged',
+                                 enemy: Enemy | null, strategy: string): EquipmentCategory | null {
     if (enemy === null) {
         return null;
     }
@@ -43,8 +43,8 @@ export function findIdealWeaponCategory(factionCategories: EquipmentCategory[], 
     return usefulCategories[0];
 }
 
-export function findIdealWeapon(weaponCategory: EquipmentCategory | null, factionEquipment: Equipment[],
-                                userLevel: number, craftingLevel: number, craftingProfession: string): Equipment | string {
+function findIdealWeapon(weaponCategory: EquipmentCategory | null, factionEquipment: Equipment[],
+                         userLevel: number, craftingLevel: number, craftingProfession: string): Equipment | string {
     if (weaponCategory === null) {
         return 'Impossible to pick weapons without a target enemy';
     }
