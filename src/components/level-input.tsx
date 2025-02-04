@@ -3,7 +3,7 @@ const LevelInput = ({value, onChange, targetProfession}:
     return (
         <div className="form-control">
             <label className="label">
-                <span className="label-text text-xl">Enter your <strong>{targetProfession}</strong> level</span>
+                <span className="label-text text-xl">Your <strong>{targetProfession}</strong> level:</span>
                 <span className="label-text-alt font-bold text-xl">{value}</span>
             </label>
             <input
