@@ -7,7 +7,10 @@
  *            \/     \/     \/      \/        \/     \/
  */
 
-let enemyTableIndex = 1; // Index varies by profession!
+// Indices vary by profession!
+let enemyTableIndex = 1;
+let vulnerabilityColIndex = 7;
+let immunityColIndex = 6;
 console.log(
     JSON.stringify(
         Array.from(document.querySelectorAll("table")[enemyTableIndex].querySelectorAll("tr"))
@@ -18,8 +21,8 @@ console.log(
                 url: cells[3]?.querySelector("a")?.href || "",
                 unlockLevel: parseInt(cells[0]?.textContent?.trim() || ""),
                 combatLevel: parseInt(cells[1]?.textContent?.trim() || ""),
-                vulnerability: `elements.${cells[6]?.textContent?.trim().toLowerCase() || ""}`,
-                immunity: `elements.${cells[6]?.textContent?.trim().toLocaleLowerCase() || ""}`,
+                vulnerability: `elements.${cells[vulnerabilityColIndex]?.textContent?.trim().toLowerCase() || ""}`,
+                immunity: `elements.${cells[immunityColIndex]?.textContent?.trim().toLocaleLowerCase() || ""}`,
             };
         }), null, 2)
         .replaceAll('"elements.none"', 'null')
