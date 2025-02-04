@@ -55,7 +55,7 @@ export default function Home() {
                 <StrategySelector onSelect={setStrategy}/>
                 <OffsetInput value={offset} onChange={setOffset}/>
             </div>
-            <button className="btn btn-primary mt-4 mb-8" onClick={handleSubmit}>
+            <button className="btn btn-primary mt-4 mb-8 text-xl" onClick={handleSubmit}>
                 Calculate or update recommendations
             </button>
             {results && <Results {...results} />}

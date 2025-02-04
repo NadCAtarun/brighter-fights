@@ -10,14 +10,17 @@ const Results = ({enemy, meleeWeapon, rangedWeapon, shield}: {
         return (
             <>
                 <h2 className="text-2xl font-bold font-title mb-8">Recommendations</h2>
-                <p>You should grind on <strong>{enemy.name}</strong></p>
+                <p className="text-xl">You should grind on <strong>{enemy.name}</strong></p>
             </>
         )
     } else {
         return (
             <>
                 <h2 className="text-2xl font-bold font-title mb-8 font-error">Something went wrong</h2>
-                <p>We could not find a suitable enemy for you to fight. Please double check your settings.</p>
+                <p className="text-xl">
+                    We could not find a suitable enemy for you to fight.
+                    Please double check your settings.
+                </p>
             </>
         )
     }
