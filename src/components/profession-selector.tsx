@@ -10,7 +10,7 @@ const ProfessionSelector = ({onSelect}: { onSelect: (profession: string) => void
                 className="select select-bordered"
                 onChange={(e) => onSelect(e.target.value)}
             >
-                {Object.values(professions).map((p: Profession) => (
+                {professions.map((p: Profession) => (
                     <option key={p.name} value={p.name}>
                         {p.name}
                     </option>

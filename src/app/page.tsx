@@ -7,16 +7,18 @@ import LevelInput from "@/components/level-input";
 import OffsetInput from "@/components/offset-input";
 import StrategySelector from "@/components/strategy-selector";
 import Results from "@/components/results";
+import {findIdealEnemy} from "@/model/strategist";
+import {enemiesByName} from "@/model/profession";
+import {Enemy} from "@/model/enemy";
 
 export default function Home() {
-    const [faction, setFaction] = useState('');
-    const [profession, setProfession] = useState('');
+    const [faction, setFaction] = useState('Guardian');
+    const [profession, setProfession] = useState('Guard');
     const [level, setLevel] = useState(0);
     const [offset, setOffset] = useState(0);
     const [strategy, setStrategy] = useState('');
     const [results, setResults] = useState<{
-        enemy: string;
-        location: string;
+        enemy: Enemy | null;
         meleeWeapon: string;
         rangedWeapon: string;
         shield: string;
@@ -25,8 +27,7 @@ export default function Home() {
     const handleSubmit = () => {
         //TODO: replace by actual logic
         const calculatedResults = {
-            enemy: 'Sample Enemy',
-            location: 'Sample Location',
+            enemy: findIdealEnemy(enemiesByName(profession), level, offset),
             meleeWeapon: 'Sample Melee Weapon',
             rangedWeapon: 'Sample Ranged Weapon',
             shield: 'Sample Shield',
@@ -47,8 +48,8 @@ export default function Home() {
                 <OffsetInput value={offset} onChange={setOffset}/>
                 <StrategySelector onSelect={setStrategy}/>
             </div>
-            <button className="btn btn-primary mt-4" onClick={handleSubmit}>
-                Calculate
+            <button className="btn btn-primary mt-4 mb-8" onClick={handleSubmit}>
+                Calculate or update recommendations
             </button>
             {results && <Results {...results} />}
         </div>

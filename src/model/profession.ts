@@ -5,21 +5,24 @@ export interface Profession {
     enemies: Enemy[];
 }
 
-export const professions = {
-    guard: {
+export const professions = [
+    {
         name: 'Guard',
         enemies: guardEnemies,
     },
-    scout: {
+    {
         name: 'Scout',
         enemies: scoutEnemies
     },
-    minefighter: {
+    {
         name: 'Minefighter',
         enemies: mineEnemies
     },
-    watchperson: {
+    {
         name: 'Watchperson',
         enemies: watchEnemies
     },
-};
+];
+
+export const enemiesByName: (name: string) => Enemy[] = (name: string) =>
+    professions.find(p => p.name === name)?.enemies || [];
