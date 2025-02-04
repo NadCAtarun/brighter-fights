@@ -23,7 +23,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Glinteye_Deathcrow",
         "unlockLevel": 0,
         "combatLevel": 2,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.necromae
     },
     {
@@ -31,7 +31,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Common_Thief#Male_(black_hair)",
         "unlockLevel": 0,
         "combatLevel": 4,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.arborae,
         "immunity": elements.cryonae
     },
     {
@@ -39,7 +39,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Looter_Goblin_Soldier",
         "unlockLevel": 0,
         "combatLevel": 6,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.infernae
     },
     {
@@ -47,7 +47,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Irritable_Goblin_Chief",
         "unlockLevel": 0,
         "combatLevel": 8,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.infernae
     },
     {
@@ -55,7 +55,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Feral_Hairbeast",
         "unlockLevel": 0,
         "combatLevel": 10,
-        "vulnerability": elements.tempestae,
+        "vulnerability": elements.necromae,
         "immunity": elements.tempestae
     },
     {
@@ -63,7 +63,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Greenlid_Carnivorous_Plant",
         "unlockLevel": 0,
         "combatLevel": 12,
-        "vulnerability": elements.arborae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.arborae
     },
     {
@@ -71,7 +71,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Shambling_Ghoul",
         "unlockLevel": 0,
         "combatLevel": 14,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.arborae,
         "immunity": elements.necromae
     },
     {
@@ -79,7 +79,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Beady-eyed_Deathcrow",
         "unlockLevel": 10,
         "combatLevel": 16,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.necromae
     },
     {
@@ -95,7 +95,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Scruffy_Thief#Male_(black_hair)",
         "unlockLevel": 14,
         "combatLevel": 22,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.arborae,
         "immunity": elements.cryonae
     },
     {
@@ -103,7 +103,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Hooligan_Goblin_Soldier",
         "unlockLevel": 16,
         "combatLevel": 28,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.infernae
     },
     {
@@ -111,7 +111,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Tangled_Hairbeast",
         "unlockLevel": 18,
         "combatLevel": 33,
-        "vulnerability": elements.tempestae,
+        "vulnerability": elements.necromae,
         "immunity": elements.tempestae
     },
     {
@@ -119,7 +119,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Bossy_Goblin_Chief",
         "unlockLevel": 22,
         "combatLevel": 41,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.infernae
     },
     {
@@ -127,7 +127,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Snap_Carnivorous_Plant",
         "unlockLevel": 28,
         "combatLevel": 47,
-        "vulnerability": elements.arborae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.arborae
     },
     {
@@ -135,7 +135,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Foraging_Ghoul",
         "unlockLevel": 33,
         "combatLevel": 52,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.arborae,
         "immunity": elements.necromae
     },
     {
@@ -143,7 +143,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Wily_Deathcrow",
         "unlockLevel": 41,
         "combatLevel": 60,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.necromae
     },
     {
@@ -151,7 +151,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Loitering_Thief#Male_(black_hair)",
         "unlockLevel": 47,
         "combatLevel": 66,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.arborae,
         "immunity": elements.cryonae
     },
     {
@@ -167,7 +167,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Plunderer_Goblin_Soldier",
         "unlockLevel": 60,
         "combatLevel": 77,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.infernae
     },
     {
@@ -175,7 +175,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Lumbering_Hairbeast",
         "unlockLevel": 66,
         "combatLevel": 85,
-        "vulnerability": elements.tempestae,
+        "vulnerability": elements.necromae,
         "immunity": elements.tempestae
     },
     {
@@ -183,7 +183,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Leafjaw_Carnivorous_Plant",
         "unlockLevel": 71,
         "combatLevel": 90,
-        "vulnerability": elements.arborae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.arborae
     },
     {
@@ -191,7 +191,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Robust_Goblin_Chief",
         "unlockLevel": 77,
         "combatLevel": 96,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.infernae
     },
     {
@@ -199,7 +199,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Slickwing_Deathcrow",
         "unlockLevel": 85,
         "combatLevel": 104,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.necromae
     },
     {
@@ -207,7 +207,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Pale_Ghoul",
         "unlockLevel": 90,
         "combatLevel": 110,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.arborae,
         "immunity": elements.necromae
     },
     {
@@ -215,7 +215,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Shifty_Thief#Male_(black_hair)",
         "unlockLevel": 96,
         "combatLevel": 115,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.arborae,
         "immunity": elements.cryonae
     },
     {
@@ -223,7 +223,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Raider_Goblin_Soldier",
         "unlockLevel": 104,
         "combatLevel": 124,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.infernae
     },
     {
@@ -239,7 +239,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Shaggy_Hairbeast",
         "unlockLevel": 115,
         "combatLevel": 135,
-        "vulnerability": elements.tempestae,
+        "vulnerability": elements.necromae,
         "immunity": elements.tempestae
     },
     {
@@ -247,7 +247,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Munching_Carnivorous_Plant",
         "unlockLevel": 124,
         "combatLevel": 143,
-        "vulnerability": elements.arborae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.arborae
     },
     {
@@ -255,7 +255,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Authoritative_Goblin_Chief",
         "unlockLevel": 129,
         "combatLevel": 149,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.infernae
     },
     {
@@ -263,7 +263,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Shadowy_Deathcrow",
         "unlockLevel": 135,
         "combatLevel": 155,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.necromae
     },
     {
@@ -271,7 +271,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Crafty_Thief#Male_(black_hair)",
         "unlockLevel": 143,
         "combatLevel": 160,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.arborae,
         "immunity": elements.cryonae
     },
     {
@@ -279,7 +279,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Marauder_Goblin_Soldier",
         "unlockLevel": 149,
         "combatLevel": 169,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.infernae
     },
     {
@@ -287,7 +287,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Crazed_Ghoul",
         "unlockLevel": 155,
         "combatLevel": 174,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.arborae,
         "immunity": elements.necromae
     },
     {
@@ -303,7 +303,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Hefty_Hairbeast",
         "unlockLevel": 169,
         "combatLevel": 188,
-        "vulnerability": elements.tempestae,
+        "vulnerability": elements.necromae,
         "immunity": elements.tempestae
     },
     {
@@ -311,7 +311,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Bladefang_Carnivorous_Plant",
         "unlockLevel": 174,
         "combatLevel": 194,
-        "vulnerability": elements.arborae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.arborae
     },
     {
@@ -319,7 +319,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Vicious_Deathcrow",
         "unlockLevel": 180,
         "combatLevel": 200,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.necromae
     },
     {
@@ -327,7 +327,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Fierce_Goblin_Chief",
         "unlockLevel": 188,
         "combatLevel": 227,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.infernae
     },
     {
@@ -335,7 +335,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Sneaky_Thief#Male_(black_hair)",
         "unlockLevel": 194,
         "combatLevel": 245,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.arborae,
         "immunity": elements.cryonae
     },
     {
@@ -343,7 +343,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Trooper_Goblin_Soldier",
         "unlockLevel": 200,
         "combatLevel": 263,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.infernae
     },
     {
@@ -351,7 +351,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Prowling_Ghoul",
         "unlockLevel": 227,
         "combatLevel": 290,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.arborae,
         "immunity": elements.necromae
     },
     {
@@ -359,7 +359,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Savage_Hairbeast",
         "unlockLevel": 245,
         "combatLevel": 308,
-        "vulnerability": elements.tempestae,
+        "vulnerability": elements.necromae,
         "immunity": elements.tempestae
     },
     {
@@ -367,7 +367,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Armsnapper_Carnivorous_Plant",
         "unlockLevel": 263,
         "combatLevel": 326,
-        "vulnerability": elements.arborae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.arborae
     },
     {
@@ -383,7 +383,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Malevolent_Deathcrow",
         "unlockLevel": 308,
         "combatLevel": 372,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.necromae
     },
     {
@@ -391,7 +391,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Dangerous_Thief#Male_(black_hair)",
         "unlockLevel": 326,
         "combatLevel": 390,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.arborae,
         "immunity": elements.cryonae
     },
     {
@@ -399,7 +399,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Preeminent_Goblin_Chief",
         "unlockLevel": 345,
         "combatLevel": 408,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.infernae
     },
     {
@@ -407,7 +407,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Warrior_Goblin_Soldier",
         "unlockLevel": 372,
         "combatLevel": 435,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.infernae
     },
     {
@@ -415,7 +415,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Psychic_Hairbeast",
         "unlockLevel": 390,
         "combatLevel": 453,
-        "vulnerability": elements.tempestae,
+        "vulnerability": elements.necromae,
         "immunity": elements.tempestae
     },
     {
@@ -423,7 +423,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Frenzied_Ghoul",
         "unlockLevel": 408,
         "combatLevel": 471,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.arborae,
         "immunity": elements.necromae
     },
     {
@@ -431,7 +431,7 @@ export const guardEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Bonecruncher_Carnivorous_Plant",
         "unlockLevel": 435,
         "combatLevel": 490,
-        "vulnerability": elements.arborae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.arborae
     }
 ];
@@ -442,7 +442,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Ragged_Outlaw#Brown",
         "unlockLevel": 0,
         "combatLevel": 0,
-        "vulnerability": null,
+        "vulnerability": elements.arborae,
         "immunity": null
     },
     {
@@ -450,7 +450,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Vagabond_Goblin#1",
         "unlockLevel": 0,
         "combatLevel": 2,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.infernae
     },
     {
@@ -458,7 +458,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Grizzly_Bear",
         "unlockLevel": 0,
         "combatLevel": 4,
-        "vulnerability": null,
+        "vulnerability": elements.cryonae,
         "immunity": null
     },
     {
@@ -466,7 +466,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Twisted_Wendigo",
         "unlockLevel": 0,
         "combatLevel": 6,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.infernae,
         "immunity": elements.cryonae
     },
     {
@@ -474,7 +474,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Common_Viper",
         "unlockLevel": 0,
         "combatLevel": 8,
-        "vulnerability": elements.tempestae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.tempestae
     },
     {
@@ -482,7 +482,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Lean_Spriggan",
         "unlockLevel": 0,
         "combatLevel": 10,
-        "vulnerability": elements.arborae,
+        "vulnerability": elements.infernae,
         "immunity": elements.arborae
     },
     {
@@ -490,7 +490,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Rotting_Bramblelith",
         "unlockLevel": 0,
         "combatLevel": 12,
-        "vulnerability": elements.arborae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.arborae
     },
     {
@@ -498,7 +498,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Murmuring_Shade",
         "unlockLevel": 0,
         "combatLevel": 14,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.arborae,
         "immunity": elements.necromae
     },
     {
@@ -506,7 +506,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Disreputable_Outlaw#Brown",
         "unlockLevel": 10,
         "combatLevel": 16,
-        "vulnerability": null,
+        "vulnerability": elements.arborae,
         "immunity": null
     },
     {
@@ -514,7 +514,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Warty_Goblin#1",
         "unlockLevel": 12,
         "combatLevel": 18,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.infernae
     },
     {
@@ -522,7 +522,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Shambling_Bear",
         "unlockLevel": 14,
         "combatLevel": 22,
-        "vulnerability": null,
+        "vulnerability": elements.cryonae,
         "immunity": null
     },
     {
@@ -530,7 +530,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Horned_Viper",
         "unlockLevel": 16,
         "combatLevel": 28,
-        "vulnerability": elements.tempestae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.tempestae
     },
     {
@@ -538,7 +538,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Wirehair_Wendigo",
         "unlockLevel": 18,
         "combatLevel": 33,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.infernae,
         "immunity": elements.cryonae
     },
     {
@@ -546,7 +546,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Bright-eyed_Spriggan",
         "unlockLevel": 22,
         "combatLevel": 39,
-        "vulnerability": elements.arborae,
+        "vulnerability": elements.infernae,
         "immunity": elements.arborae
     },
     {
@@ -554,7 +554,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Mean_Outlaw#Brown",
         "unlockLevel": 28,
         "combatLevel": 47,
-        "vulnerability": null,
+        "vulnerability": elements.arborae,
         "immunity": null
     },
     {
@@ -562,7 +562,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Budding_Bramblelith",
         "unlockLevel": 33,
         "combatLevel": 52,
-        "vulnerability": elements.arborae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.arborae
     },
     {
@@ -570,7 +570,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Slinking_Shade",
         "unlockLevel": 39,
         "combatLevel": 58,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.arborae,
         "immunity": elements.necromae
     },
     {
@@ -578,7 +578,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Rowdy_Goblin#1",
         "unlockLevel": 47,
         "combatLevel": 63,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.infernae
     },
     {
@@ -586,7 +586,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Gray_Bear",
         "unlockLevel": 52,
         "combatLevel": 71,
-        "vulnerability": null,
+        "vulnerability": elements.cryonae,
         "immunity": null
     },
     {
@@ -594,7 +594,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Asp_Viper",
         "unlockLevel": 58,
         "combatLevel": 77,
-        "vulnerability": elements.tempestae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.tempestae
     },
     {
@@ -602,7 +602,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Gaudy_Outlaw#Brown",
         "unlockLevel": 63,
         "combatLevel": 82,
-        "vulnerability": null,
+        "vulnerability": elements.arborae,
         "immunity": null
     },
     {
@@ -610,7 +610,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Roughbark_Spriggan",
         "unlockLevel": 71,
         "combatLevel": 88,
-        "vulnerability": elements.arborae,
+        "vulnerability": elements.infernae,
         "immunity": elements.arborae
     },
     {
@@ -618,7 +618,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Silverhide_Wendigo",
         "unlockLevel": 77,
         "combatLevel": 96,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.infernae,
         "immunity": elements.cryonae
     },
     {
@@ -626,7 +626,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Stalking_Bramblelith",
         "unlockLevel": 82,
         "combatLevel": 101,
-        "vulnerability": elements.arborae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.arborae
     },
     {
@@ -634,7 +634,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Deformed_Goblin#1",
         "unlockLevel": 88,
         "combatLevel": 107,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.infernae
     },
     {
@@ -642,7 +642,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Gray_Shade",
         "unlockLevel": 96,
         "combatLevel": 112,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.arborae,
         "immunity": elements.necromae
     },
     {
@@ -650,7 +650,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Hungry_Bear",
         "unlockLevel": 101,
         "combatLevel": 121,
-        "vulnerability": null,
+        "vulnerability": elements.cryonae,
         "immunity": null
     },
     {
@@ -658,7 +658,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Sneaky_Outlaw#Red",
         "unlockLevel": 107,
         "combatLevel": 126,
-        "vulnerability": null,
+        "vulnerability": elements.arborae,
         "immunity": null
     },
     {
@@ -666,7 +666,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Cotton_Mouth_Viper",
         "unlockLevel": 112,
         "combatLevel": 132,
-        "vulnerability": elements.tempestae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.tempestae
     },
     {
@@ -674,7 +674,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Leafswirl_Spriggan",
         "unlockLevel": 121,
         "combatLevel": 138,
-        "vulnerability": elements.arborae,
+        "vulnerability": elements.infernae,
         "immunity": elements.arborae
     },
     {
@@ -682,7 +682,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Furious_Wendigo",
         "unlockLevel": 126,
         "combatLevel": 146,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.infernae,
         "immunity": elements.cryonae
     },
     {
@@ -690,7 +690,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Angry_Goblin#1",
         "unlockLevel": 132,
         "combatLevel": 152,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.infernae
     },
     {
@@ -698,7 +698,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Shaggy_Bear",
         "unlockLevel": 138,
         "combatLevel": 157,
-        "vulnerability": null,
+        "vulnerability": elements.cryonae,
         "immunity": null
     },
     {
@@ -706,7 +706,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Creeping_Bramblelith",
         "unlockLevel": 146,
         "combatLevel": 166,
-        "vulnerability": elements.arborae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.arborae
     },
     {
@@ -714,7 +714,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Nimble_Outlaw#Red",
         "unlockLevel": 152,
         "combatLevel": 171,
-        "vulnerability": null,
+        "vulnerability": elements.arborae,
         "immunity": null
     },
     {
@@ -722,7 +722,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Wailing_Shade",
         "unlockLevel": 157,
         "combatLevel": 177,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.arborae,
         "immunity": elements.necromae
     },
     {
@@ -730,7 +730,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Arrow_Head_Viper",
         "unlockLevel": 166,
         "combatLevel": 183,
-        "vulnerability": elements.tempestae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.tempestae
     },
     {
@@ -738,7 +738,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Stretching_Spriggan",
         "unlockLevel": 171,
         "combatLevel": 191,
-        "vulnerability": elements.arborae,
+        "vulnerability": elements.infernae,
         "immunity": elements.arborae
     },
     {
@@ -746,7 +746,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Menacing_Wendigo",
         "unlockLevel": 177,
         "combatLevel": 197,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.infernae,
         "immunity": elements.cryonae
     },
     {
@@ -754,7 +754,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Rugged_Goblin#1",
         "unlockLevel": 183,
         "combatLevel": 209,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.infernae
     },
     {
@@ -762,7 +762,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Tough_Outlaw#Red",
         "unlockLevel": 191,
         "combatLevel": 227,
-        "vulnerability": null,
+        "vulnerability": elements.arborae,
         "immunity": null
     },
     {
@@ -770,7 +770,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Cinnamon_Bear",
         "unlockLevel": 197,
         "combatLevel": 254,
-        "vulnerability": null,
+        "vulnerability": elements.cryonae,
         "immunity": null
     },
     {
@@ -778,7 +778,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Razor_Bramblelith",
         "unlockLevel": 209,
         "combatLevel": 272,
-        "vulnerability": elements.arborae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.arborae
     },
     {
@@ -786,7 +786,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Rock_Viper",
         "unlockLevel": 227,
         "combatLevel": 290,
-        "vulnerability": elements.tempestae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.tempestae
     },
     {
@@ -794,7 +794,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Spooky_Shade",
         "unlockLevel": 254,
         "combatLevel": 308,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.arborae,
         "immunity": elements.necromae
     },
     {
@@ -802,7 +802,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Mysterious_Spriggan",
         "unlockLevel": 272,
         "combatLevel": 335,
-        "vulnerability": elements.arborae,
+        "vulnerability": elements.infernae,
         "immunity": elements.arborae
     },
     {
@@ -810,7 +810,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Monstrous_Goblin#1",
         "unlockLevel": 290,
         "combatLevel": 354,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.infernae
     },
     {
@@ -818,7 +818,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Notorious_Outlaw#Red",
         "unlockLevel": 308,
         "combatLevel": 372,
-        "vulnerability": null,
+        "vulnerability": elements.arborae,
         "immunity": null
     },
     {
@@ -826,7 +826,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Terrifying_Wendigo",
         "unlockLevel": 335,
         "combatLevel": 390,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.infernae,
         "immunity": elements.cryonae
     },
     {
@@ -834,7 +834,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Black_Bear",
         "unlockLevel": 354,
         "combatLevel": 417,
-        "vulnerability": null,
+        "vulnerability": elements.cryonae,
         "immunity": null
     },
     {
@@ -842,7 +842,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Magnificent_Viper",
         "unlockLevel": 372,
         "combatLevel": 435,
-        "vulnerability": elements.tempestae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.tempestae
     },
     {
@@ -850,7 +850,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Deadly_Bramblelith",
         "unlockLevel": 390,
         "combatLevel": 453,
-        "vulnerability": elements.arborae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.arborae
     },
     {
@@ -858,7 +858,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Powerful_Spriggan",
         "unlockLevel": 417,
         "combatLevel": 471,
-        "vulnerability": elements.arborae,
+        "vulnerability": elements.infernae,
         "immunity": elements.arborae
     },
     {
@@ -866,7 +866,7 @@ export const scoutEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Terrifying_Shade",
         "unlockLevel": 435,
         "combatLevel": 490,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.arborae,
         "immunity": elements.necromae
     }
 ];
@@ -877,7 +877,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Haggard_Minecrawler",
         "unlockLevel": 0,
         "combatLevel": 0,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.necromae,
         "immunity": elements.cryonae
     },
     {
@@ -885,7 +885,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Nuisance_Goblin_Miner#1",
         "unlockLevel": 0,
         "combatLevel": 2,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.infernae
     },
     {
@@ -893,7 +893,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Shadowy_Floor_Tentacle",
         "unlockLevel": 0,
         "combatLevel": 4,
-        "vulnerability": elements.tempestae,
+        "vulnerability": elements.infernae,
         "immunity": elements.tempestae
     },
     {
@@ -901,7 +901,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Slimy_Fire_Toad",
         "unlockLevel": 0,
         "combatLevel": 6,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.infernae
     },
     {
@@ -909,7 +909,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Brittle_Skeleton_Miner",
         "unlockLevel": 0,
         "combatLevel": 8,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.arborae,
         "immunity": elements.necromae
     },
     {
@@ -917,7 +917,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Rusty_Metalith",
         "unlockLevel": 0,
         "combatLevel": 10,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.necromae,
         "immunity": elements.cryonae
     },
     {
@@ -925,7 +925,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Old_Cobble_Stonewurm",
         "unlockLevel": 0,
         "combatLevel": 12,
-        "vulnerability": elements.tempestae,
+        "vulnerability": elements.arborae,
         "immunity": elements.tempestae
     },
     {
@@ -933,7 +933,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Stinking_Cockroach",
         "unlockLevel": 0,
         "combatLevel": 14,
-        "vulnerability": null,
+        "vulnerability": elements.infernae,
         "immunity": null
     },
     {
@@ -941,7 +941,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Drifting_Wraith",
         "unlockLevel": 0,
         "combatLevel": 16,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.necromae
     },
     {
@@ -949,7 +949,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/One_Eyed_Blob",
         "unlockLevel": 0,
         "combatLevel": 18,
-        "vulnerability": elements.arborae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.arborae
     },
     {
@@ -957,7 +957,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Pale_Minecrawler",
         "unlockLevel": 14,
         "combatLevel": 22,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.necromae,
         "immunity": elements.cryonae
     },
     {
@@ -965,7 +965,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Wastrel_Goblin_Miner#1",
         "unlockLevel": 16,
         "combatLevel": 24,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.infernae
     },
     {
@@ -973,7 +973,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Gooey_Floor_Tentacle",
         "unlockLevel": 18,
         "combatLevel": 29,
-        "vulnerability": elements.tempestae,
+        "vulnerability": elements.infernae,
         "immunity": elements.tempestae
     },
     {
@@ -981,7 +981,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Yellowing_Skeleton_Miner",
         "unlockLevel": 22,
         "combatLevel": 34,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.arborae,
         "immunity": elements.necromae
     },
     {
@@ -989,7 +989,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Broad_Footed_Fire_Toad",
         "unlockLevel": 24,
         "combatLevel": 39,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.infernae
     },
     {
@@ -997,7 +997,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Short_Legged_Cockroach",
         "unlockLevel": 29,
         "combatLevel": 44,
-        "vulnerability": null,
+        "vulnerability": elements.infernae,
         "immunity": null
     },
     {
@@ -1005,7 +1005,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Iron_Metalith",
         "unlockLevel": 34,
         "combatLevel": 49,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.necromae,
         "immunity": elements.cryonae
     },
     {
@@ -1013,7 +1013,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Twelverock_Stonewurm",
         "unlockLevel": 39,
         "combatLevel": 54,
-        "vulnerability": elements.tempestae,
+        "vulnerability": elements.arborae,
         "immunity": elements.tempestae
     },
     {
@@ -1021,7 +1021,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Umber_Blob",
         "unlockLevel": 44,
         "combatLevel": 58,
-        "vulnerability": elements.arborae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.arborae
     },
     {
@@ -1029,7 +1029,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Faded_Wraith",
         "unlockLevel": 49,
         "combatLevel": 63,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.necromae
     },
     {
@@ -1037,7 +1037,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Ugly_Minecrawler",
         "unlockLevel": 54,
         "combatLevel": 68,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.necromae,
         "immunity": elements.cryonae
     },
     {
@@ -1045,7 +1045,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Ragamuffin_Goblin_Miner#1",
         "unlockLevel": 58,
         "combatLevel": 73,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.infernae
     },
     {
@@ -1053,7 +1053,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Clattering_Skeleton_Miner",
         "unlockLevel": 63,
         "combatLevel": 78,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.arborae,
         "immunity": elements.necromae
     },
     {
@@ -1061,7 +1061,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Red_Sucker_Floor_Tentacle",
         "unlockLevel": 68,
         "combatLevel": 83,
-        "vulnerability": elements.tempestae,
+        "vulnerability": elements.infernae,
         "immunity": elements.tempestae
     },
     {
@@ -1069,7 +1069,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Lumpy_Fire_Toad",
         "unlockLevel": 73,
         "combatLevel": 88,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.infernae
     },
     {
@@ -1077,7 +1077,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Mantuban_Cockroach",
         "unlockLevel": 78,
         "combatLevel": 90,
-        "vulnerability": null,
+        "vulnerability": elements.infernae,
         "immunity": null
     },
     {
@@ -1085,7 +1085,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Spiked_Metalith",
         "unlockLevel": 83,
         "combatLevel": 95,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.necromae,
         "immunity": elements.cryonae
     },
     {
@@ -1093,7 +1093,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Smooth_Back_Stonewurm",
         "unlockLevel": 88,
         "combatLevel": 100,
-        "vulnerability": elements.tempestae,
+        "vulnerability": elements.arborae,
         "immunity": elements.tempestae
     },
     {
@@ -1101,7 +1101,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Slobbering_Blob",
         "unlockLevel": 90,
         "combatLevel": 105,
-        "vulnerability": elements.arborae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.arborae
     },
     {
@@ -1109,7 +1109,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Ashen_Minecrawler",
         "unlockLevel": 95,
         "combatLevel": 110,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.necromae,
         "immunity": elements.cryonae
     },
     {
@@ -1117,7 +1117,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Broken_Jaw_Skeleton_Miner",
         "unlockLevel": 100,
         "combatLevel": 114,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.arborae,
         "immunity": elements.necromae
     },
     {
@@ -1125,7 +1125,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Miscreant_Goblin_Miner#1",
         "unlockLevel": 105,
         "combatLevel": 119,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.infernae
     },
     {
@@ -1133,7 +1133,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Howling_Wraith",
         "unlockLevel": 110,
         "combatLevel": 124,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.necromae
     },
     {
@@ -1141,7 +1141,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Darkvein_Floor_Tentacle",
         "unlockLevel": 114,
         "combatLevel": 128,
-        "vulnerability": elements.tempestae,
+        "vulnerability": elements.infernae,
         "immunity": elements.tempestae
     },
     {
@@ -1149,7 +1149,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Silverstripe_Fire_Toad",
         "unlockLevel": 119,
         "combatLevel": 133,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.infernae
     },
     {
@@ -1157,7 +1157,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Speckled_Cockroach",
         "unlockLevel": 124,
         "combatLevel": 138,
-        "vulnerability": null,
+        "vulnerability": elements.infernae,
         "immunity": null
     },
     {
@@ -1165,7 +1165,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Pasty_Blob",
         "unlockLevel": 128,
         "combatLevel": 143,
-        "vulnerability": elements.arborae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.arborae
     },
     {
@@ -1173,7 +1173,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Grayboned_Skeleton_Miner",
         "unlockLevel": 133,
         "combatLevel": 147,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.arborae,
         "immunity": elements.necromae
     },
     {
@@ -1181,7 +1181,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Jagged_Metalith",
         "unlockLevel": 138,
         "combatLevel": 152,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.necromae,
         "immunity": elements.cryonae
     },
     {
@@ -1189,7 +1189,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Boil_Ridden_Minecrawler",
         "unlockLevel": 143,
         "combatLevel": 155,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.necromae,
         "immunity": elements.cryonae
     },
     {
@@ -1197,7 +1197,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Delinquent_Goblin_Miner#1",
         "unlockLevel": 147,
         "combatLevel": 159,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.infernae
     },
     {
@@ -1205,7 +1205,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Grim_Heart_Stonewurm",
         "unlockLevel": 152,
         "combatLevel": 164,
-        "vulnerability": elements.tempestae,
+        "vulnerability": elements.arborae,
         "immunity": elements.tempestae
     },
     {
@@ -1213,7 +1213,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Sharp_Snap_Floor_Tentacle",
         "unlockLevel": 155,
         "combatLevel": 169,
-        "vulnerability": elements.tempestae,
+        "vulnerability": elements.infernae,
         "immunity": elements.tempestae
     },
     {
@@ -1221,7 +1221,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Spined_Cockroach",
         "unlockLevel": 159,
         "combatLevel": 173,
-        "vulnerability": null,
+        "vulnerability": elements.infernae,
         "immunity": null
     },
     {
@@ -1229,7 +1229,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Belching_Fire_Toad",
         "unlockLevel": 164,
         "combatLevel": 178,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.infernae
     },
     {
@@ -1237,7 +1237,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Chilling_Wraith",
         "unlockLevel": 169,
         "combatLevel": 183,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.necromae
     },
     {
@@ -1245,7 +1245,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Durable_Skeleton_Miner",
         "unlockLevel": 173,
         "combatLevel": 188,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.arborae,
         "immunity": elements.necromae
     },
     {
@@ -1253,7 +1253,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Blotchy_Blob",
         "unlockLevel": 178,
         "combatLevel": 192,
-        "vulnerability": elements.arborae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.arborae
     },
     {
@@ -1261,7 +1261,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Sharptooth_Minecrawler",
         "unlockLevel": 183,
         "combatLevel": 197,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.necromae,
         "immunity": elements.cryonae
     },
     {
@@ -1269,7 +1269,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Troublemaker_Goblin_Miner#1",
         "unlockLevel": 188,
         "combatLevel": 207,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.infernae
     },
     {
@@ -1277,7 +1277,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Smokeybrown_Cockroach",
         "unlockLevel": 192,
         "combatLevel": 223,
-        "vulnerability": null,
+        "vulnerability": elements.infernae,
         "immunity": null
     },
     {
@@ -1285,7 +1285,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Glinted_Metalith",
         "unlockLevel": 197,
         "combatLevel": 239,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.necromae,
         "immunity": elements.cryonae
     },
     {
@@ -1293,7 +1293,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Tightgrip_Floor_Tentacle",
         "unlockLevel": 207,
         "combatLevel": 254,
-        "vulnerability": elements.tempestae,
+        "vulnerability": elements.infernae,
         "immunity": elements.tempestae
     },
     {
@@ -1301,7 +1301,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Craggy_Stonewurm",
         "unlockLevel": 223,
         "combatLevel": 270,
-        "vulnerability": elements.tempestae,
+        "vulnerability": elements.arborae,
         "immunity": elements.tempestae
     },
     {
@@ -1309,7 +1309,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Loathsome_Fire_Toad",
         "unlockLevel": 239,
         "combatLevel": 278,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.infernae
     },
     {
@@ -1317,7 +1317,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Throsum_Wraith",
         "unlockLevel": 254,
         "combatLevel": 294,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.necromae
     },
     {
@@ -1325,7 +1325,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Dangerous_Skeleton_Miner",
         "unlockLevel": 270,
         "combatLevel": 309,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.arborae,
         "immunity": elements.necromae
     },
     {
@@ -1333,7 +1333,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Vile_Blob",
         "unlockLevel": 278,
         "combatLevel": 325,
-        "vulnerability": elements.arborae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.arborae
     },
     {
@@ -1341,7 +1341,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Hairy_Cockroach",
         "unlockLevel": 294,
         "combatLevel": 341,
-        "vulnerability": null,
+        "vulnerability": elements.infernae,
         "immunity": null
     },
     {
@@ -1349,7 +1349,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Deepway_Minecrawler",
         "unlockLevel": 309,
         "combatLevel": 356,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.necromae,
         "immunity": elements.cryonae
     },
     {
@@ -1357,7 +1357,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Scoundrel_Goblin_Miner#1",
         "unlockLevel": 325,
         "combatLevel": 372,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.infernae
     },
     {
@@ -1365,7 +1365,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Malevolent_Floor_Tentacle",
         "unlockLevel": 341,
         "combatLevel": 388,
-        "vulnerability": elements.tempestae,
+        "vulnerability": elements.infernae,
         "immunity": elements.tempestae
     },
     {
@@ -1373,7 +1373,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Volatile_Fire_Toad",
         "unlockLevel": 356,
         "combatLevel": 403,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.infernae
     },
     {
@@ -1381,7 +1381,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Toughened_Metalith",
         "unlockLevel": 372,
         "combatLevel": 419,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.necromae,
         "immunity": elements.cryonae
     },
     {
@@ -1389,7 +1389,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Insidious_Stonewurm",
         "unlockLevel": 388,
         "combatLevel": 435,
-        "vulnerability": elements.tempestae,
+        "vulnerability": elements.arborae,
         "immunity": elements.tempestae
     },
     {
@@ -1397,7 +1397,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Elite_Skeleton_Miner",
         "unlockLevel": 403,
         "combatLevel": 450,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.arborae,
         "immunity": elements.necromae
     },
     {
@@ -1405,7 +1405,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Grim_Wraith",
         "unlockLevel": 419,
         "combatLevel": 466,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.necromae
     },
     {
@@ -1413,7 +1413,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Deaths_Head_Cockroach",
         "unlockLevel": 435,
         "combatLevel": 482,
-        "vulnerability": null,
+        "vulnerability": elements.infernae,
         "immunity": null
     },
     {
@@ -1421,7 +1421,7 @@ export const mineEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Bulging_Blob",
         "unlockLevel": 450,
         "combatLevel": 490,
-        "vulnerability": elements.arborae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.arborae
     }
 ];
