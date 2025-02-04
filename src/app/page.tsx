@@ -40,11 +40,13 @@ export default function Home() {
             <h1 className="text-4xl font-bold font-title mb-8">Brighter Fights</h1>
             <h2 className="text-2xl font-bold font-title mb-8">Combat companion app for Brighter Shores</h2>
 
-            <FactionSelector onSelect={setFaction}/>
-            <ProfessionSelector onSelect={setProfession}/>
-            <LevelInput onChange={setLevel}/>
-            <OffsetInput onChange={setOffset}/>
-            <StrategySelector onSelect={setStrategy}/>
+            <div className="grid grid-cols-2 gap-4">
+                <FactionSelector onSelect={setFaction}/>
+                <ProfessionSelector onSelect={setProfession}/>
+                <LevelInput value={level} onChange={setLevel}/>
+                <OffsetInput value={offset} onChange={setOffset}/>
+                <StrategySelector onSelect={setStrategy}/>
+            </div>
             <button className="btn btn-primary mt-4" onClick={handleSubmit}>
                 Calculate
             </button>
