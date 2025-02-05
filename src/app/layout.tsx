@@ -2,6 +2,7 @@ import type {Metadata} from "next";
 import "./globals.css";
 import {ReactNode} from "react";
 import {Lora, Roboto} from "next/font/google";
+import {Analytics} from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
     title: "Brighter Fights",
@@ -24,6 +25,7 @@ export default function RootLayout({children,}: Readonly<{ children: ReactNode; 
         <body className={`${roboto.variable} ${lora.variable} antialiased`}>
         <main className="font-title" data-theme="brighter">
             {children}
+            <Analytics/>
         </main>
         </body>
         </html>
