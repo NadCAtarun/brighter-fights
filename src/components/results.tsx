@@ -2,7 +2,7 @@ import {ExternalLinkIcon} from "lucide-react";
 import {Recommendations} from "@/model/strategist";
 import EquipmentProperties from "@/components/equipment-properties";
 
-const Results = (recs: Recommendations) => {
+const Results = ({recs, onLevelClick}: { recs: Recommendations, onLevelClick: (value: number) => void }) => {
     if (recs.enemy) {
         return (
             <>
@@ -19,7 +19,13 @@ const Results = (recs: Recommendations) => {
                         <ExternalLinkIcon className="w-4 h-4 inline ml-1"/>
                     </a>
                     {recs.nextLevel > 0 ? (
-                        <>until you reach level <strong className="text-primary">{recs.nextLevel}</strong></>
+                        <>
+                            until you reach level{" "}
+                            <a className="link link-primary link-hover font-bold"
+                               onClick={() => onLevelClick(recs.nextLevel)}>
+                                {recs.nextLevel}
+                            </a>
+                        </>
                     ) : (
                         ''
                     )}
