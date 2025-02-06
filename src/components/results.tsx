@@ -16,7 +16,7 @@ const Results = (recs: Recommendations) => {
                         target="_blank"
                         rel="noopener noreferrer">
                         {recs.enemy.name}
-                        <ExternalLinkIcon className="w-4 h-4 inline"/>
+                        <ExternalLinkIcon className="w-4 h-4 inline ml-1"/>
                     </a>
                 </p>
 
@@ -29,7 +29,7 @@ const Results = (recs: Recommendations) => {
                         target="_blank"
                         rel="noopener noreferrer">
                         {recs.meleeWeapon.name}
-                        <ExternalLinkIcon className="w-4 h-4 inline"/>
+                        <ExternalLinkIcon className="w-4 h-4 inline ml-1"/>
                     </a>
                     <EquipmentProperties category={recs.meleeWeapon.category}/>
                 </p>)}
@@ -43,7 +43,7 @@ const Results = (recs: Recommendations) => {
                         target="_blank"
                         rel="noopener noreferrer">
                         {recs.rangedWeapon.name}
-                        <ExternalLinkIcon className="w-4 h-4 inline"/>
+                        <ExternalLinkIcon className="w-4 h-4 inline ml-1"/>
                     </a>
                     <EquipmentProperties category={recs.rangedWeapon.category}/>
                 </p>)}
@@ -57,7 +57,7 @@ const Results = (recs: Recommendations) => {
                         target="_blank"
                         rel="noopener noreferrer">
                         {recs.shield.name}
-                        <ExternalLinkIcon className="w-4 h-4 inline"/>
+                        <ExternalLinkIcon className="w-4 h-4 inline ml-1"/>
                     </a>
                 </p>)}
             </>
