@@ -12,6 +12,9 @@ const Footer = () => {
                     <Link href="/stack" className="link link-hover">
                         Tech stack
                     </Link>
+                    <Link href="/credits" className="link link-hover">
+                        Credits
+                    </Link>
                 </nav>
 
                 <p className="text-sm">
