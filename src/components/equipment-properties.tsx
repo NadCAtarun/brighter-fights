@@ -5,6 +5,7 @@ const EquipmentProperties = ({category}: { category: string }) => {
     return (
         <>
             {c?.element.symbol || ''}
+            {c?.hands === 1 ? '🖐' : c?.hands === 2 ? '👐' : ''}
         </>
     );
 };

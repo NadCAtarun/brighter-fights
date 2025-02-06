@@ -1,7 +1,6 @@
 import {ExternalLinkIcon} from "lucide-react";
 import {Recommendations} from "@/model/strategist";
 import EquipmentProperties from "@/components/equipment-properties";
-import {EquipmentCategory} from "@/model/equipment";
 
 const Results = (recs: Recommendations) => {
     if (recs.enemy) {
