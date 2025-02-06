@@ -20,7 +20,7 @@ export default function TechStackStep({icon, label, title, description, url, log
                         {label}
                         &nbsp;➡
                         <Image src={logo} alt={`${title} logo`} width={40} height={40} className="inline-block mx-2"/>
-                        <a href={url} target="_blank" className="link link-primary">
+                        <a href={url} target="_blank" rel="noopener noreferrer" className="link link-primary">
                             {title}
                         </a>
                     </h3>
