@@ -1,9 +1,19 @@
 import {ExternalLinkIcon} from "lucide-react";
+import Link from "next/link";
 
 const Footer = () => {
     return (
         <footer className="bg-base-200 text-base-content mt-2 p-6">
             <div className="container mx-auto flex flex-col items-center">
+                <nav className="mb-4 flex gap-6">
+                    <Link href="/" className="link link-hover">
+                        Brighter Fights app
+                    </Link>
+                    <Link href="/stack" className="link link-hover">
+                        Tech stack
+                    </Link>
+                </nav>
+
                 <p className="text-sm">
                     This app is currently developed by a solo developer.{" "}
                     <a
