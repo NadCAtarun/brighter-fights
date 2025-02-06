@@ -80,6 +80,7 @@ function findIdealShield(factionEquipment: Equipment[], userLevel: number,
 
 export interface Recommendations {
     enemy: Enemy | null;
+    nextLevel: number;
     meleeWeapon: Equipment | string;
     rangedWeapon: Equipment | string;
     shield: Equipment | string;
@@ -127,6 +128,7 @@ export function getRecommendations(
 
     return {
         enemy: enemy,
+        nextLevel: userLevel + 10,
         meleeWeapon: meleeWeapon,
         rangedWeapon: rangedWeapon,
         shield: shield,

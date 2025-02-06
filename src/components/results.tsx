@@ -18,6 +18,11 @@ const Results = (recs: Recommendations) => {
                         {recs.enemy.name}
                         <ExternalLinkIcon className="w-4 h-4 inline ml-1"/>
                     </a>
+                    {recs.nextLevel > 0 ? (
+                        <>until you reach level <strong className="text-primary">{recs.nextLevel}</strong></>
+                    ) : (
+                        ''
+                    )}
                 </p>
 
                 {typeof recs.meleeWeapon === 'string' && (<p className="text-xl">{recs.meleeWeapon}</p>)}
