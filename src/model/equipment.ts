@@ -269,6 +269,13 @@ export const hammermageEquipmentCategories: EquipmentCategory[] = [
     }
 ];
 
+const categoriesByName = new Map([...cryoknightEquipmentCategories, ...guardianEquipmentCategories, ...hammermageEquipmentCategories]
+    .map(category => [category.name, category]));
+
+export function categoryByName(category: string): EquipmentCategory | null {
+    return categoriesByName.get(category) || null;
+}
+
 export interface Equipment {
     name: string;
     category: string;

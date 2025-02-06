@@ -1,5 +1,6 @@
 import {ExternalLinkIcon} from "lucide-react";
 import {Recommendations} from "@/model/strategist";
+import EquipmentProperties from "@/components/equipment-properties";
 
 const Results = (recs: Recommendations) => {
     if (recs.enemy) {
@@ -15,7 +16,7 @@ const Results = (recs: Recommendations) => {
                         target="_blank"
                         rel="noopener noreferrer">
                         {recs.enemy.name}
-                        <ExternalLinkIcon className="w-4 h-4 inline"/>
+                        <ExternalLinkIcon className="w-4 h-4 inline ml-1"/>
                     </a>
                 </p>
 
@@ -28,8 +29,9 @@ const Results = (recs: Recommendations) => {
                         target="_blank"
                         rel="noopener noreferrer">
                         {recs.meleeWeapon.name}
-                        <ExternalLinkIcon className="w-4 h-4 inline"/>
+                        <ExternalLinkIcon className="w-4 h-4 inline ml-1"/>
                     </a>
+                    <EquipmentProperties category={recs.meleeWeapon.category}/>
                 </p>)}
 
                 {typeof recs.rangedWeapon === 'string' && (<p className="text-xl">{recs.rangedWeapon}</p>)}
@@ -41,8 +43,9 @@ const Results = (recs: Recommendations) => {
                         target="_blank"
                         rel="noopener noreferrer">
                         {recs.rangedWeapon.name}
-                        <ExternalLinkIcon className="w-4 h-4 inline"/>
+                        <ExternalLinkIcon className="w-4 h-4 inline ml-1"/>
                     </a>
+                    <EquipmentProperties category={recs.rangedWeapon.category}/>
                 </p>)}
 
                 {typeof recs.shield === 'string' && (<p className="text-xl">{recs.shield}</p>)}
@@ -54,7 +57,7 @@ const Results = (recs: Recommendations) => {
                         target="_blank"
                         rel="noopener noreferrer">
                         {recs.shield.name}
-                        <ExternalLinkIcon className="w-4 h-4 inline"/>
+                        <ExternalLinkIcon className="w-4 h-4 inline ml-1"/>
                     </a>
                 </p>)}
             </>
