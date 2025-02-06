@@ -18,6 +18,21 @@ function findIdealEnemy(enemies: Enemy[], userLevel: number, offset: number): En
     return eligibleEnemies[eligibleEnemies.length - 1];
 }
 
+function findNextLevel(enemies: Enemy[], currentEnemy: Enemy | null, offset: number): number {
+    if (!currentEnemy) return 0;
+
+    const futureEnemies = enemies.filter(enemy => enemy.combatLevel > currentEnemy.combatLevel)
+        .sort((a, b) => a.combatLevel - b.combatLevel);
+
+    if (futureEnemies.length === 0) return 0;
+
+    const nextLevel = futureEnemies[0].combatLevel - offset;
+
+    if (nextLevel < 1 || nextLevel > 500) return 0;
+
+    return nextLevel
+}
+
 function findIdealWeaponCategory(factionCategories: EquipmentCategory[], type: 'melee' | 'ranged',
                                  enemy: Enemy | null, strategy: string): EquipmentCategory | null {
     if (enemy === null) {
@@ -80,6 +95,7 @@ function findIdealShield(factionEquipment: Equipment[], userLevel: number,
 
 export interface Recommendations {
     enemy: Enemy | null;
+    nextLevel: number;
     meleeWeapon: Equipment | string;
     rangedWeapon: Equipment | string;
     shield: Equipment | string;
@@ -93,7 +109,11 @@ export function getRecommendations(
     factionLevel: number,
     strategy: string,
 ): Recommendations {
-    const enemy = findIdealEnemy(enemiesByName(profession), userLevel, offset);
+    const enemies = enemiesByName(profession);
+
+    const enemy = findIdealEnemy(enemies, userLevel, offset);
+
+    const nextLevel = findNextLevel(enemies, enemy, offset);
 
     const meleeWeaponCategory = findIdealWeaponCategory(
         equipmentCategoriesByFactionName(faction),
@@ -127,6 +147,7 @@ export function getRecommendations(
 
     return {
         enemy: enemy,
+        nextLevel: nextLevel,
         meleeWeapon: meleeWeapon,
         rangedWeapon: rangedWeapon,
         shield: shield,

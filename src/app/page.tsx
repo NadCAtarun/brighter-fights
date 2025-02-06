@@ -23,6 +23,7 @@ export default function Home() {
     const [strategy, setStrategy] = useState('vulnerability');
     const [results, setResults] = useState<{
         enemy: Enemy | null;
+        nextLevel: number;
         meleeWeapon: Equipment | string;
         rangedWeapon: Equipment | string;
         shield: Equipment | string;
@@ -122,7 +123,10 @@ export default function Home() {
             <button className="btn btn-primary mt-8 mb-8 text-xl" onClick={handleSubmit}>
                 Update recommendations
             </button>
-            {results && <Results {...results} />}
+            {results && <Results onLevelClick={(level: number) => {
+                localStorage.setItem('userLevel', level.toString());
+                setUserLevel(level);
+            }} recs={results}/>}
         </div>
     );
 }

@@ -2,7 +2,7 @@ import {ExternalLinkIcon} from "lucide-react";
 import {Recommendations} from "@/model/strategist";
 import EquipmentProperties from "@/components/equipment-properties";
 
-const Results = (recs: Recommendations) => {
+const Results = ({recs, onLevelClick}: { recs: Recommendations, onLevelClick: (value: number) => void }) => {
     if (recs.enemy) {
         return (
             <>
@@ -18,6 +18,17 @@ const Results = (recs: Recommendations) => {
                         {recs.enemy.name}
                         <ExternalLinkIcon className="w-4 h-4 inline ml-1"/>
                     </a>
+                    {recs.nextLevel > 0 ? (
+                        <>
+                            until you reach level{" "}
+                            <a className="link link-primary link-hover font-bold"
+                               onClick={() => onLevelClick(recs.nextLevel)}>
+                                {recs.nextLevel}
+                            </a>
+                        </>
+                    ) : (
+                        ''
+                    )}
                 </p>
 
                 {typeof recs.meleeWeapon === 'string' && (<p className="text-xl">{recs.meleeWeapon}</p>)}
