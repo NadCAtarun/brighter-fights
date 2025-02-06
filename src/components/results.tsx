@@ -1,5 +1,7 @@
 import {ExternalLinkIcon} from "lucide-react";
 import {Recommendations} from "@/model/strategist";
+import EquipmentProperties from "@/components/equipment-properties";
+import {EquipmentCategory} from "@/model/equipment";
 
 const Results = (recs: Recommendations) => {
     if (recs.enemy) {
@@ -30,6 +32,7 @@ const Results = (recs: Recommendations) => {
                         {recs.meleeWeapon.name}
                         <ExternalLinkIcon className="w-4 h-4 inline"/>
                     </a>
+                    <EquipmentProperties category={recs.meleeWeapon.category}/>
                 </p>)}
 
                 {typeof recs.rangedWeapon === 'string' && (<p className="text-xl">{recs.rangedWeapon}</p>)}
@@ -43,6 +46,7 @@ const Results = (recs: Recommendations) => {
                         {recs.rangedWeapon.name}
                         <ExternalLinkIcon className="w-4 h-4 inline"/>
                     </a>
+                    <EquipmentProperties category={recs.rangedWeapon.category}/>
                 </p>)}
 
                 {typeof recs.shield === 'string' && (<p className="text-xl">{recs.shield}</p>)}

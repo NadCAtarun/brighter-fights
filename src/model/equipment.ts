@@ -269,6 +269,11 @@ export const hammermageEquipmentCategories: EquipmentCategory[] = [
     }
 ];
 
+export function categoryByName(category: string): EquipmentCategory | null {
+    return ([...cryoknightEquipmentCategories, ...guardianEquipmentCategories, ...hammermageEquipmentCategories])
+        .find((c) => c.name === category) || null;
+}
+
 export interface Equipment {
     name: string;
     category: string;
