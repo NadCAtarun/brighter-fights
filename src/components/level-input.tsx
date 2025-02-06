@@ -4,7 +4,12 @@ const LevelInput = ({value, onChange, targetProfession}:
         <div className="form-control">
             <label className="label" htmlFor={`${targetProfession}-level`}>
                 <span className="label-text text-xl">Your <strong>{targetProfession}</strong> level:</span>
-                <span className="label-text-alt font-bold text-xl">{value}</span>
+                <input
+                    type="number"
+                    value={value}
+                    className="input input-bordered input-primary w-20 text-xl font-bold"
+                    onChange={(e) => onChange(Number(e.target.value))}
+                />
             </label>
             <input
                 id={`${targetProfession}-level`}
