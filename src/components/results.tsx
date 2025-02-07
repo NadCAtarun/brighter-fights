@@ -1,8 +1,13 @@
 import {ExternalLinkIcon} from "lucide-react";
 import {Recommendations} from "@/model/strategist";
 import EquipmentProperties from "@/components/equipment-properties";
+import {useCallback} from "react";
 
 const Results = ({recs, onLevelClick}: { recs: Recommendations, onLevelClick: (value: number) => void }) => {
+    const handleLevelClick = useCallback(() => {
+        onLevelClick(recs.nextLevel);
+    }, [onLevelClick, recs.nextLevel])
+
     if (recs.enemy) {
         return (
             <>
@@ -22,7 +27,7 @@ const Results = ({recs, onLevelClick}: { recs: Recommendations, onLevelClick: (v
                         <>
                             until you reach level{" "}
                             <button className="link link-primary link-hover font-bold"
-                                    onClick={() => onLevelClick(recs.nextLevel)}>
+                                    onClick={handleLevelClick}>
                                 {recs.nextLevel}
                             </button>
                         </>
