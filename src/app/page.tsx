@@ -69,9 +69,6 @@ export default function Home() {
 
     return (
         <div className="container mx-auto p-4 font-text">
-            <h1 className="text-4xl font-bold font-title mb-8">Brighter Fights</h1>
-            <h2 className="text-2xl font-bold font-title mb-8">Combat companion app for Brighter Shores</h2>
-
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <ProfessionSelector
                     value={profession}
