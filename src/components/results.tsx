@@ -21,10 +21,10 @@ const Results = ({recs, onLevelClick}: { recs: Recommendations, onLevelClick: (v
                     {recs.nextLevel > 0 ? (
                         <>
                             until you reach level{" "}
-                            <a className="link link-primary link-hover font-bold"
-                               onClick={() => onLevelClick(recs.nextLevel)}>
+                            <button className="link link-primary link-hover font-bold"
+                                    onClick={() => onLevelClick(recs.nextLevel)}>
                                 {recs.nextLevel}
-                            </a>
+                            </button>
                         </>
                     ) : (
                         ''
