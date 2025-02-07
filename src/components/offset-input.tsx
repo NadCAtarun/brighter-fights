@@ -1,8 +1,15 @@
+import {CircleHelp} from "lucide-react";
+import Link from "next/link";
+
 const OffsetInput = ({value, onChange}: { value: number; onChange: (offset: number) => void }) => {
     return (
         <div className="form-control">
             <label className="label" htmlFor="offset">
-                <span className="label-text text-xl">Enter level offset (-10 to +10)</span>
+                <div className="label-text text-xl">Enter level offset (-10 to +10)
+                    <Link href="/help/offset" className="link link-primary link-hover">
+                        <CircleHelp className="inline mx-2"/>
+                    </Link>
+                </div>
                 <span className="label-text-alt text-xl font-bold">{value > 0 ? `+${value}` : value}</span>
             </label>
             <input
