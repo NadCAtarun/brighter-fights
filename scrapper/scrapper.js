@@ -8,9 +8,9 @@
  */
 
 // Indices vary by profession!
-let enemyTableIndex = 1;
-let vulnerabilityColIndex = 7;
-let immunityColIndex = 6;
+const enemyTableIndex = 1;
+const vulnerabilityColIndex = 7;
+const immunityColIndex = 6;
 console.log(
     JSON.stringify(
         Array.from(document.querySelectorAll("table")[enemyTableIndex].querySelectorAll("tr"))
@@ -38,7 +38,7 @@ console.log(
  *            \/    |__|        |__|         \/     \/     \/
  */
 
-let equipmentTableIndex = 5; // Index varies by faction!
+const equipmentTableIndex = 5; // Index varies by faction!
 console.log(
     JSON.stringify(
         Array.from(document.querySelectorAll("table")[equipmentTableIndex].querySelectorAll("tr"))
