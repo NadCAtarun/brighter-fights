@@ -73,7 +73,7 @@ export const cryoknightEquipmentCategories: EquipmentCategory[] = [
         element: elements.necromae,
     },
     {
-        name: ' Metal Bow',
+        name: 'Metal Bow',
         hands: 2,
         type: 'ranged',
         speedTier: 1,
