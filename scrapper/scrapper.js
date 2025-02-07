@@ -26,7 +26,7 @@ console.log(
             };
         }), null, 2)
         .replaceAll('"elements.none"', 'null')
-        .replace(/"elements\.(\w+)"/gm, `elements.$1`)
+        .replace(/"elements\.(\w+)"/gm, "elements.$1")
 );
 
 /***
