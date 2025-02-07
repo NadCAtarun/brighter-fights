@@ -19,7 +19,7 @@ export default function Page() {
                 <div className="space-y-6">
                     <div className="card bg-base-200 shadow-xl">
                         <div className="card-body">
-                            <h2 className="card-title text-2xl font-bold">Exploit elemental vulnerability</h2>
+                            <h2 className="card-title text-2xl font-bold">Exploit vulnerability</h2>
                             <p className="text-lg">
                                 The app favors weapons using the element the enemy is vulnerable to, whenever possible.
                                 If multiple such weapons are available, the app will pick the fastest.
