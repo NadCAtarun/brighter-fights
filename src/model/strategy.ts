@@ -5,5 +5,5 @@ export interface Strategy {
 
 export const strategies = [
     {name: 'vulnerability', description: 'Exploit elemental vulnerability'},
-    {name: 'speed', description: 'Quickest weapon avoiding immunity'},
+    {name: 'speed', description: 'Quickest weapon'},
 ];

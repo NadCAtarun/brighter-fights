@@ -1,10 +1,17 @@
 import {strategies} from "@/model/strategy";
+import {CircleHelp} from "lucide-react";
+import Link from "next/link";
 
 const StrategySelector = ({value, onSelect}: { value: string, onSelect: (strategy: string) => void }) => {
     return (
         <div className="form-control">
             <label className="label" htmlFor="strategy">
-                <span className="label-text text-xl">Choose your strategy:</span>
+                <div className="label-text text-xl">
+                    Choose your strategy:
+                    <Link href="/help/strategy" className="link link-primary link-hover">
+                        <CircleHelp className="inline mx-2"/>
+                    </Link>
+                </div>
             </label>
             <select
                 id="strategy"
