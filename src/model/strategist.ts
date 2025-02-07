@@ -141,7 +141,7 @@ export function getRecommendations(
         craftingProfessionByFactionName(faction),
     );
 
-    const shield = 1 === meleeWeaponCategory?.hands || 1 === rangedWeaponCategory?.hands
+    const shield = meleeWeaponCategory?.hands === 1 || rangedWeaponCategory?.hands === 1
         ? findIdealShield(equipmentByFactionName(faction), userLevel, factionLevel, craftingProfessionByFactionName(faction))
         : 'No need for a shield, both weapons suggested are two-handed'
 
