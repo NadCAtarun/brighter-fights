@@ -7,7 +7,7 @@ const Footer = () => {
             <div className="container mx-auto flex flex-col items-center">
                 <nav className="mb-4 flex gap-6">
                     <Link href="/" className="link link-hover">
-                        Brighter Fights app
+                        App
                     </Link>
                     <Link href="/stack" className="link link-hover">
                         Tech stack
