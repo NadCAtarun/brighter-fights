@@ -9,9 +9,7 @@ import StrategySelector from "@/components/strategy-selector";
 import Results from "@/components/results";
 import {getRecommendations} from "@/model/strategist";
 import {Enemy} from "@/model/enemy";
-import {
-    craftingProfessionByFactionName,
-} from "@/model/faction";
+import {craftingProfessionByFactionName,} from "@/model/faction";
 import {Equipment} from "@/model/equipment";
 
 export default function Home() {
