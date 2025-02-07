@@ -1,4 +1,4 @@
-import {CircleAlert, CornerLeftUp} from "lucide-react";
+import {CornerLeftUp} from "lucide-react";
 import Link from "next/link";
 
 export default function Page() {
