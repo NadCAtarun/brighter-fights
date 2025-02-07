@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const EquipmentProperties = ({category}: { category: string }) => {
     const c = categoryByName(category);
-    if (!c) return (<></>);
+    if (!c) return null;
 
     return (
         <>
@@ -30,9 +30,3 @@ const EquipmentProperties = ({category}: { category: string }) => {
 };
 
 export default EquipmentProperties;
-
-/*
-<div className="tooltip" data-tip="hello">
-  <button className="btn">Hover me</button>
-</div>
- */
