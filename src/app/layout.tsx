@@ -4,6 +4,7 @@ import {ReactNode} from "react";
 import {Lora, Roboto} from "next/font/google";
 import {Analytics} from "@vercel/analytics/next";
 import Footer from "@/components/footer";
+import Header from "@/components/header";
 
 export const metadata: Metadata = {
     title: "Brighter Fights",
@@ -25,10 +26,13 @@ export default function RootLayout({children,}: Readonly<{ children: ReactNode; 
         <html lang="en" data-theme="brighter">
         <body className={`${roboto.variable} ${lora.variable} antialiased bg-base-200`}>
         <div className="flex flex-col min-h-screen">
+            <Header/>
+
             <main className="font-title flex-grow pb-10" data-theme="brighter">
                 {children}
                 <Analytics/>
             </main>
+
             <Footer/>
         </div>
         </body>

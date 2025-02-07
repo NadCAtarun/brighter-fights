@@ -9,9 +9,7 @@ import StrategySelector from "@/components/strategy-selector";
 import Results from "@/components/results";
 import {getRecommendations} from "@/model/strategist";
 import {Enemy} from "@/model/enemy";
-import {
-    craftingProfessionByFactionName,
-} from "@/model/faction";
+import {craftingProfessionByFactionName,} from "@/model/faction";
 import {Equipment} from "@/model/equipment";
 
 export default function Home() {
@@ -71,9 +69,6 @@ export default function Home() {
 
     return (
         <div className="container mx-auto p-4 font-text">
-            <h1 className="text-4xl font-bold font-title mb-8">Brighter Fights</h1>
-            <h2 className="text-2xl font-bold font-title mb-8">Combat companion app for Brighter Shores</h2>
-
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <ProfessionSelector
                     value={profession}
