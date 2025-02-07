@@ -1,6 +1,6 @@
 "use client";
 
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 import FactionSelector from "@/components/faction-selector";
 import ProfessionSelector from "@/components/profession-selector";
 import LevelInput from "@/components/level-input";
@@ -67,6 +67,12 @@ export default function Home() {
         ));
     }, [])
 
+    const handleUserLevelChange = useCallback(
+        (level: number) => {
+            localStorage.setItem('userLevel', level.toString());
+            setUserLevel(level);
+        }, []);
+
     return (
         <div className="container mx-auto p-4 font-text">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -79,10 +85,7 @@ export default function Home() {
                 />
                 <LevelInput
                     value={userLevel}
-                    onChange={(ul: number) => {
-                        localStorage.setItem('userLevel', ul.toString());
-                        setUserLevel(ul);
-                    }}
+                    onChange={handleUserLevelChange}
                     targetProfession={profession}
                 />
                 <FactionSelector
@@ -118,10 +121,7 @@ export default function Home() {
             <button className="btn btn-primary mt-8 mb-8 text-xl" onClick={handleSubmit}>
                 Update recommendations
             </button>
-            {results && <Results onLevelClick={(level: number) => {
-                localStorage.setItem('userLevel', level.toString());
-                setUserLevel(level);
-            }} recs={results}/>}
+            {results && <Results onLevelClick={handleUserLevelChange} recs={results}/>}
         </div>
     );
 }
