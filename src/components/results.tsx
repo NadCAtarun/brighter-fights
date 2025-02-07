@@ -32,7 +32,7 @@ const Results = ({recs, onLevelClick}: { recs: Recommendations, onLevelClick: (v
                 </p>
 
                 {typeof recs.meleeWeapon === 'string' && (<p className="text-xl">{recs.meleeWeapon}</p>)}
-                {typeof recs.meleeWeapon === 'object' && (<p className="text-xl">
+                {typeof recs.meleeWeapon === 'object' && (<div className="text-xl">
                     Melee weapon to craft:
                     <a
                         href={recs.meleeWeapon.url}
@@ -43,10 +43,10 @@ const Results = ({recs, onLevelClick}: { recs: Recommendations, onLevelClick: (v
                         <ExternalLinkIcon className="w-4 h-4 inline ml-1"/>
                     </a>
                     <EquipmentProperties category={recs.meleeWeapon.category}/>
-                </p>)}
+                </div>)}
 
                 {typeof recs.rangedWeapon === 'string' && (<p className="text-xl">{recs.rangedWeapon}</p>)}
-                {typeof recs.rangedWeapon === 'object' && (<p className="text-xl">
+                {typeof recs.rangedWeapon === 'object' && (<div className="text-xl">
                     Ranged weapon to craft:
                     <a
                         href={recs.rangedWeapon.url}
@@ -57,7 +57,7 @@ const Results = ({recs, onLevelClick}: { recs: Recommendations, onLevelClick: (v
                         <ExternalLinkIcon className="w-4 h-4 inline ml-1"/>
                     </a>
                     <EquipmentProperties category={recs.rangedWeapon.category}/>
-                </p>)}
+                </div>)}
 
                 {typeof recs.shield === 'string' && (<p className="text-xl">{recs.shield}</p>)}
                 {typeof recs.shield === 'object' && (<p className="text-xl">
