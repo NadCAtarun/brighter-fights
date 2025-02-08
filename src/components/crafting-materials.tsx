@@ -1,5 +1,13 @@
 import {Equipment} from "@/model/equipment";
 
+/**
+ * A functional component that calculates and displays the crafting materials
+ * required for a given piece of equipment, as well as ideal quantities for
+ * full utilization of backpack's capacity.
+ *
+ * @param {Equipment} equipment - The equipment object containing a list of materials with
+ *                                their quantities and corresponding material names.
+ */
 const CraftingMaterials = (equipment: Equipment) => {
     const materialsCount = equipment.materials
         .reduce((acc, {quantity}) => acc + quantity, 0);
