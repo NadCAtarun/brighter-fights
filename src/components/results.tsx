@@ -2,6 +2,7 @@ import {ExternalLinkIcon} from "lucide-react";
 import {Recommendations} from "@/model/strategist";
 import EquipmentProperties from "@/components/equipment-properties";
 import {useCallback} from "react";
+import CraftingMaterials from "@/components/crafting-materials";
 
 const Results = ({recs, onLevelClick}: { recs: Recommendations, onLevelClick: (value: number) => void }) => {
     const handleLevelClick = useCallback(() => {
@@ -48,6 +49,7 @@ const Results = ({recs, onLevelClick}: { recs: Recommendations, onLevelClick: (v
                         <ExternalLinkIcon className="w-4 h-4 inline ml-1"/>
                     </a>
                     <EquipmentProperties category={recs.meleeWeapon.category}/>
+                    <CraftingMaterials {...recs.meleeWeapon}/>
                 </div>)}
 
                 {typeof recs.rangedWeapon === 'string' && (<p className="text-xl">{recs.rangedWeapon}</p>)}
@@ -62,6 +64,7 @@ const Results = ({recs, onLevelClick}: { recs: Recommendations, onLevelClick: (v
                         <ExternalLinkIcon className="w-4 h-4 inline ml-1"/>
                     </a>
                     <EquipmentProperties category={recs.rangedWeapon.category}/>
+                    <CraftingMaterials {...recs.rangedWeapon}/>
                 </div>)}
 
                 {typeof recs.shield === 'string' && (<p className="text-xl">{recs.shield}</p>)}
@@ -75,6 +78,7 @@ const Results = ({recs, onLevelClick}: { recs: Recommendations, onLevelClick: (v
                         {recs.shield.name}
                         <ExternalLinkIcon className="w-4 h-4 inline ml-1"/>
                     </a>
+                    <CraftingMaterials {...recs.shield}/>
                 </p>)}
             </>
         )
