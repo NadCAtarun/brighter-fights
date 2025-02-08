@@ -1,6 +1,11 @@
 import {CircleAlert} from "lucide-react";
 import BackLink from "@/components/back-link";
 
+/**
+ * Renders the main page for the "Strategies" help section.
+ * This page includes an overview of different weapon recommendation strategies,
+ * along with explanations for each strategy and additional notes.
+ */
 export default function Page() {
     return (
         <>
