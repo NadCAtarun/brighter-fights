@@ -51,6 +51,16 @@ console.log(
                     craftingLevel: parseInt(cells[0]?.textContent?.trim() || ""),
                     maxLevel: parseInt(cells[1]?.textContent?.trim().split('–')[1] || '0'),
                     url: cells[2]?.querySelector("a")?.href || "",
+                    materials: Array.from(
+                        (cells[4]?.textContent?.trim() || "")
+                            .matchAll(/(\d+) × {2}([a-zA-Z ]+)/gm)
+                            .map((m) => ({
+                                    quantity: parseInt(m[1]),
+                                    material: m[2]
+                                })
+                            )
+                    ),
                 };
             }), null, 2)
 );
+
