@@ -1,5 +1,9 @@
 import BackLink from "@/components/back-link";
 
+/**
+ * Renders the main page for the "Offset" help section.
+ * This page explains the level offset functionality.
+ */
 export default function Page() {
     return (
         <>
