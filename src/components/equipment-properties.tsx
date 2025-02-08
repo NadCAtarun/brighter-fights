@@ -1,6 +1,13 @@
 import {categoryByName} from "@/model/equipment";
 import Image from "next/image";
 
+/**
+ * EquipmentProperties is a functional component that renders equipment-related information
+ * based on the provided category. It dynamically fetches equipment details by the category name
+ * and displays relevant icons and tooltips.
+ *
+ * @param {string} category - The name of the equipment category used to retrieve associated data.
+ */
 const EquipmentProperties = ({category}: { category: string }) => {
     const c = categoryByName(category);
     if (!c) return null;

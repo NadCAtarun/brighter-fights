@@ -2,6 +2,11 @@ import TechStackStep from "@/app/stack/step";
 import {techStack} from "@/app/stack/data";
 import BackLink from "@/components/back-link";
 
+/**
+ * Renders the Tech Stack page,
+ * showing the layers the app relies on,
+ * from back-end to front-end.
+ */
 export default function Page() {
     return (
         <>

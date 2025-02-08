@@ -12,6 +12,14 @@ import {Enemy} from "@/model/enemy";
 import {craftingProfessionByFactionName,} from "@/model/faction";
 import {Equipment} from "@/model/equipment";
 
+/**
+ * The main part of the Brighter Fights apps:
+ * It lets users pick a profession, level, faction, faction level, offset, and a strategy,
+ * then renders recommendations based on the settings.
+ * It provides various interaction handlers to update
+ * these preferences and utilizes persistent localStorage
+ * to store and retrieve the user configuration.
+ */
 export default function Home() {
     const [profession, setProfession] = useState('Guard');
     const [userLevel, setUserLevel] = useState(0);

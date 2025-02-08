@@ -1,6 +1,17 @@
 import {CircleHelp} from "lucide-react";
 import Link from "next/link";
 
+/**
+ * OffsetInput is a React functional component that renders a UI control for selecting a numeric offset value
+ * within a predefined range (-10 to +10). The component includes a slider input, a label, and visual indicators
+ * of the current value.
+ *
+ * @param {Object} props - Props for the OffsetInput component.
+ * @param {number} props.value - The current value of the offset. It determines the position of the slider
+ *                               and is displayed in the label.
+ * @param {Function} props.onChange - Callback function invoked when the slider value changes. It receives
+ *                                    the new offset value as a number.
+ */
 const OffsetInput = ({value, onChange}: { value: number; onChange: (offset: number) => void }) => {
     return (
         <div className="form-control">

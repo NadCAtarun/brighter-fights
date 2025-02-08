@@ -2,6 +2,9 @@ import {creditsData} from "@/app/credits/data";
 import Image from "next/image";
 import BackLink from "@/components/back-link";
 
+/**
+ * Page component that renders a list of credits and attributions.
+ */
 export default function Page() {
     return (
         <>

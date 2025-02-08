@@ -272,6 +272,12 @@ export const hammermageEquipmentCategories: EquipmentCategory[] = [
 const categoriesByName = new Map([...cryoknightEquipmentCategories, ...guardianEquipmentCategories, ...hammermageEquipmentCategories]
     .map(category => [category.name, category]));
 
+/**
+ * Retrieves an equipment category by its name.
+ *
+ * @param {string} category - The name of the category to retrieve.
+ * @return {EquipmentCategory | null} The equipment category object if found, otherwise null.
+ */
 export function categoryByName(category: string): EquipmentCategory | null {
     return categoriesByName.get(category) || null;
 }
