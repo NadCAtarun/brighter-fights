@@ -10,6 +10,17 @@ interface TechStackStepProps {
     logo: string;
 }
 
+/**
+ * Renders a single item in a tech stack step list with an icon, a label, a title, a description, and a link.
+ *
+ * @param {Object} props The properties passed to the component.
+ * @param {ReactNode} props.icon The icon representing the tech stack item.
+ * @param {string} props.label The label or name of the tech stack item.
+ * @param {string} props.title The title of the tech stack item displayed in the link.
+ * @param {string} props.description A brief description of the tech stack item.
+ * @param {string} props.url The URL associated with the tech stack item that the title links to.
+ * @param {string} props.logo The logo image URL or path for the tech stack item.
+ */
 export default function TechStackStep({icon, label, title, description, url, logo}: TechStackStepProps) {
     return (
         <li className="step step-primary z-1">
