@@ -1,5 +1,5 @@
 import Link from "next/link";
-import {Bug, ExternalLink, ExternalLinkIcon, Lightbulb} from "lucide-react";
+import {Bug, ExternalLinkIcon, Lightbulb} from "lucide-react";
 
 /**
  * FeedbackButtons is a React functional component that renders two buttons
