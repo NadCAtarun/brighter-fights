@@ -58,6 +58,19 @@ function findIdealWeaponCategory(factionCategories: EquipmentCategory[], type: '
     return usefulCategories[0];
 }
 
+/**
+ * Determines the ideal weapon for a user based on the weapon category, available equipment for the user's faction,
+ * user's level, crafting level, and crafting profession.
+ *
+ * @param {EquipmentCategory | null} weaponCategory - The category of the weapon being sought,
+ *                                                    or null if no suitable enemy was found.
+ * @param {Equipment[]} factionEquipment - An array of available equipment for the user's faction.
+ * @param {number} userLevel - The level of the user, used to filter weapons that the user can use.
+ * @param {number} craftingLevel - The user's level in crafting, used to filter weapons by crafting requirements.
+ * @param {string} craftingProfession - The crafting profession associated with the user's crafting level.
+ * @return {Equipment | string} The ideal weapon matching the given criteria,
+ *                              or a descriptive string if no suitable weapon is found.
+ */
 function findIdealWeapon(weaponCategory: EquipmentCategory | null, factionEquipment: Equipment[],
                          userLevel: number, craftingLevel: number, craftingProfession: string): Equipment | string {
     if (weaponCategory === null) {
