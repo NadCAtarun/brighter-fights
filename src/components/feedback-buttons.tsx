@@ -4,7 +4,7 @@ import {Bug, Lightbulb} from "lucide-react";
 /**
  * FeedbackButtons is a React functional component that renders two buttons
  * for providing feedback through clickable links. The buttons are fixed
- * at the bottom-right corner of the screen and allow users to either suggest
+ * in the bottom-right corner of the screen and allow users to either suggest
  * improvements or report bugs.
  *
  * - The "Suggest an Improvement" button redirects users to a GitHub issue template
@@ -15,10 +15,9 @@ import {Bug, Lightbulb} from "lucide-react";
  * Both buttons open their respective links in a new browser tab.
  */
 const FeedbackButtons = () => {
-    const suggestionUrl = "https://github.com/NadCAtarun/brighter-fights/issues/new?template=suggestion.md"
-        + "&title=Suggestion%3A%20";
-    const bugReportUrl = "https://github.com/NadCAtarun/brighter-fights/issues/new?template=bug_report.md"
-        + "&title=Bug%3A%20";
+    const newIssueUrl = "https://github.com/NadCAtarun/brighter-fights/issues/new";
+    const suggestionUrl = newIssueUrl + "?template=suggestion.md&title=Suggestion%3A%20";
+    const bugReportUrl = newIssueUrl + "?template=bug_report.md&title=Bug%3A%20";
 
     return (
         <div className="fixed bottom-4 right-4 flex flex-col gap-2">
