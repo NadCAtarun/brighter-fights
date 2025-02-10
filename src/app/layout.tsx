@@ -22,6 +22,14 @@ const lora = Lora({
     variable: '--font-title',
 });
 
+/**
+ * The RootLayout component serves as the root layout wrapper for the web app.
+ * It structures the overall HTML document with a Header,
+ * main content, FeedbackButtons, and Footer, while applying global themes and styles.
+ *
+ * @param {Object} props - The properties object.
+ * @param {ReactNode} props.children - React elements to be rendered within the main content area.
+ */
 export default function RootLayout({children,}: Readonly<{ children: ReactNode; }>) {
     return (
         <html lang="en" data-theme="brighter">

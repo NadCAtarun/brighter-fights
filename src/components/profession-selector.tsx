@@ -1,9 +1,20 @@
 import {Profession, professions} from "@/model/profession";
-import {useCallback} from "react";
+import {ChangeEvent, useCallback} from "react";
 
+/**
+ * ProfessionSelector is a functional component for selecting a profession
+ * from a dropdown list. It allows the user to choose a profession and
+ * executes a callback function whenever a selection is made.
+ *
+ * @param {Object} props - The props object.
+ * @param {string} props.value - The currently selected profession value.
+ * @param {(profession: string) => void} props.onSelect - Callback function
+ * invoked when the selected profession value changes. The selected value
+ * is passed as an argument.
+ */
 const ProfessionSelector =
     ({value, onSelect}: { value: string, onSelect: (profession: string) => void }) => {
-        const handleSelect = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
+        const handleSelect = useCallback((e: ChangeEvent<HTMLSelectElement>) => {
             onSelect(e.target.value);
         }, [onSelect]);
 

@@ -1,6 +1,14 @@
 import {ExternalLinkIcon} from "lucide-react";
 import Link from "next/link";
 
+/**
+ * Represents the footer component of the application.
+ *
+ * The footer includes:
+ * - Navigation links to key sections of the website (App, Tech stack, Credits).
+ * - Information about the main developer with a link to their personal website.
+ * - A message indicating the project is open source, including a link to the GitHub repository.
+ */
 const Footer = () => {
     return (
         <footer className="bg-base-200 text-base-content mt-2 p-6 mb-28 lg:mb-0">
