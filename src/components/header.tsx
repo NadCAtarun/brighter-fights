@@ -1,5 +1,11 @@
 import {ExternalLinkIcon} from "lucide-react";
 
+/**
+ * Header functional component.
+ *
+ * The title has a large, bold font, and the subtitle includes a link to the
+ * "Brighter Shores" website with a small external link icon for better user experience.
+ */
 const Header = () => {
     return <header className="flex justify-center">
         <div className="flex flex-col items-center">
