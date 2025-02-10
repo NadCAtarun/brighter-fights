@@ -1,5 +1,5 @@
 import Link from "next/link";
-import {Bug, Lightbulb} from "lucide-react";
+import {Bug, ExternalLink, ExternalLinkIcon, Lightbulb} from "lucide-react";
 
 /**
  * FeedbackButtons is a React functional component that renders two buttons
@@ -27,8 +27,9 @@ const FeedbackButtons = () => {
                 rel="noopener noreferrer"
                 className="btn btn-primary gap-2"
             >
-                <Lightbulb/>
+                <Lightbulb className="mr-auto"/>
                 Suggest an Improvement
+                <ExternalLinkIcon className="ml-auto"/>
             </Link>
 
             <Link
@@ -37,8 +38,9 @@ const FeedbackButtons = () => {
                 rel="noopener noreferrer"
                 className="btn btn-error gap-2"
             >
-                <Bug/>
+                <Bug className="mr-auto"/>
                 Report a Bug
+                <ExternalLinkIcon className="ml-auto"/>
             </Link>
         </div>
     );
