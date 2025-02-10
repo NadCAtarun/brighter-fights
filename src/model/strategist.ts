@@ -7,6 +7,14 @@ import {
     equipmentCategoriesByFactionName
 } from "@/model/faction";
 
+/**
+ * Finds the most suitable enemy for a user based on their level and an offset.
+ *
+ * @param {Enemy[]} enemies - An array of enemy objects to choose from.
+ * @param {number} userLevel - The current level of the user.
+ * @param {number} offset - An additional offset to adjust combat level compatibility.
+ * @return {Enemy | null} - The ideal enemy from the provided list; null if no enemy is eligible.
+ */
 function findIdealEnemy(enemies: Enemy[], userLevel: number, offset: number): Enemy | null {
     const eligibleEnemies = enemies.filter(
         enemy => enemy.unlockLevel <= userLevel && enemy.combatLevel <= Math.max(0, userLevel + offset));
