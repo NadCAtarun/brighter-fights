@@ -18,6 +18,14 @@ function findIdealEnemy(enemies: Enemy[], userLevel: number, offset: number): En
     return eligibleEnemies[eligibleEnemies.length - 1];
 }
 
+/**
+ * Calculates the level at which the user should ask for new recommendations.
+ *
+ * @param {Enemy[]} enemies - An array of enemy objects with defined combat levels.
+ * @param {Enemy | null} currentEnemy - The current enemy object or null if no current enemy exists.
+ * @param {number} offset - The numeric offset to adjust the calculated combat level.
+ * @return {number} The next valid combat level, or 0 if no valid level is found.
+ */
 function findNextLevel(enemies: Enemy[], currentEnemy: Enemy | null, offset: number): number {
     if (!currentEnemy) return 0;
 
