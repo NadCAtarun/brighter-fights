@@ -1,5 +1,15 @@
 import Image from "next/image";
 
+/**
+ * A functional component that renders an input field for selecting a level,
+ * along with an accompanying range slider, label, and profession-specific icon.
+ *
+ * @param {Object} props - The props for the LevelInput component.
+ * @param {number} props.value - The current value of the level input and range slider.
+ * @param {function} props.onChange - A callback function that is triggered when the level input or range value changes.
+ * @param {string} props.targetProfession - The name of the profession that the level input is associated with.
+ *                                          This is used for labeling and displaying a corresponding icon.
+ */
 const LevelInput = ({value, onChange, targetProfession}:
                     { value: number; onChange: (level: number) => void, targetProfession: string }) => {
     return (
