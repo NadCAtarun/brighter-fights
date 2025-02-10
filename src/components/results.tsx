@@ -24,7 +24,7 @@ const Results =
                 <>
                     <h2 className="text-2xl font-bold font-title mb-8">Recommendations</h2>
 
-                    <p className="text-xl">
+                    <div className="text-xl">
                         You should grind on
                         <a
                             href={recs.enemy.url}
@@ -45,7 +45,7 @@ const Results =
                         ) : (
                             ''
                         )}
-                    </p>
+                    </div>
 
                     {typeof recs.meleeWeapon === 'string' && (<p className="text-xl">{recs.meleeWeapon}</p>)}
                     {typeof recs.meleeWeapon === 'object' && (<div className="text-xl">
@@ -78,7 +78,7 @@ const Results =
                     </div>)}
 
                     {typeof recs.shield === 'string' && (<p className="text-xl">{recs.shield}</p>)}
-                    {typeof recs.shield === 'object' && (<p className="text-xl">
+                    {typeof recs.shield === 'object' && (<div className="text-xl">
                         Shield to craft:
                         <a
                             href={recs.shield.url}
@@ -89,7 +89,7 @@ const Results =
                             <ExternalLinkIcon className="w-4 h-4 inline ml-1"/>
                         </a>
                         <CraftingMaterials {...recs.shield}/>
-                    </p>)}
+                    </div>)}
                 </>
             )
         } else {
