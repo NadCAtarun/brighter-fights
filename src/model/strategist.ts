@@ -78,6 +78,16 @@ function findIdealWeapon(weaponCategory: EquipmentCategory | null, factionEquipm
     return eligibleWeapons[0];
 }
 
+/**
+ * Finds the ideal shield for the user based on their level, crafting level, and crafting profession.
+ *
+ * @param {Equipment[]} factionEquipment - An array of equipment objects available for the user's faction.
+ * @param {number} userLevel - The level of the user, used to determine eligibility for equipment.
+ * @param {number} craftingLevel - The current crafting level of the user.
+ * @param {string} craftingProfession - The profession associated with crafting the equipment.
+ * @return {Equipment | string} The best suitable shield for the user
+ *                              or a message prompting the user to increase their crafting level.
+ */
 function findIdealShield(factionEquipment: Equipment[], userLevel: number,
                          craftingLevel: number, craftingProfession: string): Equipment | string {
     const eligibleShields = factionEquipment.filter((e) =>
