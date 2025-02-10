@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Footer = () => {
     return (
-        <footer className="bg-base-200 text-base-content mt-2 p-6">
+        <footer className="bg-base-200 text-base-content mt-2 p-6 mb-28 lg:mb-0">
             <div className="container mx-auto flex flex-col items-center">
                 <nav className="mb-4 flex gap-6">
                     <Link href="/" className="link link-hover">
