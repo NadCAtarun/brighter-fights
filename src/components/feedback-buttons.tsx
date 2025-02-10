@@ -25,7 +25,7 @@ const FeedbackButtons = () => {
                 href={suggestionUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-primary gap-2"
+                className="btn btn-primary btn-outline gap-2"
             >
                 <Lightbulb className="mr-auto"/>
                 Suggest an Improvement
@@ -36,7 +36,7 @@ const FeedbackButtons = () => {
                 href={bugReportUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-error gap-2"
+                className="btn btn-error btn-outline gap-2"
             >
                 <Bug className="mr-auto"/>
                 Report a Bug
