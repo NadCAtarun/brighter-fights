@@ -17,7 +17,7 @@ import {Bug, ExternalLink, ExternalLinkIcon, Lightbulb} from "lucide-react";
 const FeedbackButtons = () => {
     const newIssueUrl = "https://github.com/NadCAtarun/brighter-fights/issues/new";
     const suggestionUrl = newIssueUrl + "?template=suggestion.md&title=Suggestion%3A%20";
-    const bugReportUrl = newIssueUrl + "?template=bug_report.md&title=Bug%3A%20";
+    const bugReportUrl = newIssueUrl + "?template=bug_report.md&title=Bug Report%3A%20";
 
     return (
         <div className="fixed bottom-4 right-4 flex flex-col gap-2">
