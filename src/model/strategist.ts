@@ -101,6 +101,19 @@ export interface Recommendations {
     shield: Equipment | string;
 }
 
+/**
+ * Provides recommendations based on the given inputs, including an ideal enemy to target,
+ * the next level to advance to, and appropriate weapons and shield for combat.
+ *
+ * @param {string} profession - The profession of the user, used to determine relevant enemies.
+ * @param {number} userLevel - The current level of the user.
+ * @param {number} offset - The offset used to calculate the ideal enemy or progression level.
+ * @param {string} faction - The faction the user belongs to, impacting equipment and crafting options.
+ * @param {number} factionLevel - The user's level within the crafting profession associated with their faction.
+ * @param {string} strategy - The combat strategy influencing weapon and shield selection.
+ * @return {Recommendations} An object containing recommendations including the ideal enemy,
+ *                           next progression level, melee weapon, ranged weapon, and shield.
+ */
 export function getRecommendations(
     profession: string,
     userLevel: number,
