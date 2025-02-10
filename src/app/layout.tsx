@@ -5,6 +5,7 @@ import {Lora, Roboto} from "next/font/google";
 import {Analytics} from "@vercel/analytics/next";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import FeedbackButtons from "@/components/feedback-buttons";
 
 export const metadata: Metadata = {
     title: "Brighter Fights",
@@ -32,6 +33,8 @@ export default function RootLayout({children,}: Readonly<{ children: ReactNode; 
                 {children}
                 <Analytics/>
             </main>
+
+            <FeedbackButtons/>
 
             <Footer/>
         </div>
