@@ -33,6 +33,17 @@ function findNextLevel(enemies: Enemy[], currentEnemy: Enemy | null, offset: num
     return nextLevel
 }
 
+/**
+ * Determines the ideal equipment category for a given faction based on the type of weapon,
+ * the enemy's characteristics, and the chosen strategy.
+ *
+ * @param {EquipmentCategory[]} factionCategories - The list of equipment categories available for the faction.
+ * @param {'melee' | 'ranged'} type - The type of weapon being considered (either melee or ranged).
+ * @param {Enemy | null} enemy - The enemy being fought, or null if there is no specific enemy.
+ * @param {string} strategy - The strategy to use when choosing the weapon category (e.g., "vulnerability", "speed").
+ * @return {EquipmentCategory | null} - The most suitable equipment category based on the criteria,
+ *                                      or null if no applicable category is found.
+ */
 function findIdealWeaponCategory(factionCategories: EquipmentCategory[], type: 'melee' | 'ranged',
                                  enemy: Enemy | null, strategy: string): EquipmentCategory | null {
     if (enemy === null) {
@@ -63,7 +74,7 @@ function findIdealWeaponCategory(factionCategories: EquipmentCategory[], type: '
  * user's level, crafting level, and crafting profession.
  *
  * @param {EquipmentCategory | null} weaponCategory - The category of the weapon being sought,
- *                                                    or null if no suitable enemy was found.
+ *                                                    or null if no suitable category was found.
  * @param {Equipment[]} factionEquipment - An array of available equipment for the user's faction.
  * @param {number} userLevel - The level of the user, used to filter weapons that the user can use.
  * @param {number} craftingLevel - The user's level in crafting, used to filter weapons by crafting requirements.
