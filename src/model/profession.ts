@@ -24,5 +24,12 @@ export const professions = [
     },
 ];
 
-export const enemiesByName: (name: string) => Enemy[] = (name: string) =>
+/**
+ * Retrieve a list of enemies corresponding to a given profession name.
+ *
+ * @param {string} name - The name of the profession used to identify enemies.
+ * @returns {Enemy[]} An array of enemies associated with the specified profession.
+ * If the profession name does not match any in the list, an empty array is returned.
+ */
+export const enemiesByName: (name: string) => Enemy[] = (name: string): Enemy[] =>
     professions.find(p => p.name === name)?.enemies || [];
