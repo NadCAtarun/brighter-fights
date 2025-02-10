@@ -1,9 +1,20 @@
+import Image from "next/image";
+
 const LevelInput = ({value, onChange, targetProfession}:
                     { value: number; onChange: (level: number) => void, targetProfession: string }) => {
     return (
         <div className="form-control">
             <label className="label" htmlFor={`${targetProfession}-level`}>
-                <span className="label-text text-xl">Your <strong>{targetProfession}</strong> level:</span>
+                <span className="label-text text-xl">
+                    <Image
+                        src={`/symbols/${targetProfession.toLowerCase()}.png`}
+                        alt={targetProfession}
+                        className={"inline-block mr-1"}
+                        width={24}
+                        height={24}
+                    />
+                    <strong>{targetProfession}</strong> level:
+                </span>
                 <input
                     type="number"
                     value={value}
