@@ -1,0 +1,28 @@
+name: Enforce Version Bump
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  check-version-bump:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Check package.json version bump
+        run: |
+          PREV_VERSION=$(git show HEAD~1:package.json | jq -r .version)
+          CURR_VERSION=$(jq -r .version package.json)
+          
+          if [ "$PREV_VERSION" = "$CURR_VERSION" ]; then
+            echo "Error: package.json version has not been updated."
+            exit 1
+          fi
+
+      - name: Success Message
+        run: echo "package.json version updated correctly!"
