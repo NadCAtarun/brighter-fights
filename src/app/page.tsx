@@ -11,6 +11,7 @@ import {getRecommendations} from "@/model/strategist";
 import {Enemy} from "@/model/enemy";
 import {craftingProfessionByFactionName,} from "@/model/faction";
 import {Equipment} from "@/model/equipment";
+import toast, {Toaster} from "react-hot-toast";
 
 /**
  * The main part of the Brighter Fights apps:
@@ -105,9 +106,9 @@ export default function Home() {
     const handleSubmit = useCallback(
         () => {
             if (userLevel < 0 || userLevel > 500) {
-                alert(`${profession} level must be between 0 and 500`);
+                toast.error(`${profession} level must be between 0 and 500`);
             } else if (factionLevel < 0 || factionLevel > 500) {
-                alert(`${faction} level must be between 0 and 500`);
+                toast.error(`${faction} level must be between 0 and 500`);
             } else {
                 setResults(getRecommendations(
                     profession,
@@ -138,9 +139,13 @@ export default function Home() {
                 <StrategySelector value={strategy} onSelect={handleStrategyChange}/>
                 <OffsetInput value={offset} onChange={handleOffsetChange}/>
             </div>
+
             <button className="btn btn-primary mt-8 mb-8 text-xl" onClick={handleSubmit}>
                 Update recommendations
             </button>
+
+            <Toaster/>
+
             {results && <Results onLevelClick={handleUserLevelChange} recs={results}/>}
         </div>
     );
