@@ -3,6 +3,7 @@ import {Recommendations} from "@/model/strategist";
 import EquipmentProperties from "@/components/equipment-properties";
 import {useCallback} from "react";
 import CraftingMaterials from "@/components/crafting-materials";
+import EnemyProperties from "@/components/enemy-properties";
 
 /**
  * A functional React component that renders recommendations based on the user settings,
@@ -34,9 +35,11 @@ const Results =
                             {recs.enemy.name}
                             <ExternalLinkIcon className="w-4 h-4 inline ml-1"/>
                         </a>
+                        <EnemyProperties {...recs.enemy}/>
                         {recs.nextLevel > 0 ? (
                             <>
-                                until you reach level{" "}
+                                <br/>
+                                Until you reach level{" "}
                                 <button className="link link-primary link-hover font-bold"
                                         onClick={handleLevelClick}>
                                     {recs.nextLevel}
