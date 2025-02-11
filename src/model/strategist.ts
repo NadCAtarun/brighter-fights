@@ -134,8 +134,6 @@ function findIdealShield(factionEquipment: Equipment[], userLevel: number,
         e.name.includes('Shield') && e.maxLevel >= userLevel && e.minLevel <= userLevel
     ).sort((a, b) => b.craftingLevel - a.craftingLevel);
 
-    console.log(eligibleShields);
-
     const minCraftingLevel = Math.min(...eligibleShields.map((e) => e.craftingLevel));
 
     if (minCraftingLevel > craftingLevel) {
