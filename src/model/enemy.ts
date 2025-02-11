@@ -1432,7 +1432,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Whitepaw_Sabertooth_Tiger",
         "unlockLevel": 0,
         "combatLevel": 0,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.cryonae
     },
     {
@@ -1440,7 +1440,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Flea_Ridden_Street_Hag",
         "unlockLevel": 0,
         "combatLevel": 2,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.arborae,
         "immunity": elements.infernae
     },
     {
@@ -1448,7 +1448,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Warty_Mawchest",
         "unlockLevel": 0,
         "combatLevel": 4,
-        "vulnerability": elements.tempestae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.tempestae
     },
     {
@@ -1456,7 +1456,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Yellow_Giant_Wasp",
         "unlockLevel": 0,
         "combatLevel": 6,
-        "vulnerability": elements.arborae,
+        "vulnerability": elements.necromae,
         "immunity": elements.arborae
     },
     {
@@ -1464,7 +1464,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Mad_Sewer_Fiend",
         "unlockLevel": 0,
         "combatLevel": 8,
-        "vulnerability": null,
+        "vulnerability": elements.cryonae,
         "immunity": null
     },
     {
@@ -1472,7 +1472,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Decomposing_Zombie",
         "unlockLevel": 0,
         "combatLevel": 10,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.infernae,
         "immunity": elements.necromae
     },
     {
@@ -1480,7 +1480,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Murky_Spectral_Stalker",
         "unlockLevel": 0,
         "combatLevel": 12,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.arborae,
         "immunity": elements.necromae
     },
     {
@@ -1488,7 +1488,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Blunt_Spiky_Ball",
         "unlockLevel": 0,
         "combatLevel": 14,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.cryonae
     },
     {
@@ -1496,7 +1496,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Slinking_Sabertooth_Tiger",
         "unlockLevel": 10,
         "combatLevel": 16,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.cryonae
     },
     {
@@ -1504,7 +1504,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Toothless_Street_Hag",
         "unlockLevel": 12,
         "combatLevel": 18,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.arborae,
         "immunity": elements.infernae
     },
     {
@@ -1512,7 +1512,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Paper_Giant_Wasp",
         "unlockLevel": 14,
         "combatLevel": 22,
-        "vulnerability": elements.arborae,
+        "vulnerability": elements.necromae,
         "immunity": elements.arborae
     },
     {
@@ -1520,7 +1520,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Sickening_Sewer_Fiend",
         "unlockLevel": 16,
         "combatLevel": 28,
-        "vulnerability": null,
+        "vulnerability": elements.cryonae,
         "immunity": null
     },
     {
@@ -1528,7 +1528,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Orange_Eyed_Mawchest",
         "unlockLevel": 18,
         "combatLevel": 34,
-        "vulnerability": elements.tempestae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.tempestae
     },
     {
@@ -1536,7 +1536,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Eyeless_Zombie",
         "unlockLevel": 22,
         "combatLevel": 39,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.infernae,
         "immunity": elements.necromae
     },
     {
@@ -1544,7 +1544,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Snarling_Spectral_Stalker",
         "unlockLevel": 28,
         "combatLevel": 48,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.arborae,
         "immunity": elements.necromae
     },
     {
@@ -1552,7 +1552,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Ragged_Spiky_Ball",
         "unlockLevel": 34,
         "combatLevel": 53,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.cryonae
     },
     {
@@ -1560,7 +1560,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Widefang_Sabertooth_Tiger",
         "unlockLevel": 39,
         "combatLevel": 59,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.cryonae
     },
     {
@@ -1568,7 +1568,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Cackling_Street_Hag",
         "unlockLevel": 48,
         "combatLevel": 65,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.arborae,
         "immunity": elements.infernae
     },
     {
@@ -1576,7 +1576,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Red_Giant_Wasp",
         "unlockLevel": 53,
         "combatLevel": 73,
-        "vulnerability": elements.arborae,
+        "vulnerability": elements.necromae,
         "immunity": elements.arborae
     },
     {
@@ -1584,7 +1584,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Gibbering_Sewer_Fiend",
         "unlockLevel": 59,
         "combatLevel": 79,
-        "vulnerability": null,
+        "vulnerability": elements.cryonae,
         "immunity": null
     },
     {
@@ -1592,7 +1592,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Maggoty_Zombie",
         "unlockLevel": 65,
         "combatLevel": 84,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.infernae,
         "immunity": elements.necromae
     },
     {
@@ -1600,7 +1600,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Fire_Core_Spectral_Stalker",
         "unlockLevel": 73,
         "combatLevel": 93,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.arborae,
         "immunity": elements.necromae
     },
     {
@@ -1608,7 +1608,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Spiny_Mawchest",
         "unlockLevel": 79,
         "combatLevel": 98,
-        "vulnerability": elements.tempestae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.tempestae
     },
     {
@@ -1616,7 +1616,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Puffy_Spiky_Ball",
         "unlockLevel": 84,
         "combatLevel": 104,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.cryonae
     },
     {
@@ -1624,7 +1624,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Skulking_Sabertooth_Tiger",
         "unlockLevel": 93,
         "combatLevel": 110,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.cryonae
     },
     {
@@ -1632,7 +1632,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Grubby_Street_Hag",
         "unlockLevel": 98,
         "combatLevel": 118,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.arborae,
         "immunity": elements.infernae
     },
     {
@@ -1640,7 +1640,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Pale_Giant_Wasp",
         "unlockLevel": 104,
         "combatLevel": 124,
-        "vulnerability": elements.arborae,
+        "vulnerability": elements.necromae,
         "immunity": elements.arborae
     },
     {
@@ -1648,7 +1648,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Glistening_Sewer_Fiend",
         "unlockLevel": 110,
         "combatLevel": 129,
-        "vulnerability": null,
+        "vulnerability": elements.cryonae,
         "immunity": null
     },
     {
@@ -1656,7 +1656,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Hungry_Zombie",
         "unlockLevel": 118,
         "combatLevel": 135,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.infernae,
         "immunity": elements.necromae
     },
     {
@@ -1664,7 +1664,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Flare_Eyed_Spectral_Stalker",
         "unlockLevel": 124,
         "combatLevel": 143,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.arborae,
         "immunity": elements.necromae
     },
     {
@@ -1672,7 +1672,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Variegated_Spiky_Ball",
         "unlockLevel": 129,
         "combatLevel": 149,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.cryonae
     },
     {
@@ -1680,7 +1680,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Rockblend_Sabertooth_Tiger",
         "unlockLevel": 135,
         "combatLevel": 155,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.cryonae
     },
     {
@@ -1688,7 +1688,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Terrible_White_Mawchest",
         "unlockLevel": 143,
         "combatLevel": 160,
-        "vulnerability": elements.tempestae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.tempestae
     },
     {
@@ -1696,7 +1696,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Sinister_Street_Hag",
         "unlockLevel": 149,
         "combatLevel": 169,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.arborae,
         "immunity": elements.infernae
     },
     {
@@ -1704,7 +1704,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Potter_Giant_Wasp",
         "unlockLevel": 155,
         "combatLevel": 174,
-        "vulnerability": elements.arborae,
+        "vulnerability": elements.necromae,
         "immunity": elements.arborae
     },
     {
@@ -1712,7 +1712,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Vile_Green_Sewer_Fiend",
         "unlockLevel": 160,
         "combatLevel": 180,
-        "vulnerability": null,
+        "vulnerability": elements.cryonae,
         "immunity": null
     },
     {
@@ -1720,7 +1720,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Twisted_Zombie",
         "unlockLevel": 169,
         "combatLevel": 185,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.infernae,
         "immunity": elements.necromae
     },
     {
@@ -1728,7 +1728,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Glimmering_Spectral_Stalker",
         "unlockLevel": 174,
         "combatLevel": 194,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.arborae,
         "immunity": elements.necromae
     },
     {
@@ -1736,7 +1736,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Shiny_Spiky_Ball",
         "unlockLevel": 180,
         "combatLevel": 200,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.cryonae
     },
     {
@@ -1744,7 +1744,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Steelclaw_Sabertooth_Tiger",
         "unlockLevel": 185,
         "combatLevel": 218,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.cryonae
     },
     {
@@ -1752,7 +1752,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Mysterious_Street_Hag",
         "unlockLevel": 194,
         "combatLevel": 237,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.arborae,
         "immunity": elements.infernae
     },
     {
@@ -1760,7 +1760,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Horned_Giant_Wasp",
         "unlockLevel": 200,
         "combatLevel": 265,
-        "vulnerability": elements.arborae,
+        "vulnerability": elements.necromae,
         "immunity": elements.arborae
     },
     {
@@ -1768,7 +1768,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Wicked_Sewer_Fiend",
         "unlockLevel": 218,
         "combatLevel": 284,
-        "vulnerability": null,
+        "vulnerability": elements.cryonae,
         "immunity": null
     },
     {
@@ -1776,7 +1776,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Longfang_Mawchest",
         "unlockLevel": 237,
         "combatLevel": 302,
-        "vulnerability": elements.tempestae,
+        "vulnerability": elements.cryonae,
         "immunity": elements.tempestae
     },
     {
@@ -1784,7 +1784,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Ravenous_Zombie",
         "unlockLevel": 265,
         "combatLevel": 330,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.infernae,
         "immunity": elements.necromae
     },
     {
@@ -1792,7 +1792,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Horrifying_Spectral_Stalker",
         "unlockLevel": 284,
         "combatLevel": 349,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.arborae,
         "immunity": elements.necromae
     },
     {
@@ -1800,7 +1800,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Sharp_Spiky_Ball",
         "unlockLevel": 302,
         "combatLevel": 368,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.cryonae
     },
     {
@@ -1808,7 +1808,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Terrifying_Sabertooth_Tiger",
         "unlockLevel": 330,
         "combatLevel": 387,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.cryonae
     },
     {
@@ -1816,7 +1816,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Powerful_Street_Hag",
         "unlockLevel": 349,
         "combatLevel": 415,
-        "vulnerability": elements.infernae,
+        "vulnerability": elements.arborae,
         "immunity": elements.infernae
     },
     {
@@ -1824,7 +1824,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Steel_Sheen_Giant_Wasp",
         "unlockLevel": 368,
         "combatLevel": 433,
-        "vulnerability": elements.arborae,
+        "vulnerability": elements.necromae,
         "immunity": elements.arborae
     },
     {
@@ -1832,7 +1832,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Diabolical_Sewer_Fiend",
         "unlockLevel": 387,
         "combatLevel": 452,
-        "vulnerability": null,
+        "vulnerability": elements.cryonae,
         "immunity": null
     },
     {
@@ -1840,7 +1840,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Green-Eyed_Zombie",
         "unlockLevel": 415,
         "combatLevel": 471,
-        "vulnerability": elements.necromae,
+        "vulnerability": elements.infernae,
         "immunity": elements.necromae
     },
     {
@@ -1848,7 +1848,7 @@ export const watchEnemies: Enemy[] = [
         "url": "https://brightershoreswiki.org/w/Blood_Tipped_Spiky_Ball",
         "unlockLevel": 433,
         "combatLevel": 490,
-        "vulnerability": elements.cryonae,
+        "vulnerability": elements.tempestae,
         "immunity": elements.cryonae
     }
 ];
