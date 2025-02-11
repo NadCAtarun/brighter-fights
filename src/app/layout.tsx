@@ -6,6 +6,7 @@ import {Analytics} from "@vercel/analytics/next";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import FeedbackButtons from "@/components/feedback-buttons";
+import VersionDisplay from "@/components/version-display";
 
 export const metadata: Metadata = {
     title: "Brighter Fights",
@@ -43,6 +44,8 @@ export default function RootLayout({children,}: Readonly<{ children: ReactNode; 
             </main>
 
             <FeedbackButtons/>
+
+            <VersionDisplay/>
 
             <Footer/>
         </div>

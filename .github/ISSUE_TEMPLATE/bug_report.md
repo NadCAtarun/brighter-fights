@@ -3,7 +3,8 @@ name: Bug Report
 about: Report a bug or issue
 title: "[Bug] "
 labels: bug
-assignees: ''
+assignees:
+  - NadCAtarun
 ---
 
 **Describe the bug** A clear and concise description of what the bug is.
