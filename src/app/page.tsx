@@ -72,8 +72,9 @@ export default function Home() {
 
     const handleUserLevelChange = useCallback(
         (level: number) => {
-            localStorage.setItem('userLevel', level.toString());
-            setUserLevel(level);
+            const clampedLevel = Math.max(0, Math.min(level, 500));
+            localStorage.setItem('userLevel', clampedLevel.toString());
+            setUserLevel(clampedLevel);
         }, []);
 
     const handleFactionChange = useCallback(
@@ -84,8 +85,9 @@ export default function Home() {
 
     const handleFactionLevelChange = useCallback(
         (level: number) => {
-            localStorage.setItem('factionLevel', level.toString());
-            setFactionLevel(level);
+            const clampedLevel = Math.max(0, Math.min(level, 500));
+            localStorage.setItem('factionLevel', clampedLevel.toString());
+            setFactionLevel(clampedLevel);
         }, []);
 
     const handleStrategyChange = useCallback(
@@ -102,15 +104,20 @@ export default function Home() {
 
     const handleSubmit = useCallback(
         () => {
-            setResults(getRecommendations(
-                profession,
-                userLevel,
-                offset,
-                faction,
-                factionLevel,
-                strategy,
-            ));
-
+            if (userLevel < 0 || userLevel > 500) {
+                alert(`${profession} level must be between 0 and 500`);
+            } else if (factionLevel < 0 || factionLevel > 500) {
+                alert(`${faction} level must be between 0 and 500`);
+            } else {
+                setResults(getRecommendations(
+                    profession,
+                    userLevel,
+                    offset,
+                    faction,
+                    factionLevel,
+                    strategy,
+                ));
+            }
         }, [faction, factionLevel, offset, profession, strategy, userLevel]);
 
     return (
