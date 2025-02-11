@@ -131,8 +131,10 @@ function findIdealWeapon(weaponCategory: EquipmentCategory | null, factionEquipm
 function findIdealShield(factionEquipment: Equipment[], userLevel: number,
                          craftingLevel: number, craftingProfession: string): Equipment | string {
     const eligibleShields = factionEquipment.filter((e) =>
-        e.name.includes('Shield') && e.maxLevel >= userLevel
-    ).sort((a, b) => a.craftingLevel - b.craftingLevel);
+        e.name.includes('Shield') && e.maxLevel >= userLevel && e.minLevel <= userLevel
+    ).sort((a, b) => b.craftingLevel - a.craftingLevel);
+
+    console.log(eligibleShields);
 
     const minCraftingLevel = Math.min(...eligibleShields.map((e) => e.craftingLevel));
 
