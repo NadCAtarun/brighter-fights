@@ -2,6 +2,16 @@ import Image from "next/image";
 import {Enemy} from "@/model/enemy";
 import {ShieldMinus, ShieldPlus} from "lucide-react";
 
+/**
+ * EnemyProperties is a functional component that renders information about an enemy's vulnerability
+ * and immunity based on the provided enemy object. If there is no enemy or the specified properties
+ * are not available, it returns null.
+ *
+ * When vulnerability and/or immunity data are present, it displays tooltips with associated icons
+ * and images indicating the enemy's weaknesses or immunities.
+ *
+ * @param {Enemy | null} enemy - The enemy object containing vulnerability and immunity details.
+ */
 const EnemyProperties = (enemy: Enemy | null) => {
     if (!enemy) return null;
 
