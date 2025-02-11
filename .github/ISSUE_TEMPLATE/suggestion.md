@@ -2,8 +2,9 @@
 name: Suggestion
 about: Suggest an improvement or new feature
 title: "[Suggestion] "
-labels: suggestion
-assignees: ''
+labels: enhancement
+assignees:
+  - NadCAtarun
 ---
 
 **Describe your suggestion**
