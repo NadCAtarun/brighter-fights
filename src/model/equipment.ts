@@ -286,6 +286,7 @@ export interface Equipment {
     name: string;
     category: string;
     craftingLevel: number;
+    minLevel: number;
     maxLevel: number;
     url: string;
     materials: {
@@ -299,6 +300,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Rapier (basic)",
         "category": "Rapier",
         "craftingLevel": 0,
+        "minLevel": 0,
         "maxLevel": 36,
         "url": "https://brightershoreswiki.org/w/Rapier_(basic)",
         "materials": [
@@ -312,6 +314,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Throwing Twinblades (basic)",
         "category": "Throwing Twinblades",
         "craftingLevel": 2,
+        "minLevel": 0,
         "maxLevel": 40,
         "url": "https://brightershoreswiki.org/w/Throwing_Twinblades_(basic)",
         "materials": [
@@ -325,6 +328,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Metal Kite Shield (basic)",
         "category": "Metal Kite Shield",
         "craftingLevel": 4,
+        "minLevel": 0,
         "maxLevel": 44,
         "url": "https://brightershoreswiki.org/w/Metal_Kite_Shield_(basic)",
         "materials": [
@@ -338,6 +342,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Flanged Mace (basic)",
         "category": "Flanged Mace",
         "craftingLevel": 6,
+        "minLevel": 0,
         "maxLevel": 46,
         "url": "https://brightershoreswiki.org/w/Flanged_Mace_(basic)",
         "materials": [
@@ -355,6 +360,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Throwing Rings (basic)",
         "category": "Throwing Rings",
         "craftingLevel": 8,
+        "minLevel": 0,
         "maxLevel": 51,
         "url": "https://brightershoreswiki.org/w/Throwing_Rings_(basic)",
         "materials": [
@@ -368,6 +374,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Shortsword (basic)",
         "category": "Shortsword",
         "craftingLevel": 10,
+        "minLevel": 0,
         "maxLevel": 53,
         "url": "https://brightershoreswiki.org/w/Shortsword_(basic)",
         "materials": [
@@ -381,6 +388,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Metal Javelins (basic)",
         "category": "Metal Javelins",
         "craftingLevel": 12,
+        "minLevel": 0,
         "maxLevel": 57,
         "url": "https://brightershoreswiki.org/w/Metal_Javelins_(basic)",
         "materials": [
@@ -394,6 +402,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Metal Heater Shield (basic)",
         "category": "Metal Heater Shield",
         "craftingLevel": 14,
+        "minLevel": 0,
         "maxLevel": 61,
         "url": "https://brightershoreswiki.org/w/Metal_Heater_Shield_(basic)",
         "materials": [
@@ -407,6 +416,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Longsword (basic)",
         "category": "Longsword",
         "craftingLevel": 16,
+        "minLevel": 0,
         "maxLevel": 63,
         "url": "https://brightershoreswiki.org/w/Longsword_(basic)",
         "materials": [
@@ -420,6 +430,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Throwing Knives (basic)",
         "category": "Throwing Knives",
         "craftingLevel": 18,
+        "minLevel": 0,
         "maxLevel": 68,
         "url": "https://brightershoreswiki.org/w/Throwing_Knives_(basic)",
         "materials": [
@@ -437,6 +448,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Broadsword (basic)",
         "category": "Broadsword",
         "craftingLevel": 22,
+        "minLevel": 0,
         "maxLevel": 70,
         "url": "https://brightershoreswiki.org/w/Broadsword_(basic)",
         "materials": [
@@ -450,6 +462,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Metal Buckler (basic)",
         "category": "Metal Buckler",
         "craftingLevel": 24,
+        "minLevel": 0,
         "maxLevel": 74,
         "url": "https://brightershoreswiki.org/w/Metal_Buckler_(basic)",
         "materials": [
@@ -463,6 +476,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Throwing Axes (basic)",
         "category": "Throwing Axes",
         "craftingLevel": 28,
+        "minLevel": 0,
         "maxLevel": 79,
         "url": "https://brightershoreswiki.org/w/Throwing_Axes_(basic)",
         "materials": [
@@ -480,6 +494,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Battleaxe (basic)",
         "category": "Battleaxe",
         "craftingLevel": 30,
+        "minLevel": 0,
         "maxLevel": 81,
         "url": "https://brightershoreswiki.org/w/Battleaxe_(basic)",
         "materials": [
@@ -497,6 +512,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Metal Bow (basic)",
         "category": "Metal Bow",
         "craftingLevel": 34,
+        "minLevel": 0,
         "maxLevel": 85,
         "url": "https://brightershoreswiki.org/w/Metal_Bow_(basic)",
         "materials": [
@@ -510,6 +526,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Rapier (moderate)",
         "category": "Rapier",
         "craftingLevel": 37,
+        "minLevel": 37,
         "maxLevel": 87,
         "url": "https://brightershoreswiki.org/w/Rapier_(moderate)",
         "materials": [
@@ -523,6 +540,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Throwing Twinblades (moderate)",
         "category": "Throwing Twinblades",
         "craftingLevel": 41,
+        "minLevel": 41,
         "maxLevel": 91,
         "url": "https://brightershoreswiki.org/w/Throwing_Twinblades_(moderate)",
         "materials": [
@@ -536,6 +554,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Metal Kite Shield (moderate)",
         "category": "Metal Kite Shield",
         "craftingLevel": 45,
+        "minLevel": 45,
         "maxLevel": 96,
         "url": "https://brightershoreswiki.org/w/Metal_Kite_Shield_(moderate)",
         "materials": [
@@ -549,6 +568,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Flanged Mace (moderate)",
         "category": "Flanged Mace",
         "craftingLevel": 47,
+        "minLevel": 47,
         "maxLevel": 98,
         "url": "https://brightershoreswiki.org/w/Flanged_Mace_(moderate)",
         "materials": [
@@ -566,6 +586,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Throwing Rings (moderate)",
         "category": "Throwing Rings",
         "craftingLevel": 52,
+        "minLevel": 52,
         "maxLevel": 102,
         "url": "https://brightershoreswiki.org/w/Throwing_Rings_(moderate)",
         "materials": [
@@ -579,6 +600,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Shortsword (moderate)",
         "category": "Shortsword",
         "craftingLevel": 54,
+        "minLevel": 54,
         "maxLevel": 104,
         "url": "https://brightershoreswiki.org/w/Shortsword_(moderate)",
         "materials": [
@@ -592,6 +614,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Metal Javelins (moderate)",
         "category": "Metal Javelins",
         "craftingLevel": 58,
+        "minLevel": 58,
         "maxLevel": 109,
         "url": "https://brightershoreswiki.org/w/Metal_Javelins_(moderate)",
         "materials": [
@@ -605,6 +628,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Metal Heater Shield (moderate)",
         "category": "Metal Heater Shield",
         "craftingLevel": 62,
+        "minLevel": 62,
         "maxLevel": 113,
         "url": "https://brightershoreswiki.org/w/Metal_Heater_Shield_(moderate)",
         "materials": [
@@ -618,6 +642,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Longsword (moderate)",
         "category": "Longsword",
         "craftingLevel": 64,
+        "minLevel": 64,
         "maxLevel": 115,
         "url": "https://brightershoreswiki.org/w/Longsword_(moderate)",
         "materials": [
@@ -631,6 +656,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Throwing Knives (moderate)",
         "category": "Throwing Knives",
         "craftingLevel": 69,
+        "minLevel": 69,
         "maxLevel": 119,
         "url": "https://brightershoreswiki.org/w/Throwing_Knives_(moderate)",
         "materials": [
@@ -648,6 +674,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Broadsword (moderate)",
         "category": "Broadsword",
         "craftingLevel": 71,
+        "minLevel": 71,
         "maxLevel": 124,
         "url": "https://brightershoreswiki.org/w/Broadsword_(moderate)",
         "materials": [
@@ -661,6 +688,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Metal Buckler (moderate)",
         "category": "Metal Buckler",
         "craftingLevel": 75,
+        "minLevel": 75,
         "maxLevel": 126,
         "url": "https://brightershoreswiki.org/w/Metal_Buckler_(moderate)",
         "materials": [
@@ -674,6 +702,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Throwing Axes (moderate)",
         "category": "Throwing Axes",
         "craftingLevel": 80,
+        "minLevel": 80,
         "maxLevel": 130,
         "url": "https://brightershoreswiki.org/w/Throwing_Axes_(moderate)",
         "materials": [
@@ -691,6 +720,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Battleaxe (moderate)",
         "category": "Battleaxe",
         "craftingLevel": 82,
+        "minLevel": 82,
         "maxLevel": 132,
         "url": "https://brightershoreswiki.org/w/Battleaxe_(moderate)",
         "materials": [
@@ -708,6 +738,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Metal Bow (moderate)",
         "category": "Metal Bow",
         "craftingLevel": 86,
+        "minLevel": 86,
         "maxLevel": 136,
         "url": "https://brightershoreswiki.org/w/Metal_Bow_(moderate)",
         "materials": [
@@ -721,6 +752,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Rapier (fine)",
         "category": "Rapier",
         "craftingLevel": 88,
+        "minLevel": 88,
         "maxLevel": 141,
         "url": "https://brightershoreswiki.org/w/Rapier_(fine)",
         "materials": [
@@ -734,6 +766,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Throwing Twinblades (fine)",
         "category": "Throwing Twinblades",
         "craftingLevel": 92,
+        "minLevel": 92,
         "maxLevel": 143,
         "url": "https://brightershoreswiki.org/w/Throwing_Twinblades_(fine)",
         "materials": [
@@ -747,6 +780,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Metal Kite Shield (fine)",
         "category": "Metal Kite Shield",
         "craftingLevel": 97,
+        "minLevel": 97,
         "maxLevel": 147,
         "url": "https://brightershoreswiki.org/w/Metal_Kite_Shield_(fine)",
         "materials": [
@@ -760,6 +794,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Flanged Mace (fine)",
         "category": "Flanged Mace",
         "craftingLevel": 99,
+        "minLevel": 99,
         "maxLevel": 149,
         "url": "https://brightershoreswiki.org/w/Flanged_Mace_(fine)",
         "materials": [
@@ -777,6 +812,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Throwing Rings (fine)",
         "category": "Throwing Rings",
         "craftingLevel": 103,
+        "minLevel": 103,
         "maxLevel": 153,
         "url": "https://brightershoreswiki.org/w/Throwing_Rings_(fine)",
         "materials": [
@@ -790,6 +826,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Shortsword (fine)",
         "category": "Shortsword",
         "craftingLevel": 105,
+        "minLevel": 105,
         "maxLevel": 158,
         "url": "https://brightershoreswiki.org/w/Shortsword_(fine)",
         "materials": [
@@ -803,6 +840,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Metal Javelins (fine)",
         "category": "Metal Javelins",
         "craftingLevel": 110,
+        "minLevel": 110,
         "maxLevel": 160,
         "url": "https://brightershoreswiki.org/w/Metal_Javelins_(fine)",
         "materials": [
@@ -816,6 +854,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Metal Heater Shield (fine)",
         "category": "Metal Heater Shield",
         "craftingLevel": 114,
+        "minLevel": 114,
         "maxLevel": 164,
         "url": "https://brightershoreswiki.org/w/Metal_Heater_Shield_(fine)",
         "materials": [
@@ -829,6 +868,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Longsword (fine)",
         "category": "Longsword",
         "craftingLevel": 116,
+        "minLevel": 116,
         "maxLevel": 166,
         "url": "https://brightershoreswiki.org/w/Longsword_(fine)",
         "materials": [
@@ -842,6 +882,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Throwing Knives (fine)",
         "category": "Throwing Knives",
         "craftingLevel": 120,
+        "minLevel": 120,
         "maxLevel": 171,
         "url": "https://brightershoreswiki.org/w/Throwing_Knives_(fine)",
         "materials": [
@@ -859,6 +900,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Broadsword (fine)",
         "category": "Broadsword",
         "craftingLevel": 125,
+        "minLevel": 125,
         "maxLevel": 175,
         "url": "https://brightershoreswiki.org/w/Broadsword_(fine)",
         "materials": [
@@ -872,6 +914,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Metal Buckler (fine)",
         "category": "Metal Buckler",
         "craftingLevel": 127,
+        "minLevel": 127,
         "maxLevel": 177,
         "url": "https://brightershoreswiki.org/w/Metal_Buckler_(fine)",
         "materials": [
@@ -885,6 +928,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Throwing Axes (fine)",
         "category": "Throwing Axes",
         "craftingLevel": 131,
+        "minLevel": 131,
         "maxLevel": 181,
         "url": "https://brightershoreswiki.org/w/Throwing_Axes_(fine)",
         "materials": [
@@ -902,6 +946,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Battleaxe (fine)",
         "category": "Battleaxe",
         "craftingLevel": 133,
+        "minLevel": 133,
         "maxLevel": 183,
         "url": "https://brightershoreswiki.org/w/Battleaxe_(fine)",
         "materials": [
@@ -919,6 +964,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Metal Bow (fine)",
         "category": "Metal Bow",
         "craftingLevel": 137,
+        "minLevel": 137,
         "maxLevel": 188,
         "url": "https://brightershoreswiki.org/w/Metal_Bow_(fine)",
         "materials": [
@@ -932,6 +978,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Rapier (strong)",
         "category": "Rapier",
         "craftingLevel": 142,
+        "minLevel": 142,
         "maxLevel": 192,
         "url": "https://brightershoreswiki.org/w/Rapier_(strong)",
         "materials": [
@@ -945,6 +992,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Throwing Twinblades (strong)",
         "category": "Throwing Twinblades",
         "craftingLevel": 144,
+        "minLevel": 144,
         "maxLevel": 194,
         "url": "https://brightershoreswiki.org/w/Throwing_Twinblades_(strong)",
         "materials": [
@@ -958,6 +1006,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Metal Kite Shield (strong)",
         "category": "Metal Kite Shield",
         "craftingLevel": 148,
+        "minLevel": 148,
         "maxLevel": 199,
         "url": "https://brightershoreswiki.org/w/Metal_Kite_Shield_(strong)",
         "materials": [
@@ -971,6 +1020,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Flanged Mace (strong)",
         "category": "Flanged Mace",
         "craftingLevel": 150,
+        "minLevel": 150,
         "maxLevel": 212,
         "url": "https://brightershoreswiki.org/w/Flanged_Mace_(strong)",
         "materials": [
@@ -988,6 +1038,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Throwing Rings (strong)",
         "category": "Throwing Rings",
         "craftingLevel": 154,
+        "minLevel": 154,
         "maxLevel": 219,
         "url": "https://brightershoreswiki.org/w/Throwing_Rings_(strong)",
         "materials": [
@@ -1001,6 +1052,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Shortsword (strong)",
         "category": "Shortsword",
         "craftingLevel": 159,
+        "minLevel": 159,
         "maxLevel": 232,
         "url": "https://brightershoreswiki.org/w/Shortsword_(strong)",
         "materials": [
@@ -1014,6 +1066,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Metal Javelins (strong)",
         "category": "Metal Javelins",
         "craftingLevel": 161,
+        "minLevel": 161,
         "maxLevel": 239,
         "url": "https://brightershoreswiki.org/w/Metal_Javelins_(strong)",
         "materials": [
@@ -1027,6 +1080,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Metal Heater Shield (strong)",
         "category": "Metal Heater Shield",
         "craftingLevel": 165,
+        "minLevel": 165,
         "maxLevel": 252,
         "url": "https://brightershoreswiki.org/w/Metal_Heater_Shield_(strong)",
         "materials": [
@@ -1040,6 +1094,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Longsword (strong)",
         "category": "Longsword",
         "craftingLevel": 167,
+        "minLevel": 167,
         "maxLevel": 266,
         "url": "https://brightershoreswiki.org/w/Longsword_(strong)",
         "materials": [
@@ -1053,6 +1108,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Throwing Knives (strong)",
         "category": "Throwing Knives",
         "craftingLevel": 172,
+        "minLevel": 172,
         "maxLevel": 273,
         "url": "https://brightershoreswiki.org/w/Throwing_Knives_(strong)",
         "materials": [
@@ -1070,6 +1126,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Broadsword (strong)",
         "category": "Broadsword",
         "craftingLevel": 176,
+        "minLevel": 176,
         "maxLevel": 286,
         "url": "https://brightershoreswiki.org/w/Broadsword_(strong)",
         "materials": [
@@ -1083,6 +1140,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Metal Buckler (strong)",
         "category": "Metal Buckler",
         "craftingLevel": 178,
+        "minLevel": 178,
         "maxLevel": 293,
         "url": "https://brightershoreswiki.org/w/Metal_Buckler_(strong)",
         "materials": [
@@ -1096,6 +1154,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Throwing Axes (strong)",
         "category": "Throwing Axes",
         "craftingLevel": 182,
+        "minLevel": 182,
         "maxLevel": 306,
         "url": "https://brightershoreswiki.org/w/Throwing_Axes_(strong)",
         "materials": [
@@ -1113,6 +1172,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Battleaxe (strong)",
         "category": "Battleaxe",
         "craftingLevel": 184,
+        "minLevel": 184,
         "maxLevel": 320,
         "url": "https://brightershoreswiki.org/w/Battleaxe_(strong)",
         "materials": [
@@ -1130,6 +1190,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Metal Bow (strong)",
         "category": "Metal Bow",
         "craftingLevel": 189,
+        "minLevel": 189,
         "maxLevel": 327,
         "url": "https://brightershoreswiki.org/w/Metal_Bow_(strong)",
         "materials": [
@@ -1143,6 +1204,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Rapier (superior)",
         "category": "Rapier",
         "craftingLevel": 193,
+        "minLevel": 193,
         "maxLevel": 340,
         "url": "https://brightershoreswiki.org/w/Rapier_(superior)",
         "materials": [
@@ -1156,6 +1218,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Throwing Twinblades (superior)",
         "category": "Throwing Twinblades",
         "craftingLevel": 195,
+        "minLevel": 195,
         "maxLevel": 347,
         "url": "https://brightershoreswiki.org/w/Throwing_Twinblades_(superior)",
         "materials": [
@@ -1169,6 +1232,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Metal Kite Shield (superior)",
         "category": "Metal Kite Shield",
         "craftingLevel": 200,
+        "minLevel": 200,
         "maxLevel": 360,
         "url": "https://brightershoreswiki.org/w/Metal_Kite_Shield_(superior)",
         "materials": [
@@ -1182,6 +1246,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Flanged Mace (superior)",
         "category": "Flanged Mace",
         "craftingLevel": 213,
+        "minLevel": 213,
         "maxLevel": 374,
         "url": "https://brightershoreswiki.org/w/Flanged_Mace_(superior)",
         "materials": [
@@ -1199,6 +1264,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Throwing Rings (superior)",
         "category": "Throwing Rings",
         "craftingLevel": 220,
+        "minLevel": 220,
         "maxLevel": 381,
         "url": "https://brightershoreswiki.org/w/Throwing_Rings_(superior)",
         "materials": [
@@ -1212,6 +1278,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Shortsword (superior)",
         "category": "Shortsword",
         "craftingLevel": 233,
+        "minLevel": 233,
         "maxLevel": 394,
         "url": "https://brightershoreswiki.org/w/Shortsword_(superior)",
         "materials": [
@@ -1225,6 +1292,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Metal Javelins (superior)",
         "category": "Metal Javelins",
         "craftingLevel": 240,
+        "minLevel": 240,
         "maxLevel": 401,
         "url": "https://brightershoreswiki.org/w/Metal_Javelins_(superior)",
         "materials": [
@@ -1238,6 +1306,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Metal Heater Shield (superior)",
         "category": "Metal Heater Shield",
         "craftingLevel": 253,
+        "minLevel": 253,
         "maxLevel": 414,
         "url": "https://brightershoreswiki.org/w/Metal_Heater_Shield_(superior)",
         "materials": [
@@ -1251,6 +1320,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Longsword (superior)",
         "category": "Longsword",
         "craftingLevel": 267,
+        "minLevel": 267,
         "maxLevel": 428,
         "url": "https://brightershoreswiki.org/w/Longsword_(superior)",
         "materials": [
@@ -1264,6 +1334,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Throwing Knives (superior)",
         "category": "Throwing Knives",
         "craftingLevel": 274,
+        "minLevel": 274,
         "maxLevel": 435,
         "url": "https://brightershoreswiki.org/w/Throwing_Knives_(superior)",
         "materials": [
@@ -1281,6 +1352,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Broadsword (superior)",
         "category": "Broadsword",
         "craftingLevel": 287,
+        "minLevel": 287,
         "maxLevel": 448,
         "url": "https://brightershoreswiki.org/w/Broadsword_(superior)",
         "materials": [
@@ -1294,6 +1366,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Metal Buckler (superior)",
         "category": "Metal Buckler",
         "craftingLevel": 294,
+        "minLevel": 294,
         "maxLevel": 455,
         "url": "https://brightershoreswiki.org/w/Metal_Buckler_(superior)",
         "materials": [
@@ -1307,6 +1380,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Throwing Axes (superior)",
         "category": "Throwing Axes",
         "craftingLevel": 307,
+        "minLevel": 307,
         "maxLevel": 468,
         "url": "https://brightershoreswiki.org/w/Throwing_Axes_(superior)",
         "materials": [
@@ -1324,6 +1398,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Battleaxe (superior)",
         "category": "Battleaxe",
         "craftingLevel": 321,
+        "minLevel": 321,
         "maxLevel": 482,
         "url": "https://brightershoreswiki.org/w/Battleaxe_(superior)",
         "materials": [
@@ -1341,6 +1416,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Metal Bow (superior)",
         "category": "Metal Bow",
         "craftingLevel": 328,
+        "minLevel": 328,
         "maxLevel": 489,
         "url": "https://brightershoreswiki.org/w/Metal_Bow_(superior)",
         "materials": [
@@ -1354,6 +1430,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Rapier (perfect)",
         "category": "Rapier",
         "craftingLevel": 341,
+        "minLevel": 341,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Rapier_(perfect)",
         "materials": [
@@ -1367,6 +1444,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Throwing Twinblades (perfect)",
         "category": "Throwing Twinblades",
         "craftingLevel": 348,
+        "minLevel": 348,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Throwing_Twinblades_(perfect)",
         "materials": [
@@ -1380,6 +1458,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Metal Kite Shield (perfect)",
         "category": "Metal Kite Shield",
         "craftingLevel": 361,
+        "minLevel": 361,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Metal_Kite_Shield_(perfect)",
         "materials": [
@@ -1393,6 +1472,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Flanged Mace (perfect)",
         "category": "Flanged Mace",
         "craftingLevel": 375,
+        "minLevel": 375,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Flanged_Mace_(perfect)",
         "materials": [
@@ -1410,6 +1490,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Throwing Rings (perfect)",
         "category": "Throwing Rings",
         "craftingLevel": 382,
+        "minLevel": 382,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Throwing_Rings_(perfect)",
         "materials": [
@@ -1423,6 +1504,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Shortsword (perfect)",
         "category": "Shortsword",
         "craftingLevel": 395,
+        "minLevel": 395,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Shortsword_(perfect)",
         "materials": [
@@ -1436,6 +1518,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Metal Javelins (perfect)",
         "category": "Metal Javelins",
         "craftingLevel": 402,
+        "minLevel": 402,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Metal_Javelins_(perfect)",
         "materials": [
@@ -1449,6 +1532,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Metal Heater Shield (perfect)",
         "category": "Metal Heater Shield",
         "craftingLevel": 415,
+        "minLevel": 415,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Metal_Heater_Shield_(perfect)",
         "materials": [
@@ -1462,6 +1546,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Longsword (perfect)",
         "category": "Longsword",
         "craftingLevel": 429,
+        "minLevel": 429,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Longsword_(perfect)",
         "materials": [
@@ -1475,6 +1560,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Throwing Knives (perfect)",
         "category": "Throwing Knives",
         "craftingLevel": 436,
+        "minLevel": 436,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Throwing_Knives_(perfect)",
         "materials": [
@@ -1492,6 +1578,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Broadsword (perfect)",
         "category": "Broadsword",
         "craftingLevel": 449,
+        "minLevel": 449,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Broadsword_(perfect)",
         "materials": [
@@ -1505,6 +1592,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Metal Buckler (perfect)",
         "category": "Metal Buckler",
         "craftingLevel": 456,
+        "minLevel": 456,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Metal_Buckler_(perfect)",
         "materials": [
@@ -1518,6 +1606,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Throwing Axes (perfect)",
         "category": "Throwing Axes",
         "craftingLevel": 469,
+        "minLevel": 469,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Throwing_Axes_(perfect)",
         "materials": [
@@ -1535,6 +1624,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Battleaxe (perfect)",
         "category": "Battleaxe",
         "craftingLevel": 483,
+        "minLevel": 483,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Battleaxe_(perfect)",
         "materials": [
@@ -1552,6 +1642,7 @@ export const cryoknightEquipment: Equipment[] = [
         "name": "Metal Bow (perfect)",
         "category": "Metal Bow",
         "craftingLevel": 490,
+        "minLevel": 490,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Metal_Bow_(perfect)",
         "materials": [
@@ -1568,6 +1659,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Truncheon (basic)",
         "category": "Truncheon",
         "craftingLevel": 0,
+        "minLevel": 0,
         "maxLevel": 37,
         "url": "https://brightershoreswiki.org/w/Truncheon_(basic)",
         "materials": [
@@ -1585,6 +1677,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Blowpipe (basic)",
         "category": "Blowpipe",
         "craftingLevel": 2,
+        "minLevel": 0,
         "maxLevel": 41,
         "url": "https://brightershoreswiki.org/w/Blowpipe_(basic)",
         "materials": [
@@ -1602,6 +1695,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Wooden Round Shield (basic)",
         "category": "Wooden Round Shield",
         "craftingLevel": 4,
+        "minLevel": 0,
         "maxLevel": 43,
         "url": "https://brightershoreswiki.org/w/Wooden_Round_Shield_(basic)",
         "materials": [
@@ -1619,6 +1713,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Cudgel (basic)",
         "category": "Cudgel",
         "craftingLevel": 6,
+        "minLevel": 0,
         "maxLevel": 47,
         "url": "https://brightershoreswiki.org/w/Cudgel_(basic)",
         "materials": [
@@ -1636,6 +1731,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Javelins (basic)",
         "category": "Javelins",
         "craftingLevel": 8,
+        "minLevel": 0,
         "maxLevel": 51,
         "url": "https://brightershoreswiki.org/w/Javelins_(basic)",
         "materials": [
@@ -1653,6 +1749,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Club (basic)",
         "category": "Club",
         "craftingLevel": 10,
+        "minLevel": 0,
         "maxLevel": 53,
         "url": "https://brightershoreswiki.org/w/Club_(basic)",
         "materials": [
@@ -1670,6 +1767,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Light Crossbow (basic)",
         "category": "Light Crossbow",
         "craftingLevel": 12,
+        "minLevel": 0,
         "maxLevel": 57,
         "url": "https://brightershoreswiki.org/w/Light_Crossbow_(basic)",
         "materials": [
@@ -1687,6 +1785,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Wooden Square Shield (basic)",
         "category": "Wooden Square Shield",
         "craftingLevel": 14,
+        "minLevel": 0,
         "maxLevel": 61,
         "url": "https://brightershoreswiki.org/w/Wooden_Square_Shield_(basic)",
         "materials": [
@@ -1704,6 +1803,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Quarterstaff (basic)",
         "category": "Quarterstaff",
         "craftingLevel": 16,
+        "minLevel": 0,
         "maxLevel": 65,
         "url": "https://brightershoreswiki.org/w/Quarterstaff_(basic)",
         "materials": [
@@ -1721,6 +1821,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Recurve Bow (basic)",
         "category": "Recurve Bow",
         "craftingLevel": 18,
+        "minLevel": 0,
         "maxLevel": 67,
         "url": "https://brightershoreswiki.org/w/Recurve_Bow_(basic)",
         "materials": [
@@ -1738,6 +1839,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Spear (basic)",
         "category": "Spear",
         "craftingLevel": 22,
+        "minLevel": 0,
         "maxLevel": 71,
         "url": "https://brightershoreswiki.org/w/Spear_(basic)",
         "materials": [
@@ -1755,6 +1857,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Wooden Hexagon Shield (basic)",
         "category": "Wooden Hexagon Shield",
         "craftingLevel": 24,
+        "minLevel": 0,
         "maxLevel": 75,
         "url": "https://brightershoreswiki.org/w/Wooden_Hexagon_Shield_(basic)",
         "materials": [
@@ -1772,6 +1875,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Longbow (basic)",
         "category": "Longbow",
         "craftingLevel": 28,
+        "minLevel": 0,
         "maxLevel": 77,
         "url": "https://brightershoreswiki.org/w/Longbow_(basic)",
         "materials": [
@@ -1789,6 +1893,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Poleaxe (basic)",
         "category": "Poleaxe",
         "craftingLevel": 30,
+        "minLevel": 0,
         "maxLevel": 81,
         "url": "https://brightershoreswiki.org/w/Poleaxe_(basic)",
         "materials": [
@@ -1806,6 +1911,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Heavy Crossbow (basic)",
         "category": "Heavy Crossbow",
         "craftingLevel": 34,
+        "minLevel": 0,
         "maxLevel": 85,
         "url": "https://brightershoreswiki.org/w/Heavy_Crossbow_(basic)",
         "materials": [
@@ -1823,6 +1929,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Truncheon (moderate)",
         "category": "Truncheon",
         "craftingLevel": 38,
+        "minLevel": 38,
         "maxLevel": 89,
         "url": "https://brightershoreswiki.org/w/Truncheon_(moderate)",
         "materials": [
@@ -1840,6 +1947,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Blowpipe (moderate)",
         "category": "Blowpipe",
         "craftingLevel": 42,
+        "minLevel": 42,
         "maxLevel": 91,
         "url": "https://brightershoreswiki.org/w/Blowpipe_(moderate)",
         "materials": [
@@ -1857,6 +1965,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Wooden Round Shield (moderate)",
         "category": "Wooden Round Shield",
         "craftingLevel": 44,
+        "minLevel": 44,
         "maxLevel": 95,
         "url": "https://brightershoreswiki.org/w/Wooden_Round_Shield_(moderate)",
         "materials": [
@@ -1874,6 +1983,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Cudgel (moderate)",
         "category": "Cudgel",
         "craftingLevel": 48,
+        "minLevel": 48,
         "maxLevel": 99,
         "url": "https://brightershoreswiki.org/w/Cudgel_(moderate)",
         "materials": [
@@ -1891,6 +2001,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Javelins (moderate)",
         "category": "Javelins",
         "craftingLevel": 52,
+        "minLevel": 52,
         "maxLevel": 101,
         "url": "https://brightershoreswiki.org/w/Javelins_(moderate)",
         "materials": [
@@ -1908,6 +2019,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Club (moderate)",
         "category": "Club",
         "craftingLevel": 54,
+        "minLevel": 54,
         "maxLevel": 105,
         "url": "https://brightershoreswiki.org/w/Club_(moderate)",
         "materials": [
@@ -1925,6 +2037,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Light Crossbow (moderate)",
         "category": "Light Crossbow",
         "craftingLevel": 58,
+        "minLevel": 58,
         "maxLevel": 109,
         "url": "https://brightershoreswiki.org/w/Light_Crossbow_(moderate)",
         "materials": [
@@ -1942,6 +2055,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Wooden Square Shield (moderate)",
         "category": "Wooden Square Shield",
         "craftingLevel": 62,
+        "minLevel": 62,
         "maxLevel": 111,
         "url": "https://brightershoreswiki.org/w/Wooden_Square_Shield_(moderate)",
         "materials": [
@@ -1959,6 +2073,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Quarterstaff (moderate)",
         "category": "Quarterstaff",
         "craftingLevel": 66,
+        "minLevel": 66,
         "maxLevel": 115,
         "url": "https://brightershoreswiki.org/w/Quarterstaff_(moderate)",
         "materials": [
@@ -1976,6 +2091,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Recurve Bow (moderate)",
         "category": "Recurve Bow",
         "craftingLevel": 68,
+        "minLevel": 68,
         "maxLevel": 119,
         "url": "https://brightershoreswiki.org/w/Recurve_Bow_(moderate)",
         "materials": [
@@ -1993,6 +2109,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Spear (moderate)",
         "category": "Spear",
         "craftingLevel": 72,
+        "minLevel": 72,
         "maxLevel": 123,
         "url": "https://brightershoreswiki.org/w/Spear_(moderate)",
         "materials": [
@@ -2010,6 +2127,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Wooden Hexagon Shield (moderate)",
         "category": "Wooden Hexagon Shield",
         "craftingLevel": 76,
+        "minLevel": 76,
         "maxLevel": 125,
         "url": "https://brightershoreswiki.org/w/Wooden_Hexagon_Shield_(moderate)",
         "materials": [
@@ -2027,6 +2145,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Longbow (moderate)",
         "category": "Longbow",
         "craftingLevel": 79,
+        "minLevel": 78,
         "maxLevel": 129,
         "url": "https://brightershoreswiki.org/w/Longbow_(moderate)",
         "materials": [
@@ -2044,6 +2163,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Poleaxe (moderate)",
         "category": "Poleaxe",
         "craftingLevel": 82,
+        "minLevel": 82,
         "maxLevel": 133,
         "url": "https://brightershoreswiki.org/w/Poleaxe_(moderate)",
         "materials": [
@@ -2061,6 +2181,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Heavy Crossbow (moderate)",
         "category": "Heavy Crossbow",
         "craftingLevel": 86,
+        "minLevel": 86,
         "maxLevel": 135,
         "url": "https://brightershoreswiki.org/w/Heavy_Crossbow_(moderate)",
         "materials": [
@@ -2078,6 +2199,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Truncheon (fine)",
         "category": "Truncheon",
         "craftingLevel": 90,
+        "minLevel": 90,
         "maxLevel": 139,
         "url": "https://brightershoreswiki.org/w/Truncheon_(fine)",
         "materials": [
@@ -2095,6 +2217,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Blowpipe (fine)",
         "category": "Blowpipe",
         "craftingLevel": 92,
+        "minLevel": 92,
         "maxLevel": 143,
         "url": "https://brightershoreswiki.org/w/Blowpipe_(fine)",
         "materials": [
@@ -2112,6 +2235,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Wooden Round Shield (fine)",
         "category": "Wooden Round Shield",
         "craftingLevel": 96,
+        "minLevel": 96,
         "maxLevel": 147,
         "url": "https://brightershoreswiki.org/w/Wooden_Round_Shield_(fine)",
         "materials": [
@@ -2129,6 +2253,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Cudgel (fine)",
         "category": "Cudgel",
         "craftingLevel": 100,
+        "minLevel": 100,
         "maxLevel": 149,
         "url": "https://brightershoreswiki.org/w/Cudgel_(fine)",
         "materials": [
@@ -2146,6 +2271,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Javelins (fine)",
         "category": "Javelins",
         "craftingLevel": 102,
+        "minLevel": 102,
         "maxLevel": 153,
         "url": "https://brightershoreswiki.org/w/Javelins_(fine)",
         "materials": [
@@ -2163,6 +2289,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Club (fine)",
         "category": "Club",
         "craftingLevel": 106,
+        "minLevel": 106,
         "maxLevel": 157,
         "url": "https://brightershoreswiki.org/w/Club_(fine)",
         "materials": [
@@ -2180,6 +2307,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Light Crossbow (fine)",
         "category": "Light Crossbow",
         "craftingLevel": 110,
+        "minLevel": 110,
         "maxLevel": 159,
         "url": "https://brightershoreswiki.org/w/Light_Crossbow_(fine)",
         "materials": [
@@ -2197,6 +2325,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Wooden Square Shield (fine)",
         "category": "Wooden Square Shield",
         "craftingLevel": 112,
+        "minLevel": 112,
         "maxLevel": 163,
         "url": "https://brightershoreswiki.org/w/Wooden_Square_Shield_(fine)",
         "materials": [
@@ -2214,6 +2343,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Quarterstaff (fine)",
         "category": "Quarterstaff",
         "craftingLevel": 116,
+        "minLevel": 116,
         "maxLevel": 167,
         "url": "https://brightershoreswiki.org/w/Quarterstaff_(fine)",
         "materials": [
@@ -2231,6 +2361,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Recurve Bow (fine)",
         "category": "Recurve Bow",
         "craftingLevel": 120,
+        "minLevel": 120,
         "maxLevel": 171,
         "url": "https://brightershoreswiki.org/w/Recurve_Bow_(fine)",
         "materials": [
@@ -2248,6 +2379,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Spear (fine)",
         "category": "Spear",
         "craftingLevel": 124,
+        "minLevel": 124,
         "maxLevel": 173,
         "url": "https://brightershoreswiki.org/w/Spear_(fine)",
         "materials": [
@@ -2265,6 +2397,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Wooden Hexagon Shield (fine)",
         "category": "Wooden Hexagon Shield",
         "craftingLevel": 126,
+        "minLevel": 126,
         "maxLevel": 177,
         "url": "https://brightershoreswiki.org/w/Wooden_Hexagon_Shield_(fine)",
         "materials": [
@@ -2282,6 +2415,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Longbow (fine)",
         "category": "Longbow",
         "craftingLevel": 130,
+        "minLevel": 130,
         "maxLevel": 181,
         "url": "https://brightershoreswiki.org/w/Longbow_(fine)",
         "materials": [
@@ -2299,6 +2433,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Poleaxe (fine)",
         "category": "Poleaxe",
         "craftingLevel": 134,
+        "minLevel": 134,
         "maxLevel": 183,
         "url": "https://brightershoreswiki.org/w/Poleaxe_(fine)",
         "materials": [
@@ -2316,6 +2451,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Heavy Crossbow (fine)",
         "category": "Heavy Crossbow",
         "craftingLevel": 136,
+        "minLevel": 136,
         "maxLevel": 187,
         "url": "https://brightershoreswiki.org/w/Heavy_Crossbow_(fine)",
         "materials": [
@@ -2333,6 +2469,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Truncheon (strong)",
         "category": "Truncheon",
         "craftingLevel": 140,
+        "minLevel": 140,
         "maxLevel": 191,
         "url": "https://brightershoreswiki.org/w/Truncheon_(strong)",
         "materials": [
@@ -2350,6 +2487,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Blowpipe (strong)",
         "category": "Blowpipe",
         "craftingLevel": 144,
+        "minLevel": 144,
         "maxLevel": 195,
         "url": "https://brightershoreswiki.org/w/Blowpipe_(strong)",
         "materials": [
@@ -2367,6 +2505,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Wooden Round Shield (strong)",
         "category": "Wooden Round Shield",
         "craftingLevel": 148,
+        "minLevel": 148,
         "maxLevel": 197,
         "url": "https://brightershoreswiki.org/w/Wooden_Round_Shield_(strong)",
         "materials": [
@@ -2384,6 +2523,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Cudgel (strong)",
         "category": "Cudgel",
         "craftingLevel": 150,
+        "minLevel": 150,
         "maxLevel": 205,
         "url": "https://brightershoreswiki.org/w/Cudgel_(strong)",
         "materials": [
@@ -2401,6 +2541,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Javelins (strong)",
         "category": "Javelins",
         "craftingLevel": 154,
+        "minLevel": 154,
         "maxLevel": 218,
         "url": "https://brightershoreswiki.org/w/Javelins_(strong)",
         "materials": [
@@ -2418,6 +2559,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Club (strong)",
         "category": "Club",
         "craftingLevel": 158,
+        "minLevel": 158,
         "maxLevel": 224,
         "url": "https://brightershoreswiki.org/w/Club_(strong)",
         "materials": [
@@ -2435,6 +2577,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Light Crossbow (strong)",
         "category": "Light Crossbow",
         "craftingLevel": 160,
+        "minLevel": 160,
         "maxLevel": 237,
         "url": "https://brightershoreswiki.org/w/Light_Crossbow_(strong)",
         "materials": [
@@ -2452,6 +2595,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Wooden Square Shield (strong)",
         "category": "Wooden Square Shield",
         "craftingLevel": 164,
+        "minLevel": 164,
         "maxLevel": 250,
         "url": "https://brightershoreswiki.org/w/Wooden_Square_Shield_(strong)",
         "materials": [
@@ -2469,6 +2613,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Quarterstaff (strong)",
         "category": "Quarterstaff",
         "craftingLevel": 168,
+        "minLevel": 168,
         "maxLevel": 257,
         "url": "https://brightershoreswiki.org/w/Quarterstaff_(strong)",
         "materials": [
@@ -2486,6 +2631,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Recurve Bow (strong)",
         "category": "Recurve Bow",
         "craftingLevel": 172,
+        "minLevel": 172,
         "maxLevel": 269,
         "url": "https://brightershoreswiki.org/w/Recurve_Bow_(strong)",
         "materials": [
@@ -2503,6 +2649,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Spear (strong)",
         "category": "Spear",
         "craftingLevel": 174,
+        "minLevel": 174,
         "maxLevel": 282,
         "url": "https://brightershoreswiki.org/w/Spear_(strong)",
         "materials": [
@@ -2520,6 +2667,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Wooden Hexagon Shield (strong)",
         "category": "Wooden Hexagon Shield",
         "craftingLevel": 178,
+        "minLevel": 178,
         "maxLevel": 295,
         "url": "https://brightershoreswiki.org/w/Wooden_Hexagon_Shield_(strong)",
         "materials": [
@@ -2537,6 +2685,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Longbow (strong)",
         "category": "Longbow",
         "craftingLevel": 182,
+        "minLevel": 182,
         "maxLevel": 302,
         "url": "https://brightershoreswiki.org/w/Longbow_(strong)",
         "materials": [
@@ -2554,6 +2703,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Poleaxe (strong)",
         "category": "Poleaxe",
         "craftingLevel": 184,
+        "minLevel": 184,
         "maxLevel": 315,
         "url": "https://brightershoreswiki.org/w/Poleaxe_(strong)",
         "materials": [
@@ -2571,6 +2721,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Heavy Crossbow (strong)",
         "category": "Heavy Crossbow",
         "craftingLevel": 188,
+        "minLevel": 188,
         "maxLevel": 327,
         "url": "https://brightershoreswiki.org/w/Heavy_Crossbow_(strong)",
         "materials": [
@@ -2588,6 +2739,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Truncheon (superior)",
         "category": "Truncheon",
         "craftingLevel": 192,
+        "minLevel": 192,
         "maxLevel": 334,
         "url": "https://brightershoreswiki.org/w/Truncheon_(superior)",
         "materials": [
@@ -2605,6 +2757,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Blowpipe (superior)",
         "category": "Blowpipe",
         "craftingLevel": 196,
+        "minLevel": 196,
         "maxLevel": 347,
         "url": "https://brightershoreswiki.org/w/Blowpipe_(superior)",
         "materials": [
@@ -2622,6 +2775,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Wooden Round Shield (superior)",
         "category": "Wooden Round Shield",
         "craftingLevel": 198,
+        "minLevel": 198,
         "maxLevel": 360,
         "url": "https://brightershoreswiki.org/w/Wooden_Round_Shield_(superior)",
         "materials": [
@@ -2639,6 +2793,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Cudgel (superior)",
         "category": "Cudgel",
         "craftingLevel": 206,
+        "minLevel": 206,
         "maxLevel": 373,
         "url": "https://brightershoreswiki.org/w/Cudgel_(superior)",
         "materials": [
@@ -2656,6 +2811,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Javelins (superior)",
         "category": "Javelins",
         "craftingLevel": 219,
+        "minLevel": 219,
         "maxLevel": 379,
         "url": "https://brightershoreswiki.org/w/Javelins_(superior)",
         "materials": [
@@ -2673,6 +2829,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Club (superior)",
         "category": "Club",
         "craftingLevel": 225,
+        "minLevel": 225,
         "maxLevel": 392,
         "url": "https://brightershoreswiki.org/w/Club_(superior)",
         "materials": [
@@ -2690,6 +2847,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Light Crossbow (superior)",
         "category": "Light Crossbow",
         "craftingLevel": 234,
+        "minLevel": 234,
         "maxLevel": 405,
         "url": "https://brightershoreswiki.org/w/Light_Crossbow_(superior)",
         "materials": [
@@ -2707,6 +2865,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Wooden Square Shield (superior)",
         "category": "Wooden Square Shield",
         "craftingLevel": 251,
+        "minLevel": 251,
         "maxLevel": 411,
         "url": "https://brightershoreswiki.org/w/Wooden_Square_Shield_(superior)",
         "materials": [
@@ -2724,6 +2883,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Quarterstaff (superior)",
         "category": "Quarterstaff",
         "craftingLevel": 258,
+        "minLevel": 258,
         "maxLevel": 424,
         "url": "https://brightershoreswiki.org/w/Quarterstaff_(superior)",
         "materials": [
@@ -2741,6 +2901,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Recurve Bow (superior)",
         "category": "Recurve Bow",
         "craftingLevel": 270,
+        "minLevel": 270,
         "maxLevel": 437,
         "url": "https://brightershoreswiki.org/w/Recurve_Bow_(superior)",
         "materials": [
@@ -2758,6 +2919,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Spear (superior)",
         "category": "Spear",
         "craftingLevel": 283,
+        "minLevel": 283,
         "maxLevel": 450,
         "url": "https://brightershoreswiki.org/w/Spear_(superior)",
         "materials": [
@@ -2775,6 +2937,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Wooden Hexagon Shield (superior)",
         "category": "Wooden Hexagon Shield",
         "craftingLevel": 296,
+        "minLevel": 296,
         "maxLevel": 456,
         "url": "https://brightershoreswiki.org/w/Wooden_Hexagon_Shield_(superior)",
         "materials": [
@@ -2792,6 +2955,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Longbow (superior)",
         "category": "Longbow",
         "craftingLevel": 303,
+        "minLevel": 303,
         "maxLevel": 469,
         "url": "https://brightershoreswiki.org/w/Longbow_(superior)",
         "materials": [
@@ -2809,6 +2973,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Poleaxe (superior)",
         "category": "Poleaxe",
         "craftingLevel": 316,
+        "minLevel": 316,
         "maxLevel": 482,
         "url": "https://brightershoreswiki.org/w/Poleaxe_(superior)",
         "materials": [
@@ -2826,6 +2991,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Heavy Crossbow (superior)",
         "category": "Heavy Crossbow",
         "craftingLevel": 328,
+        "minLevel": 328,
         "maxLevel": 489,
         "url": "https://brightershoreswiki.org/w/Heavy_Crossbow_(superior)",
         "materials": [
@@ -2843,6 +3009,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Truncheon (perfect)",
         "category": "Truncheon",
         "craftingLevel": 335,
+        "minLevel": 335,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Truncheon_(perfect)",
         "materials": [
@@ -2860,6 +3027,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Blowpipe (perfect)",
         "category": "Blowpipe",
         "craftingLevel": 348,
+        "minLevel": 348,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Blowpipe_(perfect)",
         "materials": [
@@ -2877,6 +3045,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Wooden Round Shield (perfect)",
         "category": "Wooden Round Shield",
         "craftingLevel": 361,
+        "minLevel": 361,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Wooden_Round_Shield_(perfect)",
         "materials": [
@@ -2894,6 +3063,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Cudgel (perfect)",
         "category": "Cudgel",
         "craftingLevel": 374,
+        "minLevel": 374,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Cudgel_(perfect)",
         "materials": [
@@ -2911,6 +3081,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Javelins (perfect)",
         "category": "Javelins",
         "craftingLevel": 380,
+        "minLevel": 380,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Javelins_(perfect)",
         "materials": [
@@ -2928,6 +3099,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Club (perfect)",
         "category": "Club",
         "craftingLevel": 393,
+        "minLevel": 393,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Club_(perfect)",
         "materials": [
@@ -2945,6 +3117,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Light Crossbow (perfect)",
         "category": "Light Crossbow",
         "craftingLevel": 406,
+        "minLevel": 406,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Light_Crossbow_(perfect)",
         "materials": [
@@ -2962,6 +3135,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Wooden Square Shield (perfect)",
         "category": "Wooden Square Shield",
         "craftingLevel": 412,
+        "minLevel": 412,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Wooden_Square_Shield_(perfect)",
         "materials": [
@@ -2979,6 +3153,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Quarterstaff (perfect)",
         "category": "Quarterstaff",
         "craftingLevel": 425,
+        "minLevel": 425,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Quarterstaff_(perfect)",
         "materials": [
@@ -2996,6 +3171,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Recurve Bow (perfect)",
         "category": "Recurve Bow",
         "craftingLevel": 438,
+        "minLevel": 438,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Recurve_Bow_(perfect)",
         "materials": [
@@ -3013,6 +3189,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Spear (perfect)",
         "category": "Spear",
         "craftingLevel": 451,
+        "minLevel": 451,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Spear_(perfect)",
         "materials": [
@@ -3030,6 +3207,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Wooden Hexagon Shield (perfect)",
         "category": "Wooden Hexagon Shield",
         "craftingLevel": 457,
+        "minLevel": 457,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Wooden_Hexagon_Shield_(perfect)",
         "materials": [
@@ -3047,6 +3225,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Longbow (perfect)",
         "category": "Longbow",
         "craftingLevel": 470,
+        "minLevel": 470,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Longbow_(perfect)",
         "materials": [
@@ -3064,6 +3243,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Poleaxe (perfect)",
         "category": "Poleaxe",
         "craftingLevel": 483,
+        "minLevel": 483,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Poleaxe_(perfect)",
         "materials": [
@@ -3081,6 +3261,7 @@ export const guardianEquipment: Equipment[] = [
         "name": "Heavy Crossbow (perfect)",
         "category": "Heavy Crossbow",
         "craftingLevel": 490,
+        "minLevel": 490,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Heavy_Crossbow_(perfect)",
         "materials": [
@@ -3101,6 +3282,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Hammerfist (basic)",
         "category": "Hammerfist",
         "craftingLevel": 0,
+        "minLevel": 0,
         "maxLevel": 37,
         "url": "https://brightershoreswiki.org/w/Hammerfist_(basic)",
         "materials": [
@@ -3118,6 +3300,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Throwing Stones (basic)",
         "category": "Throwing Stones",
         "craftingLevel": 2,
+        "minLevel": 0,
         "maxLevel": 39,
         "url": "https://brightershoreswiki.org/w/Throwing_Stones_(basic)",
         "materials": [
@@ -3131,6 +3314,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Stone Slab Shield (basic)",
         "category": "Stone Slab Shield",
         "craftingLevel": 4,
+        "minLevel": 0,
         "maxLevel": 43,
         "url": "https://brightershoreswiki.org/w/Stone_Slab_Shield_(basic)",
         "materials": [
@@ -3144,6 +3328,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Stone Mace (basic)",
         "category": "Stone Mace",
         "craftingLevel": 6,
+        "minLevel": 0,
         "maxLevel": 47,
         "url": "https://brightershoreswiki.org/w/Stone_Mace_(basic)",
         "materials": [
@@ -3161,6 +3346,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Stone Discs (basic)",
         "category": "Stone Discs",
         "craftingLevel": 8,
+        "minLevel": 0,
         "maxLevel": 49,
         "url": "https://brightershoreswiki.org/w/Stone_Discs_(basic)",
         "materials": [
@@ -3174,6 +3360,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "War Hammer (basic)",
         "category": "War Hammer",
         "craftingLevel": 10,
+        "minLevel": 0,
         "maxLevel": 53,
         "url": "https://brightershoreswiki.org/w/War_Hammer_(basic)",
         "materials": [
@@ -3191,6 +3378,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Bolas (basic)",
         "category": "Bolas",
         "craftingLevel": 12,
+        "minLevel": 0,
         "maxLevel": 57,
         "url": "https://brightershoreswiki.org/w/Bolas_(basic)",
         "materials": [
@@ -3204,6 +3392,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Stone Chunk Shield (basic)",
         "category": "Stone Chunk Shield",
         "craftingLevel": 14,
+        "minLevel": 0,
         "maxLevel": 59,
         "url": "https://brightershoreswiki.org/w/Stone_Chunk_Shield_(basic)",
         "materials": [
@@ -3217,6 +3406,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Double Headed Hammer (basic)",
         "category": "Double Headed Hammer",
         "craftingLevel": 16,
+        "minLevel": 0,
         "maxLevel": 64,
         "url": "https://brightershoreswiki.org/w/Double_Headed_Hammer_(basic)",
         "materials": [
@@ -3234,6 +3424,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Throwing Clubs (basic)",
         "category": "Throwing Clubs",
         "craftingLevel": 18,
+        "minLevel": 0,
         "maxLevel": 68,
         "url": "https://brightershoreswiki.org/w/Throwing_Clubs_(basic)",
         "materials": [
@@ -3247,6 +3438,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Great Stone Mace (basic)",
         "category": "Great Stone Mace",
         "craftingLevel": 22,
+        "minLevel": 0,
         "maxLevel": 70,
         "url": "https://brightershoreswiki.org/w/Great_Stone_Mace_(basic)",
         "materials": [
@@ -3264,6 +3456,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Polished Stone Shield (basic)",
         "category": "Polished Stone Shield",
         "craftingLevel": 24,
+        "minLevel": 0,
         "maxLevel": 74,
         "url": "https://brightershoreswiki.org/w/Polished_Stone_Shield_(basic)",
         "materials": [
@@ -3277,6 +3470,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Throwing Hammers (basic)",
         "category": "Throwing Hammers",
         "craftingLevel": 28,
+        "minLevel": 0,
         "maxLevel": 78,
         "url": "https://brightershoreswiki.org/w/Throwing_Hammers_(basic)",
         "materials": [
@@ -3294,6 +3488,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Great Hammer (basic)",
         "category": "Great Hammer",
         "craftingLevel": 30,
+        "minLevel": 0,
         "maxLevel": 80,
         "url": "https://brightershoreswiki.org/w/Great_Hammer_(basic)",
         "materials": [
@@ -3311,6 +3506,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Sling (basic)",
         "category": "Sling",
         "craftingLevel": 34,
+        "minLevel": 0,
         "maxLevel": 84,
         "url": "https://brightershoreswiki.org/w/Sling_(basic)",
         "materials": [
@@ -3324,6 +3520,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Hammerfist (moderate)",
         "category": "Hammerfist",
         "craftingLevel": 38,
+        "minLevel": 38,
         "maxLevel": 86,
         "url": "https://brightershoreswiki.org/w/Hammerfist_(moderate)",
         "materials": [
@@ -3341,6 +3538,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Throwing Stones (moderate)",
         "category": "Throwing Stones",
         "craftingLevel": 40,
+        "minLevel": 40,
         "maxLevel": 90,
         "url": "https://brightershoreswiki.org/w/Throwing_Stones_(moderate)",
         "materials": [
@@ -3354,6 +3552,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Stone Slab Shield (moderate)",
         "category": "Stone Slab Shield",
         "craftingLevel": 44,
+        "minLevel": 44,
         "maxLevel": 94,
         "url": "https://brightershoreswiki.org/w/Stone_Slab_Shield_(moderate)",
         "materials": [
@@ -3367,6 +3566,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Stone Mace (moderate)",
         "category": "Stone Mace",
         "craftingLevel": 48,
+        "minLevel": 48,
         "maxLevel": 96,
         "url": "https://brightershoreswiki.org/w/Stone_Mace_(moderate)",
         "materials": [
@@ -3384,6 +3584,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Stone Discs (moderate)",
         "category": "Stone Discs",
         "craftingLevel": 50,
+        "minLevel": 50,
         "maxLevel": 100,
         "url": "https://brightershoreswiki.org/w/Stone_Discs_(moderate)",
         "materials": [
@@ -3397,6 +3598,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "War Hammer (moderate)",
         "category": "War Hammer",
         "craftingLevel": 54,
+        "minLevel": 54,
         "maxLevel": 104,
         "url": "https://brightershoreswiki.org/w/War_Hammer_(moderate)",
         "materials": [
@@ -3414,6 +3616,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Bolas (moderate)",
         "category": "Bolas",
         "craftingLevel": 58,
+        "minLevel": 58,
         "maxLevel": 106,
         "url": "https://brightershoreswiki.org/w/Bolas_(moderate)",
         "materials": [
@@ -3427,6 +3630,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Stone Chunk Shield (moderate)",
         "category": "Stone Chunk Shield",
         "craftingLevel": 60,
+        "minLevel": 60,
         "maxLevel": 111,
         "url": "https://brightershoreswiki.org/w/Stone_Chunk_Shield_(moderate)",
         "materials": [
@@ -3440,6 +3644,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Double Headed Hammer (moderate)",
         "category": "Double Headed Hammer",
         "craftingLevel": 65,
+        "minLevel": 65,
         "maxLevel": 115,
         "url": "https://brightershoreswiki.org/w/Double_Headed_Hammer_(moderate)",
         "materials": [
@@ -3457,6 +3662,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Throwing Clubs (moderate)",
         "category": "Throwing Clubs",
         "craftingLevel": 69,
+        "minLevel": 69,
         "maxLevel": 117,
         "url": "https://brightershoreswiki.org/w/Throwing_Clubs_(moderate)",
         "materials": [
@@ -3470,6 +3676,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Great Stone Mace (moderate)",
         "category": "Great Stone Mace",
         "craftingLevel": 71,
+        "minLevel": 71,
         "maxLevel": 121,
         "url": "https://brightershoreswiki.org/w/Great_Stone_Mace_(moderate)",
         "materials": [
@@ -3487,6 +3694,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Polished Stone Shield (moderate)",
         "category": "Polished Stone Shield",
         "craftingLevel": 75,
+        "minLevel": 75,
         "maxLevel": 125,
         "url": "https://brightershoreswiki.org/w/Polished_Stone_Shield_(moderate)",
         "materials": [
@@ -3500,6 +3708,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Throwing Hammers (moderate)",
         "category": "Throwing Hammers",
         "craftingLevel": 79,
+        "minLevel": 79,
         "maxLevel": 127,
         "url": "https://brightershoreswiki.org/w/Throwing_Hammers_(moderate)",
         "materials": [
@@ -3517,6 +3726,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Great Hammer (moderate)",
         "category": "Great Hammer",
         "craftingLevel": 81,
+        "minLevel": 81,
         "maxLevel": 131,
         "url": "https://brightershoreswiki.org/w/Great_Hammer_(moderate)",
         "materials": [
@@ -3534,6 +3744,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Sling (moderate)",
         "category": "Sling",
         "craftingLevel": 85,
+        "minLevel": 85,
         "maxLevel": 135,
         "url": "https://brightershoreswiki.org/w/Sling_(moderate)",
         "materials": [
@@ -3547,6 +3758,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Hammerfist (fine)",
         "category": "Hammerfist",
         "craftingLevel": 87,
+        "minLevel": 87,
         "maxLevel": 137,
         "url": "https://brightershoreswiki.org/w/Hammerfist_(fine)",
         "materials": [
@@ -3564,6 +3776,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Throwing Stones (fine)",
         "category": "Throwing Stones",
         "craftingLevel": 91,
+        "minLevel": 91,
         "maxLevel": 141,
         "url": "https://brightershoreswiki.org/w/Throwing_Stones_(fine)",
         "materials": [
@@ -3577,6 +3790,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Stone Slab Shield (fine)",
         "category": "Stone Slab Shield",
         "craftingLevel": 95,
+        "minLevel": 95,
         "maxLevel": 145,
         "url": "https://brightershoreswiki.org/w/Stone_Slab_Shield_(fine)",
         "materials": [
@@ -3590,6 +3804,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Stone Mace (fine)",
         "category": "Stone Mace",
         "craftingLevel": 97,
+        "minLevel": 97,
         "maxLevel": 147,
         "url": "https://brightershoreswiki.org/w/Stone_Mace_(fine)",
         "materials": [
@@ -3607,6 +3822,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Stone Discs (fine)",
         "category": "Stone Discs",
         "craftingLevel": 101,
+        "minLevel": 101,
         "maxLevel": 151,
         "url": "https://brightershoreswiki.org/w/Stone_Discs_(fine)",
         "materials": [
@@ -3620,6 +3836,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "War Hammer (fine)",
         "category": "War Hammer",
         "craftingLevel": 105,
+        "minLevel": 105,
         "maxLevel": 156,
         "url": "https://brightershoreswiki.org/w/War_Hammer_(fine)",
         "materials": [
@@ -3637,6 +3854,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Bolas (fine)",
         "category": "Bolas",
         "craftingLevel": 107,
+        "minLevel": 107,
         "maxLevel": 158,
         "url": "https://brightershoreswiki.org/w/Bolas_(fine)",
         "materials": [
@@ -3650,6 +3868,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Stone Chunk Shield (fine)",
         "category": "Stone Chunk Shield",
         "craftingLevel": 112,
+        "minLevel": 112,
         "maxLevel": 162,
         "url": "https://brightershoreswiki.org/w/Stone_Chunk_Shield_(fine)",
         "materials": [
@@ -3663,6 +3882,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Double Headed Hammer (fine)",
         "category": "Double Headed Hammer",
         "craftingLevel": 116,
+        "minLevel": 116,
         "maxLevel": 166,
         "url": "https://brightershoreswiki.org/w/Double_Headed_Hammer_(fine)",
         "materials": [
@@ -3680,6 +3900,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Throwing Clubs (fine)",
         "category": "Throwing Clubs",
         "craftingLevel": 118,
+        "minLevel": 118,
         "maxLevel": 168,
         "url": "https://brightershoreswiki.org/w/Throwing_Clubs_(fine)",
         "materials": [
@@ -3693,6 +3914,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Great Stone Mace (fine)",
         "category": "Great Stone Mace",
         "craftingLevel": 122,
+        "minLevel": 122,
         "maxLevel": 172,
         "url": "https://brightershoreswiki.org/w/Great_Stone_Mace_(fine)",
         "materials": [
@@ -3710,6 +3932,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Polished Stone Shield (fine)",
         "category": "Polished Stone Shield",
         "craftingLevel": 126,
+        "minLevel": 126,
         "maxLevel": 176,
         "url": "https://brightershoreswiki.org/w/Polished_Stone_Shield_(fine)",
         "materials": [
@@ -3723,6 +3946,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Throwing Hammers (fine)",
         "category": "Throwing Hammers",
         "craftingLevel": 128,
+        "minLevel": 128,
         "maxLevel": 178,
         "url": "https://brightershoreswiki.org/w/Throwing_Hammers_(fine)",
         "materials": [
@@ -3740,6 +3964,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Great Hammer (fine)",
         "category": "Great Hammer",
         "craftingLevel": 132,
+        "minLevel": 132,
         "maxLevel": 182,
         "url": "https://brightershoreswiki.org/w/Great_Hammer_(fine)",
         "materials": [
@@ -3757,6 +3982,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Sling (fine)",
         "category": "Sling",
         "craftingLevel": 136,
+        "minLevel": 136,
         "maxLevel": 186,
         "url": "https://brightershoreswiki.org/w/Sling_(fine)",
         "materials": [
@@ -3770,6 +3996,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Hammerfist (strong)",
         "category": "Hammerfist",
         "craftingLevel": 138,
+        "minLevel": 138,
         "maxLevel": 188,
         "url": "https://brightershoreswiki.org/w/Hammerfist_(strong)",
         "materials": [
@@ -3787,6 +4014,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Throwing Stones (strong)",
         "category": "Throwing Stones",
         "craftingLevel": 142,
+        "minLevel": 142,
         "maxLevel": 192,
         "url": "https://brightershoreswiki.org/w/Throwing_Stones_(strong)",
         "materials": [
@@ -3800,6 +4028,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Stone Slab Shield (strong)",
         "category": "Stone Slab Shield",
         "craftingLevel": 146,
+        "minLevel": 146,
         "maxLevel": 196,
         "url": "https://brightershoreswiki.org/w/Stone_Slab_Shield_(strong)",
         "materials": [
@@ -3813,6 +4042,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Stone Mace (strong)",
         "category": "Stone Mace",
         "craftingLevel": 148,
+        "minLevel": 148,
         "maxLevel": 199,
         "url": "https://brightershoreswiki.org/w/Stone_Mace_(strong)",
         "materials": [
@@ -3830,6 +4060,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Stone Discs (strong)",
         "category": "Stone Discs",
         "craftingLevel": 152,
+        "minLevel": 152,
         "maxLevel": 212,
         "url": "https://brightershoreswiki.org/w/Stone_Discs_(strong)",
         "materials": [
@@ -3843,6 +4074,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "War Hammer (strong)",
         "category": "War Hammer",
         "craftingLevel": 157,
+        "minLevel": 157,
         "maxLevel": 225,
         "url": "https://brightershoreswiki.org/w/War_Hammer_(strong)",
         "materials": [
@@ -3860,6 +4092,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Bolas (strong)",
         "category": "Bolas",
         "craftingLevel": 159,
+        "minLevel": 159,
         "maxLevel": 232,
         "url": "https://brightershoreswiki.org/w/Bolas_(strong)",
         "materials": [
@@ -3873,6 +4106,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Stone Chunk Shield (strong)",
         "category": "Stone Chunk Shield",
         "craftingLevel": 163,
+        "minLevel": 163,
         "maxLevel": 246,
         "url": "https://brightershoreswiki.org/w/Stone_Chunk_Shield_(strong)",
         "materials": [
@@ -3886,6 +4120,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Double Headed Hammer (strong)",
         "category": "Double Headed Hammer",
         "craftingLevel": 167,
+        "minLevel": 167,
         "maxLevel": 259,
         "url": "https://brightershoreswiki.org/w/Double_Headed_Hammer_(strong)",
         "materials": [
@@ -3903,6 +4138,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Throwing Clubs (strong)",
         "category": "Throwing Clubs",
         "craftingLevel": 169,
+        "minLevel": 169,
         "maxLevel": 266,
         "url": "https://brightershoreswiki.org/w/Throwing_Clubs_(strong)",
         "materials": [
@@ -3916,6 +4152,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Great Stone Mace (strong)",
         "category": "Great Stone Mace",
         "craftingLevel": 173,
+        "minLevel": 173,
         "maxLevel": 279,
         "url": "https://brightershoreswiki.org/w/Great_Stone_Mace_(strong)",
         "materials": [
@@ -3933,6 +4170,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Polished Stone Shield (strong)",
         "category": "Polished Stone Shield",
         "craftingLevel": 177,
+        "minLevel": 177,
         "maxLevel": 286,
         "url": "https://brightershoreswiki.org/w/Polished_Stone_Shield_(strong)",
         "materials": [
@@ -3946,6 +4184,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Throwing Hammers (strong)",
         "category": "Throwing Hammers",
         "craftingLevel": 179,
+        "minLevel": 179,
         "maxLevel": 300,
         "url": "https://brightershoreswiki.org/w/Throwing_Hammers_(strong)",
         "materials": [
@@ -3963,6 +4202,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Great Hammer (strong)",
         "category": "Great Hammer",
         "craftingLevel": 183,
+        "minLevel": 183,
         "maxLevel": 313,
         "url": "https://brightershoreswiki.org/w/Great_Hammer_(strong)",
         "materials": [
@@ -3980,6 +4220,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Sling (strong)",
         "category": "Sling",
         "craftingLevel": 187,
+        "minLevel": 187,
         "maxLevel": 320,
         "url": "https://brightershoreswiki.org/w/Sling_(strong)",
         "materials": [
@@ -3993,6 +4234,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Hammerfist (superior)",
         "category": "Hammerfist",
         "craftingLevel": 189,
+        "minLevel": 189,
         "maxLevel": 333,
         "url": "https://brightershoreswiki.org/w/Hammerfist_(superior)",
         "materials": [
@@ -4010,6 +4252,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Throwing Stones (superior)",
         "category": "Throwing Stones",
         "craftingLevel": 193,
+        "minLevel": 193,
         "maxLevel": 347,
         "url": "https://brightershoreswiki.org/w/Throwing_Stones_(superior)",
         "materials": [
@@ -4023,6 +4266,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Stone Slab Shield (superior)",
         "category": "Stone Slab Shield",
         "craftingLevel": 197,
+        "minLevel": 197,
         "maxLevel": 354,
         "url": "https://brightershoreswiki.org/w/Stone_Slab_Shield_(superior)",
         "materials": [
@@ -4036,6 +4280,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Stone Mace (superior)",
         "category": "Stone Mace",
         "craftingLevel": 200,
+        "minLevel": 200,
         "maxLevel": 367,
         "url": "https://brightershoreswiki.org/w/Stone_Mace_(superior)",
         "materials": [
@@ -4053,6 +4298,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Stone Discs (superior)",
         "category": "Stone Discs",
         "craftingLevel": 213,
+        "minLevel": 213,
         "maxLevel": 381,
         "url": "https://brightershoreswiki.org/w/Stone_Discs_(superior)",
         "materials": [
@@ -4066,6 +4312,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "War Hammer (superior)",
         "category": "War Hammer",
         "craftingLevel": 226,
+        "minLevel": 226,
         "maxLevel": 387,
         "url": "https://brightershoreswiki.org/w/War_Hammer_(superior)",
         "materials": [
@@ -4083,6 +4330,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Bolas (superior)",
         "category": "Bolas",
         "craftingLevel": 233,
+        "minLevel": 233,
         "maxLevel": 401,
         "url": "https://brightershoreswiki.org/w/Bolas_(superior)",
         "materials": [
@@ -4096,6 +4344,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Stone Chunk Shield (superior)",
         "category": "Stone Chunk Shield",
         "craftingLevel": 247,
+        "minLevel": 247,
         "maxLevel": 414,
         "url": "https://brightershoreswiki.org/w/Stone_Chunk_Shield_(superior)",
         "materials": [
@@ -4109,6 +4358,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Double Headed Hammer (superior)",
         "category": "Double Headed Hammer",
         "craftingLevel": 260,
+        "minLevel": 260,
         "maxLevel": 421,
         "url": "https://brightershoreswiki.org/w/Double_Headed_Hammer_(superior)",
         "materials": [
@@ -4126,6 +4376,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Throwing Clubs (superior)",
         "category": "Throwing Clubs",
         "craftingLevel": 267,
+        "minLevel": 267,
         "maxLevel": 435,
         "url": "https://brightershoreswiki.org/w/Throwing_Clubs_(superior)",
         "materials": [
@@ -4139,6 +4390,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Great Stone Mace (superior)",
         "category": "Great Stone Mace",
         "craftingLevel": 280,
+        "minLevel": 280,
         "maxLevel": 448,
         "url": "https://brightershoreswiki.org/w/Great_Stone_Mace_(superior)",
         "materials": [
@@ -4156,6 +4408,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Polished Stone Shield (superior)",
         "category": "Polished Stone Shield",
         "craftingLevel": 287,
+        "minLevel": 287,
         "maxLevel": 455,
         "url": "https://brightershoreswiki.org/w/Polished_Stone_Shield_(superior)",
         "materials": [
@@ -4169,6 +4422,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Throwing Hammers (superior)",
         "category": "Throwing Hammers",
         "craftingLevel": 301,
+        "minLevel": 301,
         "maxLevel": 468,
         "url": "https://brightershoreswiki.org/w/Throwing_Hammers_(superior)",
         "materials": [
@@ -4186,6 +4440,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Great Hammer (superior)",
         "category": "Great Hammer",
         "craftingLevel": 314,
+        "minLevel": 314,
         "maxLevel": 482,
         "url": "https://brightershoreswiki.org/w/Great_Hammer_(superior)",
         "materials": [
@@ -4203,6 +4458,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Sling (superior)",
         "category": "Sling",
         "craftingLevel": 321,
+        "minLevel": 321,
         "maxLevel": 489,
         "url": "https://brightershoreswiki.org/w/Sling_(superior)",
         "materials": [
@@ -4216,6 +4472,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Hammerfist (perfect)",
         "category": "Hammerfist",
         "craftingLevel": 334,
+        "minLevel": 334,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Hammerfist_(perfect)",
         "materials": [
@@ -4233,6 +4490,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Throwing Stones (perfect)",
         "category": "Throwing Stones",
         "craftingLevel": 348,
+        "minLevel": 348,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Throwing_Stones_(perfect)",
         "materials": [
@@ -4246,6 +4504,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Stone Slab Shield (perfect)",
         "category": "Stone Slab Shield",
         "craftingLevel": 355,
+        "minLevel": 355,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Stone_Slab_Shield_(perfect)",
         "materials": [
@@ -4259,6 +4518,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Stone Mace (perfect)",
         "category": "Stone Mace",
         "craftingLevel": 368,
+        "minLevel": 368,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Stone_Mace_(perfect)",
         "materials": [
@@ -4276,6 +4536,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Stone Discs (perfect)",
         "category": "Stone Discs",
         "craftingLevel": 382,
+        "minLevel": 382,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Stone_Discs_(perfect)",
         "materials": [
@@ -4289,6 +4550,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "War Hammer (perfect)",
         "category": "War Hammer",
         "craftingLevel": 388,
+        "minLevel": 388,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/War_Hammer_(perfect)",
         "materials": [
@@ -4306,6 +4568,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Bolas (perfect)",
         "category": "Bolas",
         "craftingLevel": 402,
+        "minLevel": 402,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Bolas_(perfect)",
         "materials": [
@@ -4319,6 +4582,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Stone Chunk Shield (perfect)",
         "category": "Stone Chunk Shield",
         "craftingLevel": 415,
+        "minLevel": 415,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Stone_Chunk_Shield_(perfect)",
         "materials": [
@@ -4332,6 +4596,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Double Headed Hammer (perfect)",
         "category": "Double Headed Hammer",
         "craftingLevel": 422,
+        "minLevel": 422,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Double_Headed_Hammer_(perfect)",
         "materials": [
@@ -4349,6 +4614,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Throwing Clubs (perfect)",
         "category": "Throwing Clubs",
         "craftingLevel": 436,
+        "minLevel": 436,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Throwing_Clubs_(perfect)",
         "materials": [
@@ -4362,6 +4628,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Great Stone Mace (perfect)",
         "category": "Great Stone Mace",
         "craftingLevel": 449,
+        "minLevel": 449,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Great_Stone_Mace_(perfect)",
         "materials": [
@@ -4379,6 +4646,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Polished Stone Shield (perfect)",
         "category": "Polished Stone Shield",
         "craftingLevel": 456,
+        "minLevel": 456,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Polished_Stone_Shield_(perfect)",
         "materials": [
@@ -4392,6 +4660,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Throwing Hammers (perfect)",
         "category": "Throwing Hammers",
         "craftingLevel": 469,
+        "minLevel": 469,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Throwing_Hammers_(perfect)",
         "materials": [
@@ -4409,6 +4678,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Great Hammer (perfect)",
         "category": "Great Hammer",
         "craftingLevel": 483,
+        "minLevel": 483,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Great_Hammer_(perfect)",
         "materials": [
@@ -4426,6 +4696,7 @@ export const hammermageEquipment: Equipment[] = [
         "name": "Sling (perfect)",
         "category": "Sling",
         "craftingLevel": 490,
+        "minLevel": 490,
         "maxLevel": 500,
         "url": "https://brightershoreswiki.org/w/Sling_(perfect)",
         "materials": [

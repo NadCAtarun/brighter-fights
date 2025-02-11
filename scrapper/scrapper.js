@@ -49,6 +49,7 @@ console.log(
                     name: cells[2]?.querySelector("a")?.title.trim() || "",
                     category: cells[2]?.querySelector("a")?.title.split('(')[0].trim() || "",
                     craftingLevel: parseInt(cells[0]?.textContent?.trim() || ""),
+                    minLevel: parseInt(cells[1]?.textContent?.trim().split('–')[0] || '0'),
                     maxLevel: parseInt(cells[1]?.textContent?.trim().split('–')[1] || '0'),
                     url: cells[2]?.querySelector("a")?.href || "",
                     materials: Array.from(
