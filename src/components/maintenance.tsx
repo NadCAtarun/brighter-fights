@@ -11,10 +11,23 @@ export default function Maintenance() {
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState('');
 
+    /**
+     * A callback function for handling changes in the email input field.
+     * It updates the email state with the current value of the input.
+     */
     const handleEmailChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
         setEmail(e.target.value);
     }, []);
 
+    /**
+     * A callback function to handle form submission.
+     * Prevents the default form submission behavior and sends a POST request to subscribe the user with the provided email.
+     * Handles errors and updates the submission and error state accordingly.
+     *
+     * @callback handleSubmit
+     * @param {FormEvent} e - The form event triggered on submission.
+     * @returns {Promise<void>} A promise that resolves when the submission process completes.
+     */
     const handleSubmit = useCallback(async (e: FormEvent) => {
         e.preventDefault();
 
