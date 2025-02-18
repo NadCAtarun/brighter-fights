@@ -1,4 +1,4 @@
-import {FormEvent, useState} from 'react';
+import {ChangeEvent, FormEvent, useCallback, useState} from 'react';
 
 /**
  * The `Maintenance` component displays a notification about an ongoing application update.
@@ -11,7 +11,11 @@ export default function Maintenance() {
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState('');
 
-    const handleSubmit = async (e: FormEvent) => {
+    const handleEmailChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+        setEmail(e.target.value);
+    }, []);
+
+    const handleSubmit = useCallback(async (e: FormEvent) => {
         e.preventDefault();
 
         try {
@@ -31,7 +35,7 @@ export default function Maintenance() {
         } catch {
             setError('Something went wrong. Please try again.');
         }
-    };
+    }, [email]);
 
     return (
         <div className="container mx-auto p-4 font-text">
@@ -57,7 +61,7 @@ export default function Maintenance() {
                                 type="email"
                                 placeholder="Enter your email"
                                 value={email}
-                                onChange={(e) => setEmail(e.target.value)}
+                                onChange={handleEmailChange}
                                 className="input input-bordered w-full"
                                 required
                             />
