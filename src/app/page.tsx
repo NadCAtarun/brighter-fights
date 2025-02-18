@@ -13,7 +13,6 @@ import {craftingProfessionByFactionName,} from "@/model/faction";
 import {Equipment} from "@/model/equipment";
 import toast, {Toaster} from "react-hot-toast";
 import Maintenance from "@/components/maintenance";
-import {NextApiRequest, NextApiResponse} from "next";
 
 /**
  * The main part of the Brighter Fights apps:
