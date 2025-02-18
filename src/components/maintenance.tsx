@@ -1,5 +1,11 @@
 import {FormEvent, useState} from 'react';
 
+/**
+ * The `Maintenance` component displays a notification about an ongoing application update.
+ * It includes a subscription form where users can enter their email address
+ * to receive a notification once the update is complete.
+ * Handles the email submission process and displays success or error messages based on the operation result.
+ */
 export default function Maintenance() {
     const [email, setEmail] = useState('');
     const [submitted, setSubmitted] = useState(false);
