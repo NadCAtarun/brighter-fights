@@ -12,6 +12,8 @@ import {Enemy} from "@/model/enemy";
 import {craftingProfessionByFactionName,} from "@/model/faction";
 import {Equipment} from "@/model/equipment";
 import toast, {Toaster} from "react-hot-toast";
+import Maintenance from "@/components/maintenance";
+import {NextApiRequest, NextApiResponse} from "next";
 
 /**
  * The main part of the Brighter Fights apps:
@@ -120,6 +122,10 @@ export default function Home() {
                 ));
             }
         }, [faction, factionLevel, offset, profession, strategy, userLevel]);
+
+    if (process.env.NEXT_PUBLIC_MAINTENANCE_MODE === 'true') {
+        return <Maintenance/>;
+    }
 
     return (
         <div className="container mx-auto p-4 font-text">
