@@ -1,6 +1,7 @@
 import {strategies} from "@/model/strategy";
 import {CircleHelp} from "lucide-react";
 import Link from "next/link";
+import {ChangeEvent, useCallback} from "react";
 
 /**
  * StrategySelector is a functional component that renders a select dropdown for choosing a specific strategy.
@@ -12,6 +13,10 @@ import Link from "next/link";
  *                                      It receives the selected strategy as a parameter.
  */
 const StrategySelector = ({value, onSelect}: { value: string, onSelect: (strategy: string) => void }) => {
+    const handleStrategyChange = useCallback((e: ChangeEvent<HTMLSelectElement>) => {
+        onSelect(e.target.value);
+    }, [onSelect]);
+
     return (
         <div className="form-control">
             <label className="label" htmlFor="strategy">
@@ -26,7 +31,7 @@ const StrategySelector = ({value, onSelect}: { value: string, onSelect: (strateg
                 id="strategy"
                 className="select select-bordered text-xl bg-base-200"
                 value={value}
-                onChange={(e) => onSelect(e.target.value)}
+                onChange={handleStrategyChange}
             >
                 {strategies.map((strategy) => (
                     <option key={strategy.name} value={strategy.name}>

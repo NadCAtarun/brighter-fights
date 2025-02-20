@@ -1,4 +1,5 @@
 import Image from "next/image";
+import {ChangeEvent, useCallback} from "react";
 
 /**
  * A functional component that renders an input field for selecting a level,
@@ -12,6 +13,10 @@ import Image from "next/image";
  */
 const LevelInput = ({value, onChange, targetProfession}:
                     { value: number; onChange: (level: number) => void, targetProfession: string }) => {
+    const handleLevelChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+        onChange(Number(e.target.value))
+    }, [onChange]);
+
     return (
         <div className="form-control">
             <label className="label" htmlFor={`${targetProfession}-level`}>
@@ -29,7 +34,7 @@ const LevelInput = ({value, onChange, targetProfession}:
                     type="number"
                     value={value}
                     className="input input-bordered input-primary w-20 text-xl font-bold"
-                    onChange={(e) => onChange(Number(e.target.value))}
+                    onChange={handleLevelChange}
                 />
             </label>
             <input
@@ -39,7 +44,7 @@ const LevelInput = ({value, onChange, targetProfession}:
                 max="500"
                 value={value}
                 className="range range-primary"
-                onChange={(e) => onChange(Number(e.target.value))}
+                onChange={handleLevelChange}
             />
             <div className="w-full flex justify-between text-xs px-2">
                 <span>0</span>
