@@ -61,7 +61,7 @@ const Results =
                             {recs.meleeWeapon.name}
                             <ExternalLinkIcon className="w-4 h-4 inline ml-1"/>
                         </a>
-                        <EquipmentProperties category={recs.meleeWeapon.category}/>
+                        <EquipmentProperties categoryName={recs.meleeWeapon.category}/>
                         <CraftingMaterials {...recs.meleeWeapon}/>
                     </div>)}
 
@@ -76,7 +76,7 @@ const Results =
                             {recs.rangedWeapon.name}
                             <ExternalLinkIcon className="w-4 h-4 inline ml-1"/>
                         </a>
-                        <EquipmentProperties category={recs.rangedWeapon.category}/>
+                        <EquipmentProperties categoryName={recs.rangedWeapon.category}/>
                         <CraftingMaterials {...recs.rangedWeapon}/>
                     </div>)}
 
