@@ -1,4 +1,5 @@
 import {factions} from "@/model/faction";
+import {ChangeEvent, useCallback} from "react";
 
 /**
  * FactionSelector is a functional component that renders a dropdown selector
@@ -11,6 +12,10 @@ import {factions} from "@/model/faction";
  *                                    It receives the selected faction's name as an argument.
  */
 const FactionSelector = ({value, onSelect}: { value: string, onSelect: (faction: string) => void }) => {
+    const handleFactionChange = useCallback((e: ChangeEvent<HTMLSelectElement>) => {
+        onSelect(e.target.value);
+    }, [onSelect]);
+
     return (
         <div className="form-control">
             <label className="label" htmlFor="faction">
@@ -20,7 +25,7 @@ const FactionSelector = ({value, onSelect}: { value: string, onSelect: (faction:
                 id="faction"
                 className="select select-bordered text-xl bg-base-200"
                 value={value}
-                onChange={(e) => onSelect(e.target.value)}
+                onChange={handleFactionChange}
             >
                 {factions.map((faction) => (
                     <option key={faction.name} value={faction.name}>

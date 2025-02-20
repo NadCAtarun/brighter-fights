@@ -1,5 +1,6 @@
 import {CircleHelp} from "lucide-react";
 import Link from "next/link";
+import {ChangeEvent, useCallback} from "react";
 
 /**
  * OffsetInput is a React functional component that renders a UI control for selecting a numeric offset value
@@ -13,6 +14,10 @@ import Link from "next/link";
  *                                    the new offset value as a number.
  */
 const OffsetInput = ({value, onChange}: { value: number; onChange: (offset: number) => void }) => {
+    const handleOffsetChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+        onChange(Number(e.target.value));
+    }, [onChange]);
+
     return (
         <div className="form-control">
             <label className="label" htmlFor="offset">
@@ -30,7 +35,7 @@ const OffsetInput = ({value, onChange}: { value: number; onChange: (offset: numb
                 max="10"
                 value={value}
                 className="range range-secondary"
-                onChange={(e) => onChange(Number(e.target.value))}
+                onChange={handleOffsetChange}
             />
             <div className="w-full flex justify-between text-xs px-2">
                 <span>-10</span>

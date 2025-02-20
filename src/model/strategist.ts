@@ -209,10 +209,10 @@ export function getRecommendations(
         : 'No need for a shield, both weapons suggested are two-handed'
 
     return {
-        enemy: enemy,
-        nextLevel: nextLevel,
-        meleeWeapon: meleeWeapon,
-        rangedWeapon: rangedWeapon,
-        shield: shield,
+        enemy,
+        nextLevel,
+        meleeWeapon,
+        rangedWeapon,
+        shield,
     };
 }
