@@ -64,47 +64,9 @@ export default function Home() {
             factionLevel,
             strategy,
         ));
-    }, [])
+    }, []);
 
-    const handleProfessionChange = useCallback(
-        (profession: string) => {
-            localStorage.setItem('profession', profession);
-            setProfession(profession);
-        }, []);
-
-    const handleUserLevelChange = useCallback(
-        (level: number) => {
-            const clampedLevel = Math.max(0, Math.min(level, 500));
-            localStorage.setItem('userLevel', clampedLevel.toString());
-            setUserLevel(clampedLevel);
-        }, []);
-
-    const handleFactionChange = useCallback(
-        (faction: string) => {
-            localStorage.setItem('faction', faction);
-            setFaction(faction);
-        }, []);
-
-    const handleFactionLevelChange = useCallback(
-        (level: number) => {
-            const clampedLevel = Math.max(0, Math.min(level, 500));
-            localStorage.setItem('factionLevel', clampedLevel.toString());
-            setFactionLevel(clampedLevel);
-        }, []);
-
-    const handleStrategyChange = useCallback(
-        (strategy: string) => {
-            localStorage.setItem('strategy', strategy);
-            setStrategy(strategy);
-        }, []);
-
-    const handleOffsetChange = useCallback(
-        (offset: number) => {
-            localStorage.setItem('offset', offset.toString());
-            setOffset(offset);
-        }, []);
-
-    const handleSubmit = useCallback(
+    const handleChange = useCallback(
         () => {
             if (userLevel < 0 || userLevel > 500) {
                 toast.error(`${profession} level must be between 0 and 500`);
@@ -121,6 +83,51 @@ export default function Home() {
                 ));
             }
         }, [faction, factionLevel, offset, profession, strategy, userLevel]);
+
+    const handleProfessionChange = useCallback(
+        (profession: string) => {
+            localStorage.setItem('profession', profession);
+            setProfession(profession);
+            handleChange();
+        }, [handleChange]);
+
+    const handleUserLevelChange = useCallback(
+        (level: number) => {
+            const clampedLevel = Math.max(0, Math.min(level, 500));
+            localStorage.setItem('userLevel', clampedLevel.toString());
+            setUserLevel(clampedLevel);
+            handleChange();
+        }, [handleChange]);
+
+    const handleFactionChange = useCallback(
+        (faction: string) => {
+            localStorage.setItem('faction', faction);
+            setFaction(faction);
+            handleChange();
+        }, [handleChange]);
+
+    const handleFactionLevelChange = useCallback(
+        (level: number) => {
+            const clampedLevel = Math.max(0, Math.min(level, 500));
+            localStorage.setItem('factionLevel', clampedLevel.toString());
+            setFactionLevel(clampedLevel);
+            handleChange();
+        }, [handleChange]);
+
+    const handleStrategyChange = useCallback(
+        (strategy: string) => {
+            localStorage.setItem('strategy', strategy);
+            setStrategy(strategy);
+            handleChange();
+        }, [handleChange]);
+
+    const handleOffsetChange = useCallback(
+        (offset: number) => {
+            localStorage.setItem('offset', offset.toString());
+            setOffset(offset);
+            handleChange();
+        }, [handleChange]);
+
 
     if (process.env.NEXT_PUBLIC_MAINTENANCE_MODE === 'true') {
         return <Maintenance/>;
@@ -144,10 +151,6 @@ export default function Home() {
                 <StrategySelector value={strategy} onSelect={handleStrategyChange}/>
                 <OffsetInput value={offset} onChange={handleOffsetChange}/>
             </div>
-
-            <button className="btn btn-primary mt-8 mb-8 text-xl" onClick={handleSubmit}>
-                Update recommendations
-            </button>
 
             <Toaster/>
 

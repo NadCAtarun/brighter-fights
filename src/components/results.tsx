@@ -23,7 +23,7 @@ const Results =
         if (recs.enemy) {
             return (
                 <>
-                    <h2 className="text-2xl font-bold font-title mb-8">Recommendations</h2>
+                    <h2 className="text-2xl font-bold font-title my-8">Recommendations</h2>
 
                     <div className="text-xl">
                         You should grind on
