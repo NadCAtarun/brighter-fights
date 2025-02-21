@@ -11,7 +11,7 @@ import {getRecommendations} from "@/model/strategist";
 import {Enemy} from "@/model/enemy";
 import {craftingProfessionByFactionName,} from "@/model/faction";
 import {Equipment} from "@/model/equipment";
-import toast, {Toaster} from "react-hot-toast";
+import {Toaster} from "react-hot-toast";
 import Maintenance from "@/components/maintenance";
 
 /**
@@ -64,69 +64,45 @@ export default function Home() {
             factionLevel,
             strategy,
         ));
-    }, []);
-
-    const handleChange = useCallback(
-        () => {
-            if (userLevel < 0 || userLevel > 500) {
-                toast.error(`${profession} level must be between 0 and 500`);
-            } else if (factionLevel < 0 || factionLevel > 500) {
-                toast.error(`${faction} level must be between 0 and 500`);
-            } else {
-                setResults(getRecommendations(
-                    profession,
-                    userLevel,
-                    offset,
-                    faction,
-                    factionLevel,
-                    strategy,
-                ));
-            }
-        }, [faction, factionLevel, offset, profession, strategy, userLevel]);
+    }, [profession, userLevel, faction, factionLevel, offset, strategy]);
 
     const handleProfessionChange = useCallback(
         (profession: string) => {
             localStorage.setItem('profession', profession);
             setProfession(profession);
-            handleChange();
-        }, [handleChange]);
+        }, []);
 
     const handleUserLevelChange = useCallback(
         (level: number) => {
             const clampedLevel = Math.max(0, Math.min(level, 500));
             localStorage.setItem('userLevel', clampedLevel.toString());
             setUserLevel(clampedLevel);
-            handleChange();
-        }, [handleChange]);
+        }, []);
 
     const handleFactionChange = useCallback(
         (faction: string) => {
             localStorage.setItem('faction', faction);
             setFaction(faction);
-            handleChange();
-        }, [handleChange]);
+        }, []);
 
     const handleFactionLevelChange = useCallback(
         (level: number) => {
             const clampedLevel = Math.max(0, Math.min(level, 500));
             localStorage.setItem('factionLevel', clampedLevel.toString());
             setFactionLevel(clampedLevel);
-            handleChange();
-        }, [handleChange]);
+        }, []);
 
     const handleStrategyChange = useCallback(
         (strategy: string) => {
             localStorage.setItem('strategy', strategy);
             setStrategy(strategy);
-            handleChange();
-        }, [handleChange]);
+        }, []);
 
     const handleOffsetChange = useCallback(
         (offset: number) => {
             localStorage.setItem('offset', offset.toString());
             setOffset(offset);
-            handleChange();
-        }, [handleChange]);
+        }, []);
 
 
     if (process.env.NEXT_PUBLIC_MAINTENANCE_MODE === 'true') {
