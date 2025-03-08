@@ -10,7 +10,7 @@ const ExternalLink: FC<ExternalLinkProps> = ({url, label}) => {
     return (
         <a
             href={url}
-            className="link link-primary mx-2 font-bold"
+            className="link link-primary mx-2 font-bold inline-flex items-center"
             target="_blank"
             rel="noopener noreferrer"
         >

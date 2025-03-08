@@ -2,6 +2,7 @@ import {ChangeEvent, useEffect, useState} from 'react';
 import {enemies, Enemy} from '@/model/enemy';
 import indefinite from 'indefinite';
 import {MdClear} from "react-icons/md";
+import ExternalLink from "@/components/external-link";
 
 const MAX_MATCHES = 4;
 
@@ -73,10 +74,10 @@ const EnemySelector = ({value, onSelect}: { value: Enemy | null; onSelect: (enem
 
             {selectedEnemy && (
                 <div className="mt-4 flex justify-center items-center gap-4">
-                    <h3 className="text-center">
-                        You are fighting {indefinite(selectedEnemy.name, {articleOnly: true})}{' '}
-                        <span className="font-bold text-primary">{selectedEnemy.name}</span>
-                    </h3>
+                    <div className="inline-flex items-center">
+                        <span>You are fighting {indefinite(selectedEnemy.name, {articleOnly: true})} </span>
+                        <ExternalLink url={selectedEnemy.url} label={selectedEnemy.name}/>
+                    </div>
                     <button className="btn btn-outline btn-sm" onClick={handleClearSelection}>
                         <MdClear/>
                         Pick another

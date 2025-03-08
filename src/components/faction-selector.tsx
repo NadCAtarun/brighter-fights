@@ -9,13 +9,13 @@ const FactionSelector = ({value, onSelect}: { value: string; onSelect: (faction:
 
     return (
         <div className="pt-2">
-            <h3 className="text-center mb-4">
+            <p className="text-center mb-4">
                 {value ? (
                     <>You are a <span className="font-bold text-primary">{value}</span></>
                 ) : (
                     <>Please pick a faction:</>
                 )}
-            </h3>
+            </p>
             <div className="flex space-x-4 justify-center">
                 {factions.map((faction) => (
                     <button
