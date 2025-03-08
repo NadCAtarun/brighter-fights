@@ -9,6 +9,7 @@ export interface Enemy {
 }
 
 export const enemies: Enemy[] = [
+    // Hopeport
     {
         name: "Sparring Guard",
         url: "https://brightershoreswiki.org/w/Sparring_Guard",
@@ -61,6 +62,63 @@ export const enemies: Enemy[] = [
     {
         name: "Ghoul",
         url: "https://brightershoreswiki.org/w/Ghoul",
+        attackStyle: elements.necromae,
+        immunity: elements.necromae,
+        vulnerability: elements.arborae,
+    },
+    // Hopeforest
+    {
+        name: "Outlaw",
+        url: "https://brightershoreswiki.org/w/Outlaw",
+        attackStyle: elements.impact,
+        immunity: null,
+        vulnerability: elements.arborae,
+    },
+    {
+        name: "Goblin",
+        url: "https://brightershoreswiki.org/w/Goblin",
+        attackStyle: elements.infernae,
+        immunity: elements.infernae,
+        vulnerability: elements.tempestae,
+    },
+    {
+        name: "Bear",
+        url: "https://brightershoreswiki.org/w/Bear",
+        attackStyle: elements.impact,
+        immunity: null,
+        vulnerability: elements.cryonae,
+    },
+    {
+        name: "Wendigo",
+        url: "https://brightershoreswiki.org/w/Wendigo",
+        attackStyle: elements.cryonae,
+        immunity: elements.cryonae,
+        vulnerability: elements.infernae,
+    },
+    {
+        name: "Viper",
+        url: "https://brightershoreswiki.org/w/Viper",
+        attackStyle: elements.tempestae,
+        immunity: elements.tempestae,
+        vulnerability: elements.cryonae,
+    },
+    {
+        name: "Spriggan",
+        url: "https://brightershoreswiki.org/w/Spriggan",
+        attackStyle: elements.arborae,
+        immunity: elements.arborae,
+        vulnerability: elements.infernae,
+    },
+    {
+        name: "Bramblelith",
+        url: "https://brightershoreswiki.org/w/Bramblelith",
+        attackStyle: elements.arborae,
+        immunity: elements.arborae,
+        vulnerability: elements.tempestae,
+    },
+    {
+        name: "Shade",
+        url: "https://brightershoreswiki.org/w/Shade",
         attackStyle: elements.necromae,
         immunity: elements.necromae,
         vulnerability: elements.arborae,
