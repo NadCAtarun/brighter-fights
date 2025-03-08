@@ -2,7 +2,6 @@
 
 @plugin "daisyui";
 
-
 @plugin "daisyui/theme" {
     name: "dark";
     default: true;
@@ -36,4 +35,19 @@
     --border: 1px;
     --depth: 1;
     --noise: 1;
+}
+
+@theme {
+    --font-sans: 'Roboto', sans-serif;
+    --font-serif: 'Lora', serif;
+}
+
+@layer base {
+    body {
+        @apply font-sans;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-serif;
+    }
 }
