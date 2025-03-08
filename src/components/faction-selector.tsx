@@ -34,7 +34,6 @@ const FactionSelector = ({value, onSelect}: { value: string; onSelect: (faction:
                             className="w-20 h-20"
                             width={256}
                             height={256}
-                            objectFit="contain"
                         />
                     </button>
                 ))}
