@@ -1,0 +1,78 @@
+import {useState, ChangeEvent, FC} from 'react';
+import {enemies, Enemy} from "@/model/enemy";
+import indefinite from "indefinite";
+
+const MAX_MATCHES = 4;
+
+interface EnemySelectorProps {
+    onEnemySelect?: (enemy: Enemy) => void;
+}
+
+const EnemySelector: FC<EnemySelectorProps> = ({onEnemySelect}) => {
+    const [searchTerm, setSearchTerm] = useState('');
+    const [selectedEnemy, setSelectedEnemy] = useState<Enemy | null>(null);
+
+    const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setSearchTerm(e.target.value);
+        if (selectedEnemy) {
+            setSelectedEnemy(null);
+        }
+    };
+
+    const handleSelect = (enemy: Enemy) => {
+        setSearchTerm(enemy.name);
+        setSelectedEnemy(enemy);
+        onEnemySelect && onEnemySelect(enemy);
+    };
+
+    const filteredEnemies = enemies.filter(enemy =>
+        enemy.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    return (
+        <div className="w-full max-w-md mx-auto p-4">
+            <input
+                type="text"
+                placeholder="Search enemy by name..."
+                className="input input-bordered w-full mb-2"
+                value={searchTerm}
+                onChange={handleInputChange}
+            />
+
+            {!selectedEnemy && searchTerm && (
+                <div>
+                    {filteredEnemies.length === 0 && (
+                        <p className="text-red-500">No enemy found by that name 🥺</p>
+                    )}
+
+                    {filteredEnemies.length > MAX_MATCHES && (
+                        <p>{filteredEnemies.length} possible matches</p>
+                    )}
+
+                    {filteredEnemies.length > 0 && filteredEnemies.length <= MAX_MATCHES && (
+                        <ul className="menu bg-base-100 rounded-box p-2">
+                            {filteredEnemies.map(enemy => (
+                                <li key={enemy.name}>
+                                    <button onClick={() => handleSelect(enemy)} className="w-full text-left">
+                                        {enemy.name}
+                                    </button>
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+                </div>
+            )}
+
+            {selectedEnemy && (
+                <div className="mt-4">
+                    <p>
+                        You are fighting {indefinite(selectedEnemy.name, {articleOnly: true})} <span
+                        className="font-bold text-primary">{selectedEnemy.name}</span>
+                    </p>
+                </div>
+            )}
+        </div>
+    );
+};
+
+export default EnemySelector;
