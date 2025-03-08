@@ -25,8 +25,8 @@ export default function Home() {
         }, []);
 
     const handleEnemyChange = useCallback(
-        (enemy: Enemy) => {
-            localStorage.setItem('enemy', enemy.name);
+        (enemy: Enemy | null) => {
+            localStorage.setItem('enemy', enemy?.name || '');
             setEnemy(enemy);
         }, []);
 
