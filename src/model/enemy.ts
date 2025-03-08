@@ -252,3 +252,9 @@ export const enemies: Enemy[] = [
         vulnerability: elements.tempestae,
     },
 ];
+
+const enemiesByName = new Map(enemies.map(enemy => [enemy.name, enemy]));
+
+export function enemyByName(name: string): Enemy | null {
+    return enemiesByName.get(name) || null;
+}

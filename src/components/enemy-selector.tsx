@@ -1,16 +1,17 @@
-import {useState, ChangeEvent, FC} from 'react';
+import {ChangeEvent, useEffect, useState} from 'react';
 import {enemies, Enemy} from "@/model/enemy";
 import indefinite from "indefinite";
 
 const MAX_MATCHES = 4;
 
-interface EnemySelectorProps {
-    onEnemySelect?: (enemy: Enemy) => void;
-}
-
-const EnemySelector: FC<EnemySelectorProps> = ({onEnemySelect}) => {
+const EnemySelector = ({value, onSelect}: { value: Enemy | null, onSelect: (enemy: Enemy) => void }) => {
     const [searchTerm, setSearchTerm] = useState('');
-    const [selectedEnemy, setSelectedEnemy] = useState<Enemy | null>(null);
+    const [selectedEnemy, setSelectedEnemy] = useState<Enemy | null>(value);
+
+    useEffect(() => {
+        setSelectedEnemy(value);
+        setSearchTerm(value ? value.name : '');
+    }, [value]);
 
     const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(e.target.value);
@@ -22,7 +23,7 @@ const EnemySelector: FC<EnemySelectorProps> = ({onEnemySelect}) => {
     const handleSelect = (enemy: Enemy) => {
         setSearchTerm(enemy.name);
         setSelectedEnemy(enemy);
-        onEnemySelect && onEnemySelect(enemy);
+        onSelect && onSelect(enemy);
     };
 
     const filteredEnemies = enemies.filter(enemy =>
@@ -65,10 +66,10 @@ const EnemySelector: FC<EnemySelectorProps> = ({onEnemySelect}) => {
 
             {selectedEnemy && (
                 <div className="mt-4">
-                    <p>
+                    <h3 className="text-center mb-4">
                         You are fighting {indefinite(selectedEnemy.name, {articleOnly: true})} <span
                         className="font-bold text-primary">{selectedEnemy.name}</span>
-                    </p>
+                    </h3>
                 </div>
             )}
         </div>
