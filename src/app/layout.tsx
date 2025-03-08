@@ -3,6 +3,7 @@ import {Geist, Geist_Mono} from "next/font/google";
 import "./globals.css";
 import {ReactNode} from "react";
 import Link from "next/link";
+import ExternalLink from "@/components/external-link";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -27,12 +28,7 @@ export default function RootLayout({children}: Readonly<{ children: ReactNode; }
             <div className="flex flex-col items-center">
                 <h1 className="text-4xl font-bold font-title text-secondary m-4">✨Brighter Fights✨</h1>
                 <h2 className="text-2xl font-bold font-title mb-4">Combat companion app for
-                    <a href="https://www.brightershores.com/"
-                       className="link link-primary mx-2 font-bold"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        Brighter Shores
-                    </a>
+                    <ExternalLink url="https://www.brightershores.com/" label="Brighter Shores"/>
                 </h2>
             </div>
         </header>
@@ -56,27 +52,15 @@ export default function RootLayout({children}: Readonly<{ children: ReactNode; }
                 </nav>
 
                 <p className="text-sm">
-                    This app is currently developed by a solo developer.{" "}
-                    <a
-                        href="https://atarun.dev"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="link link-primary"
-                    >
-                        Learn more about me
-                    </a>
+                    This app is currently developed by a solo developer.
+                    {" "}
+                    <ExternalLink url="https://atarun.dev" label="Learn more about me"/>
                 </p>
 
                 <p className="text-sm">
-                    It is open source. Check out the code and contribute on{" "}
-                    <a
-                        href="https://github.com/NadCAtarun/brighter-fights"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="link link-primary"
-                    >
-                        GitHub
-                    </a>
+                    It is open source. Check out the code and contribute on
+                    {" "}
+                    <ExternalLink url="https://github.com/NadCAtarun/brighter-fights" label="GitHub"/>
                 </p>
             </div>
         </footer>
