@@ -4,6 +4,7 @@ import "./globals.css";
 import {ReactNode} from "react";
 import Link from "next/link";
 import ExternalLink from "@/components/external-link";
+import VersionDisplay from "@/components/version-display";
 
 export const metadata: Metadata = {
     title: "Brighter Fights",
@@ -38,6 +39,8 @@ export default function RootLayout({children}: Readonly<{ children: ReactNode; }
         <main className="bg-base-200 text-base-content flex-1">
             {children}
         </main>
+
+        <VersionDisplay/>
 
         <footer className="footer bg-base-100 text-base-content mt-2 p-6 mb-28 lg:mb-0">
             <div className="container mx-auto flex flex-col items-center">
