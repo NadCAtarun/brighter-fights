@@ -1,10 +1,10 @@
 "use client"
 
-import FactionSelector from "@/components/faction-selector";
+import FactionSelector from "@/components/selectors/faction-selector";
 import {useCallback, useEffect, useState} from "react";
-import EnemySelector from "@/components/enemy-selector";
+import EnemySelector from "@/components/selectors/enemy-selector";
 import {Enemy, enemyByName} from "@/model/enemy";
-import RaritySelector from "@/components/rarity-selector";
+import RaritySelector from "@/components/selectors/rarity-selector";
 
 export default function Home() {
     const [faction, setFaction] = useState('');
