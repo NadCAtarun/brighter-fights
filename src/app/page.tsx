@@ -12,6 +12,9 @@ export default function Home() {
     const [enemy, setEnemy] = useState<Enemy | null>(null);
     const [rarity, setRarity] = useState<'Rare' | 'Epic'>('Epic');
     const [combatLevel, setCombatLevel] = useState(0);
+    const [blacksmithLevel, setBlacksmithLevel] = useState(0);
+    const [bonewrightLevel, setBonewrightLevel] = useState(0);
+    const [stonemasonLevel, setStonemasonLevel] = useState(0);
 
     useEffect(() => {
         const faction = localStorage.getItem('faction') || '';
@@ -25,6 +28,15 @@ export default function Home() {
 
         const combatLevel = localStorage.getItem('combatLevel') || '0';
         setCombatLevel(parseInt(combatLevel));
+
+        const blacksmithLevel = localStorage.getItem('blacksmithLevel') || '0';
+        setBlacksmithLevel(parseInt(blacksmithLevel));
+
+        const bonewrightLevel = localStorage.getItem('bonewrightLevel') || '0';
+        setBonewrightLevel(parseInt(bonewrightLevel));
+
+        const stonemasonLevel = localStorage.getItem('stonemasonLevel') || '0';
+        setStonemasonLevel(parseInt(stonemasonLevel));
     }, [faction, enemy]);
 
     const handleFactionChange = useCallback(
@@ -51,12 +63,37 @@ export default function Home() {
             setCombatLevel(combatLevel);
         }, []);
 
+    const handleBlacksmithLevelChange = useCallback(
+        (blacksmithLevel: number) => {
+            localStorage.setItem('blacksmithLevel', blacksmithLevel.toString());
+            setBlacksmithLevel(blacksmithLevel);
+        }, []);
+
+    const handleBonewrightLevelChange = useCallback(
+        (bonewrightLevel: number) => {
+            localStorage.setItem('bonewrightLevel', bonewrightLevel.toString());
+            setBonewrightLevel(bonewrightLevel);
+        }, []);
+
+    const handleStonemasonLevelChange = useCallback(
+        (stonemasonLevel: number) => {
+            localStorage.setItem('stonemasonLevel', stonemasonLevel.toString());
+            setStonemasonLevel(stonemasonLevel);
+        }, []);
+
     return (
         <>
             <FactionSelector value={faction} onSelect={handleFactionChange}/>
             <EnemySelector value={enemy} onSelect={handleEnemyChange}/>
             <RaritySelector value={rarity} onSelect={handleRarityChange}/>
-            <LevelSelector value={combatLevel} onChange={handleCombatLevelChange} profession="Combat" maxLevel={2000}/>
+            <LevelSelector value={combatLevel} onChange={handleCombatLevelChange}
+                           profession="Combat" maxLevel={2000}/>
+            <LevelSelector value={blacksmithLevel} onChange={handleBlacksmithLevelChange}
+                           profession="Blacksmith" maxLevel={500}/>
+            <LevelSelector value={bonewrightLevel} onChange={handleBonewrightLevelChange}
+                           profession="Bonewright" maxLevel={500}/>
+            <LevelSelector value={stonemasonLevel} onChange={handleStonemasonLevelChange}
+                           profession="Stonemason" maxLevel={500}/>
         </>
     );
 }
