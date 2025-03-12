@@ -83,17 +83,22 @@ export default function Home() {
 
     return (
         <>
-            <FactionSelector value={faction} onSelect={handleFactionChange}/>
-            <EnemySelector value={enemy} onSelect={handleEnemyChange}/>
-            <RaritySelector value={rarity} onSelect={handleRarityChange}/>
-            <LevelSelector value={combatLevel} onChange={handleCombatLevelChange}
-                           profession="Combat" maxLevel={2000}/>
-            <LevelSelector value={blacksmithLevel} onChange={handleBlacksmithLevelChange}
-                           profession="Blacksmith" maxLevel={500}/>
-            <LevelSelector value={bonewrightLevel} onChange={handleBonewrightLevelChange}
-                           profession="Bonewright" maxLevel={500}/>
-            <LevelSelector value={stonemasonLevel} onChange={handleStonemasonLevelChange}
-                           profession="Stonemason" maxLevel={500}/>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                <FactionSelector value={faction} onSelect={handleFactionChange}/>
+                <EnemySelector value={enemy} onSelect={handleEnemyChange}/>
+                <RaritySelector value={rarity} onSelect={handleRarityChange}/>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <LevelSelector value={combatLevel} onChange={handleCombatLevelChange}
+                               profession="Combat" maxLevel={2000}/>
+                <LevelSelector value={blacksmithLevel} onChange={handleBlacksmithLevelChange}
+                               profession="Blacksmith" maxLevel={500}/>
+                <LevelSelector value={bonewrightLevel} onChange={handleBonewrightLevelChange}
+                               profession="Bonewright" maxLevel={500}/>
+                <LevelSelector value={stonemasonLevel} onChange={handleStonemasonLevelChange}
+                               profession="Stonemason" maxLevel={500}/>
+            </div>
         </>
     );
 }
