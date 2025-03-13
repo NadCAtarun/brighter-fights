@@ -9,13 +9,6 @@ const FactionSelector = ({value, onSelect}: { value: string; onSelect: (faction:
 
     return (
         <div className="pt-2">
-            <p className="text-center mb-4">
-                {value ? (
-                    <>You are a <span className="font-bold text-primary">{value}</span></>
-                ) : (
-                    <>Please pick a faction:</>
-                )}
-            </p>
             <div className="flex space-x-4 justify-center">
                 {factions.map((faction) => (
                     <button
@@ -37,6 +30,13 @@ const FactionSelector = ({value, onSelect}: { value: string; onSelect: (faction:
                         />
                     </button>
                 ))}
+            </div>
+            <div className="text-center mt-4">
+                {value ? (
+                    <>You are a <span className="font-bold text-primary">{value}</span></>
+                ) : (
+                    <span className="text-warning">Please pick a faction</span>
+                )}
             </div>
         </div>
     );
