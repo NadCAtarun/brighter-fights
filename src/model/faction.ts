@@ -1,10 +1,18 @@
 import {Element, elements} from "./element";
-import {enemies, Enemy} from "@/model/enemy";
+
+import {
+    cryoknightEquipment, cryoknightEquipmentCategories,
+    Equipment, EquipmentCategory,
+    guardianEquipment, guardianEquipmentCategories,
+    hammermageEquipment, hammermageEquipmentCategories
+} from "@/model/equipment";
 
 export interface Faction {
     name: string;
     craftingProfession: "Blacksmith" | "Bonewright" | "Stonemason";
     vulnerability: Element;
+    equipmentCategories: EquipmentCategory[];
+    equipment: Equipment[];
 }
 
 export const factions: Faction[] = [
@@ -12,16 +20,22 @@ export const factions: Faction[] = [
         name: "Cryoknight",
         craftingProfession: "Blacksmith",
         vulnerability: elements.tempestae,
+        equipmentCategories: cryoknightEquipmentCategories,
+        equipment: cryoknightEquipment,
     },
     {
         name: "Guardian",
         craftingProfession: "Bonewright",
         vulnerability: elements.cryonae,
+        equipmentCategories: guardianEquipmentCategories,
+        equipment: guardianEquipment,
     },
     {
         name: "Hammermage",
         craftingProfession: "Stonemason",
         vulnerability: elements.arborae,
+        equipmentCategories: hammermageEquipmentCategories,
+        equipment: hammermageEquipment,
     },
 ];
 
