@@ -12,7 +12,7 @@ const PrioritySelector = (
         <div className="w-full max-w-xs mx-auto flex items-center gap-2">
             <span className="text-base font-medium text-base-content">You want to prioritize</span>
 
-            <div className="flex-1 cursor-pointer" onClick={handleToggle}>
+            <button className="flex-1 cursor-pointer" onClick={handleToggle}>
                 <div className="flex justify-between text-sm font-medium text-base-content mb-2">
                     <span className={value === 'speed' ? 'text-blue-500' : 'text-base-content/50'}>Speed</span>
                     <span className={value === 'strength' ? 'text-red-500' : 'text-base-content/50'}>Strength</span>
@@ -31,7 +31,7 @@ const PrioritySelector = (
                         }`}
                     />
                 </div>
-            </div>
+            </button>
         </div>
     );
 
