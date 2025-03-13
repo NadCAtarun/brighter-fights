@@ -8,6 +8,16 @@ import {Faction} from '@/model/faction';
 
 const MAX_MATCHES = 4;
 
+/**
+ * A functional component that allows the selection of an enemy from a filtered list based on user input.
+ * The component handles searching, selecting, and clearing an enemy selection, as well as displaying
+ * additional properties associated with the selected enemy.
+ *
+ * @param {object} props The input properties for the EnemySelector component.
+ * @param {Enemy|null} props.value The current selected enemy. Can be null if no enemy is selected.
+ * @param {function} props.onSelect A callback function triggered when an enemy is selected or when the selection is cleared.
+ * @param {Faction|null} props.faction The current faction, used to display faction-specific properties of the enemy.
+ */
 const EnemySelector = (
     {value, onSelect, faction}: {
         value: Enemy | null;
