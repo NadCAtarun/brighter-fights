@@ -1,13 +1,26 @@
 import {ChangeEvent, useCallback} from "react";
 import Image from "next/image";
 
-function LevelInput(props: {
-    profession: string,
-    max: number,
-    value: number,
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
-}) {
-    return <div className="px-2">
+/**
+ * LevelInput is a React functional component used for adjusting and displaying
+ * a numerical level associated with a specific profession. It provides both
+ * a numerical input field and a range slider for adjusting the value.
+ *
+ * @param {Object} props - The properties object.
+ * @param {string} props.profession - The profession associated with the level input.
+ * @param {number} props.max - The maximum allowable value for the level input.
+ * @param {number} props.value - The current value of the level input.
+ * @param {function} props.onChange - Callback function to handle changes to the input value.
+ */
+const LevelInput = (
+    props: {
+        profession: string,
+        max: number,
+        value: number,
+        onChange: (e: ChangeEvent<HTMLInputElement>) => void
+    }
+) =>
+    <div className="px-2">
         <input
             id={`${props.profession}-level`}
             type="number"
@@ -29,11 +42,17 @@ function LevelInput(props: {
             <span>0</span>
             <span>{props.max}</span>
         </div>
-    </div>;
-}
+    </div>
 
-function LevelLabel(props: { profession: string, s: string }) {
-    return <label
+/**
+ * Renders a label component for displaying the level of a specific profession.
+ *
+ * @param {Object} props - The properties object.
+ * @param {string} props.profession - The name of the profession to be displayed.
+ * @param {string} props.s - The identifier for the symbol or icon associated with the profession.
+ */
+const LevelLabel = (props: { profession: string, s: string }) =>
+    <label
         className="label flex justify-center items-center pb-1"
         htmlFor={`${props.profession}-level`}
     >
@@ -47,8 +66,7 @@ function LevelLabel(props: { profession: string, s: string }) {
                     />
                     Your <strong className="mx-1">{props.profession}</strong>level
                   </span>
-    </label>;
-}
+    </label>
 
 /**
  * LevelSelector is a React functional component designed to allow users to input or adjust a numerical "level" value.
