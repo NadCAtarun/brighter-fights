@@ -3,6 +3,7 @@ import {enemies, Enemy} from '@/model/enemy';
 import indefinite from 'indefinite';
 import {MdClear} from "react-icons/md";
 import ExternalLink from "@/components/external-link";
+import EnemyProperties from "@/components/enemy-properties";
 
 const MAX_MATCHES = 4;
 
@@ -84,6 +85,8 @@ const EnemySelector = ({value, onSelect}: { value: Enemy | null; onSelect: (enem
                     </button>
                 </div>
             )}
+
+            {selectedEnemy && EnemyProperties(selectedEnemy)}
         </div>
     );
 };
