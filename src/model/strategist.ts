@@ -54,7 +54,8 @@ const chooseMeleeWeapon = (
 const chooseRangedWeapon = (
     faction: Faction, category: WeaponCategory, enemy: Enemy, combatLevel: number, craftingLevel: number
 ): Equipment | string => {
-    if (enemy.ranged && enemy.attackStyle != faction.rangedOnly) return "A ranged weapon won't be useful in this case.";
+    if (enemy.ranged && enemy.attackStyle != faction.rangedOnly)
+        return `The enemy attacks at range and is not vulnerable to ${faction.rangedOnly.name}`;
 
     const idealRangedWeapon = findIdealWeapon(category, faction.rangedWeapons, combatLevel,);
 
@@ -74,7 +75,7 @@ export const generateRecommendations = (
     let shield;
     if (idealMeleeWeaponCategory.hands === 2
         && (typeof (rangedWeapon) === 'string' || idealRangedWeaponCategory.hands === 2)) {
-        shield = "You do not need a shield in this context."
+        shield = "The weapons recommended are 2-handed, no need for a shield"
     } else {
         const suitableShields = findSuitableShields(faction.shields, combatLevel);
         shield = suitableShields.find(s => s.craftingLevel <= craftingLevel)
