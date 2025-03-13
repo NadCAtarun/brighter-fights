@@ -3,26 +3,29 @@ import {LuShieldMinus, LuShieldPlus} from "react-icons/lu";
 import Image from "next/image";
 import {TbBow} from "react-icons/tb";
 import {PiSword} from "react-icons/pi";
+import {Faction} from "@/model/faction";
+import {AiOutlineWarning} from "react-icons/ai";
 
-const EnemyProperties = (enemy: Enemy) => {
+const EnemyProperties = (enemy: Enemy, faction: Faction | null) => {
     const attackStyle = enemy.attackStyle.name;
     const vulnerability = enemy.vulnerability?.name || null;
     const immunity = enemy.immunity?.name || null;
     const ranged = enemy.ranged;
+    const dangerous = enemy.attackStyle === faction?.vulnerability;
 
     return (
-        <>
+        <div className="w-full flex justify-center">
             <div className="inline">
                 Properties:
             </div>
 
             {ranged ? (
                 <div className="tooltip tooltip-secondary mx-1" data-tip="Has ranged attacks">
-                    <TbBow className="inline-block text-warning"/>
+                    <TbBow className="inline-block text-warning text-xl"/>
                 </div>
             ) : (
                 <div className="tooltip tooltip-secondary mx-1" data-tip="Only melee attacks">
-                    <PiSword className="inline-block text-success"/>
+                    <PiSword className="inline-block text-success text-xl"/>
                 </div>
             )}
 
@@ -38,7 +41,7 @@ const EnemyProperties = (enemy: Enemy) => {
 
             {vulnerability && (
                 <div className="tooltip tooltip-secondary mx-1" data-tip={`Vulnerable to ${vulnerability}`}>
-                    <LuShieldMinus className="inline-block text-error"/>
+                    <LuShieldMinus className="inline-block text-error text-xl"/>
                     <Image
                         src={`/symbols/${vulnerability.toLowerCase()}.png`}
                         alt={`Vulnerable to ${vulnerability}`}
@@ -51,7 +54,7 @@ const EnemyProperties = (enemy: Enemy) => {
 
             {immunity && (
                 <div className="tooltip tooltip-secondary mx-1" data-tip={`Immune to ${immunity}`}>
-                    <LuShieldPlus className="inline-block text-success"/>
+                    <LuShieldPlus className="inline-block text-success text-xl"/>
                     <Image
                         src={`/symbols/${immunity.toLowerCase()}.png`}
                         alt={`Immune to ${immunity}`}
@@ -61,7 +64,13 @@ const EnemyProperties = (enemy: Enemy) => {
                     />
                 </div>
             )}
-        </>
+
+            {dangerous && (
+                <div className="tooltip tooltip-secondary mx-1" data-tip="You are vulnerable to this monster's attacks">
+                    <AiOutlineWarning className="inline-block text-warning text-xl"/>
+                </div>
+            )}
+        </div>
     );
 };
 

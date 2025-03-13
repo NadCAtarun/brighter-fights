@@ -6,9 +6,10 @@ import EnemySelector from "@/components/selectors/enemy-selector";
 import {Enemy, enemyByName} from "@/model/enemy";
 import RaritySelector from "@/components/selectors/rarity-selector";
 import LevelSelector from "@/components/selectors/level-selector";
+import {Faction, factionByName} from "@/model/faction";
 
 export default function Home() {
-    const [faction, setFaction] = useState('');
+    const [faction, setFaction] = useState<Faction | null>(null);
     const [enemy, setEnemy] = useState<Enemy | null>(null);
     const [rarity, setRarity] = useState<'Rare' | 'Epic'>('Epic');
     const [combatLevel, setCombatLevel] = useState(0);
@@ -18,7 +19,7 @@ export default function Home() {
 
     useEffect(() => {
         const faction = localStorage.getItem('faction') || '';
-        setFaction(faction);
+        setFaction(factionByName(faction));
 
         const enemy = localStorage.getItem('enemy') || '';
         setEnemy(enemyByName(enemy));
@@ -42,7 +43,7 @@ export default function Home() {
     const handleFactionChange = useCallback(
         (faction: string) => {
             localStorage.setItem('faction', faction);
-            setFaction(faction);
+            setFaction(factionByName(faction));
         }, []);
 
     const handleEnemyChange = useCallback(
@@ -84,8 +85,8 @@ export default function Home() {
     return (
         <>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-                <FactionSelector value={faction} onSelect={handleFactionChange}/>
-                <EnemySelector value={enemy} onSelect={handleEnemyChange}/>
+                <FactionSelector value={faction?.name || ''} onSelect={handleFactionChange}/>
+                <EnemySelector value={enemy} onSelect={handleEnemyChange} faction={faction}/>
                 <RaritySelector value={rarity} onSelect={handleRarityChange}/>
             </div>
 
