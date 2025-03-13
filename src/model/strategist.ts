@@ -2,7 +2,7 @@ import {Equipment, WeaponCategory} from "@/model/equipment";
 import {Enemy} from "@/model/enemy";
 import {Faction} from "@/model/faction";
 
-export interface Recommendations {
+export interface CraftingRecommendations {
     meleeWeapon: Equipment | string;
     rangedWeapon: Equipment | string;
     shield: Equipment | string;
@@ -43,8 +43,8 @@ const findSuitableShields = (
 };
 
 export const generateRecommendations =
-    (faction: Faction, enemy: Enemy, priority: 'speed' | 'strength',
-     combatLevel: number, craftingLevel: number): Recommendations => {
+    (faction: Faction, enemy: Enemy, priority: string,
+     combatLevel: number, craftingLevel: number): CraftingRecommendations => {
         const idealMeleeWeapon = findIdealWeapon(
             findIdealWeaponCategory(faction.weaponCategories, 'melee', enemy, priority),
             faction.meleeWeapons,

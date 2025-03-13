@@ -7,7 +7,20 @@ import {Enemy, enemyByName} from "@/model/enemy";
 import LevelSelector from "@/components/selectors/level-selector";
 import {Faction, factionByName} from "@/model/faction";
 import PrioritySelector from "@/components/selectors/priority-selector";
-import {generateRecommendations} from "@/model/strategist";
+import Recommendations from "@/components/recommendations";
+import {CraftingRecommendations, generateRecommendations} from "@/model/strategist";
+
+const craftingLevel =
+    (faction: Faction, blacksmithLevel: number, bonewrightLevel: number, stonemasonLevel: number): number => {
+        switch (faction.name) {
+            case 'Cryoknight':
+                return blacksmithLevel;
+            case 'Guardian':
+                return bonewrightLevel;
+            default:
+                return stonemasonLevel;
+        }
+    };
 
 export default function Home() {
     const [faction, setFaction] = useState<Faction | null>(null);
@@ -17,29 +30,39 @@ export default function Home() {
     const [blacksmithLevel, setBlacksmithLevel] = useState(0);
     const [bonewrightLevel, setBonewrightLevel] = useState(0);
     const [stonemasonLevel, setStonemasonLevel] = useState(0);
+    const [recommendations, setRecommendations] = useState<CraftingRecommendations | null>(null);
 
     useEffect(() => {
-        const faction = localStorage.getItem('faction') || '';
-        setFaction(factionByName(faction));
+        const factionName = localStorage.getItem('faction') || '';
+        const faction = factionByName(factionName);
+        setFaction(faction);
 
-        const enemy = localStorage.getItem('enemy') || '';
-        setEnemy(enemyByName(enemy));
+        const enemyName = localStorage.getItem('enemy') || '';
+        const enemy = enemyByName(enemyName);
+        setEnemy(enemy);
 
         const priority = localStorage.getItem('priority') || 'speed';
         setPriority(priority === 'speed' ? 'speed' : 'strength');
 
-        const combatLevel = localStorage.getItem('combatLevel') || '0';
-        setCombatLevel(parseInt(combatLevel));
+        const combatLevel = parseInt(localStorage.getItem('combatLevel') || '0');
+        setCombatLevel(combatLevel);
 
-        const blacksmithLevel = localStorage.getItem('blacksmithLevel') || '0';
-        setBlacksmithLevel(parseInt(blacksmithLevel));
+        const blacksmithLevel = parseInt(localStorage.getItem('blacksmithLevel') || '0');
+        setBlacksmithLevel(blacksmithLevel);
 
-        const bonewrightLevel = localStorage.getItem('bonewrightLevel') || '0';
-        setBonewrightLevel(parseInt(bonewrightLevel));
+        const bonewrightLevel = parseInt(localStorage.getItem('bonewrightLevel') || '0');
+        setBonewrightLevel(bonewrightLevel);
 
-        const stonemasonLevel = localStorage.getItem('stonemasonLevel') || '0';
-        setStonemasonLevel(parseInt(stonemasonLevel));
-    }, [faction, enemy]);
+        const stonemasonLevel = parseInt(localStorage.getItem('stonemasonLevel') || '0');
+        setStonemasonLevel(stonemasonLevel);
+
+        if (faction && enemy) {
+            setRecommendations(generateRecommendations(faction, enemy, priority, combatLevel,
+                craftingLevel(faction, blacksmithLevel, bonewrightLevel, stonemasonLevel)))
+        } else {
+            setRecommendations(null);
+        }
+    }, [faction, enemy, priority, combatLevel, blacksmithLevel, bonewrightLevel, stonemasonLevel]);
 
     const handleFactionChange = useCallback(
         (faction: string) => {
@@ -102,14 +125,7 @@ export default function Home() {
                                profession="Stonemason" maxLevel={500}/>
             </div>
 
-            {faction && enemy && (
-                <div>
-                    <pre>{JSON.stringify(generateRecommendations(faction, enemy, priority, combatLevel,
-                            faction.name === 'Cryoknight' ? blacksmithLevel : faction.name === 'Guardian' ? bonewrightLevel : stonemasonLevel),
-                        null, 2
-                    )}</pre>
-                </div>
-            )}
+            {recommendations && <Recommendations {...recommendations}/>}
         </>
     );
 }
