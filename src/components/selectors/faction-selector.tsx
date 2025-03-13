@@ -1,4 +1,4 @@
-import {useCallback} from "react";
+import {useCallback, useMemo} from "react";
 import {factions} from "@/model/faction";
 import Image from "next/image";
 
@@ -10,11 +10,22 @@ import Image from "next/image";
  * @param {function} props.onSelect - A callback function triggered when a faction is selected. It receives the name of the selected faction as an argument.
  */
 const FactionSelector = (
-    {value, onSelect}: { value: string; onSelect: (faction: string) => void }
+    {value, onSelect}: { value: string; onSelect: (faction: string) => void; }
 ) => {
-    const handleSelect = useCallback((factionName: string) => {
-        onSelect(value === factionName ? '' : factionName);
-    }, [onSelect, value]);
+    const handleSelect = useCallback(
+        (factionName: string) => {
+            onSelect(value === factionName ? "" : factionName);
+        },
+        [onSelect, value]
+    );
+
+    const factionHandlers = useMemo(() => {
+        const handlers: Record<string, () => void> = {};
+        factions.forEach((faction) => {
+            handlers[faction.name] = () => handleSelect(faction.name);
+        });
+        return handlers;
+    }, [handleSelect]);
 
     return (
         <div className="pt-2">
@@ -22,7 +33,7 @@ const FactionSelector = (
                 {factions.map((faction) => (
                     <button
                         key={faction.name}
-                        onClick={handleSelect.bind(null, faction.name)}
+                        onClick={factionHandlers[faction.name]}
                         className={`btn tooltip tooltip-bottom w-20 h-20 p-0 border-4 border-transparent ${
                             value === faction.name
                                 ? "border-primary ring-2 ring-primary ring-offset-2"
@@ -42,7 +53,10 @@ const FactionSelector = (
             </div>
             <div className="text-center mt-4">
                 {value ? (
-                    <>You are a <span className="font-bold text-primary">{value}</span></>
+                    <>
+                        You are a{" "}
+                        <span className="font-bold text-primary">{value}</span>
+                    </>
                 ) : (
                     <span className="text-warning">Please pick a faction</span>
                 )}

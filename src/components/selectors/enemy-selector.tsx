@@ -1,10 +1,10 @@
-import {ChangeEvent, useEffect, useState} from 'react';
+import {ChangeEvent, useEffect, useMemo, useState} from 'react';
 import {enemies, Enemy} from '@/model/enemy';
 import indefinite from 'indefinite';
-import {MdClear} from "react-icons/md";
-import ExternalLink from "@/components/external-link";
-import EnemyProperties from "@/components/enemy-properties";
-import {Faction} from "@/model/faction";
+import {MdClear} from 'react-icons/md';
+import ExternalLink from '@/components/external-link';
+import EnemyProperties from '@/components/enemy-properties';
+import {Faction} from '@/model/faction';
 
 const MAX_MATCHES = 4;
 
@@ -50,9 +50,22 @@ const EnemySelector = (
         onSelect(null);
     };
 
-    const filteredEnemies = enemies.filter((enemy) =>
-        enemy.name.toLowerCase().includes(searchTerm.toLowerCase())
+    const filteredEnemies = useMemo(
+        () =>
+            enemies.filter((enemy) =>
+                enemy.name.toLowerCase().includes(searchTerm.toLowerCase())
+            ),
+        [searchTerm]
     );
+
+    // Pre-create handlers for each enemy to avoid inline functions
+    const enemyHandlers = useMemo(() => {
+        const handlers: Record<string, () => void> = {};
+        filteredEnemies.forEach((enemy) => {
+            handlers[enemy.name] = () => handleSelect(enemy);
+        });
+        return handlers;
+    }, [filteredEnemies]);
 
     return (
         <div className="w-full max-w-md mx-auto p-4">
@@ -70,15 +83,19 @@ const EnemySelector = (
 
             {!selectedEnemy && searchTerm && (
                 <div>
-                    {filteredEnemies.length === 0 && <p className="text-red-500">No enemy found by that name 🥺</p>}
+                    {filteredEnemies.length === 0 && (
+                        <p className="text-red-500">No enemy found by that name 🥺</p>
+                    )}
 
-                    {filteredEnemies.length > MAX_MATCHES && <p>{filteredEnemies.length} possible matches</p>}
+                    {filteredEnemies.length > MAX_MATCHES && (
+                        <p>{filteredEnemies.length} possible matches</p>
+                    )}
 
                     {filteredEnemies.length > 0 && filteredEnemies.length <= MAX_MATCHES && (
                         <ul className="menu bg-base-100 rounded-box p-2">
                             {filteredEnemies.map((enemy) => (
                                 <li key={enemy.name}>
-                                    <button onClick={() => handleSelect(enemy)} className="w-full text-left">
+                                    <button onClick={enemyHandlers[enemy.name]} className="w-full text-left">
                                         {enemy.name}
                                     </button>
                                 </li>
@@ -91,10 +108,16 @@ const EnemySelector = (
             {selectedEnemy && (
                 <div className="mt-4 flex justify-center items-center gap-4">
                     <div className="inline-flex items-center">
-                        <span>You are fighting {indefinite(selectedEnemy.name, {articleOnly: true})} </span>
+            <span>
+              You are fighting{' '}
+                {indefinite(selectedEnemy.name, {articleOnly: true})}{' '}
+            </span>
                         <ExternalLink url={selectedEnemy.url} label={selectedEnemy.name}/>
                     </div>
-                    <button className="btn btn-outline btn-sm" onClick={handleClearSelection}>
+                    <button
+                        className="btn btn-outline btn-sm"
+                        onClick={handleClearSelection}
+                    >
                         <MdClear/>
                         Pick another
                     </button>
