@@ -6,6 +6,7 @@ export interface Enemy {
     attackStyle: Element;
     immunity: Element | null;
     vulnerability: Element | null;
+    ranged: boolean;
 }
 
 export const enemies: Enemy[] = [
@@ -16,6 +17,7 @@ export const enemies: Enemy[] = [
         attackStyle: elements.impact,
         immunity: null,
         vulnerability: null,
+        ranged: false,
     },
     {
         name: "Deathcrow",
@@ -23,6 +25,7 @@ export const enemies: Enemy[] = [
         attackStyle: elements.necromae,
         immunity: elements.necromae,
         vulnerability: elements.cryonae,
+        ranged: false,
     },
     {
         name: "Thief",
@@ -30,6 +33,7 @@ export const enemies: Enemy[] = [
         attackStyle: elements.cryonae,
         immunity: elements.cryonae,
         vulnerability: elements.arborae,
+        ranged: false,
     },
     {
         name: "Goblin Soldier",
@@ -37,6 +41,7 @@ export const enemies: Enemy[] = [
         attackStyle: elements.infernae,
         immunity: elements.infernae,
         vulnerability: elements.tempestae,
+        ranged: false,
     },
     {
         name: "Goblin Chief",
@@ -44,6 +49,7 @@ export const enemies: Enemy[] = [
         attackStyle: elements.infernae,
         immunity: elements.infernae,
         vulnerability: elements.tempestae,
+        ranged: false,
     },
     {
         name: "Hairbeast",
@@ -51,6 +57,7 @@ export const enemies: Enemy[] = [
         attackStyle: elements.tempestae,
         immunity: elements.tempestae,
         vulnerability: elements.necromae,
+        ranged: false,
     },
     {
         name: "Carnivorous Plant",
@@ -58,6 +65,7 @@ export const enemies: Enemy[] = [
         attackStyle: elements.arborae,
         immunity: elements.arborae,
         vulnerability: elements.cryonae,
+        ranged: false,
     },
     {
         name: "Ghoul",
@@ -65,6 +73,7 @@ export const enemies: Enemy[] = [
         attackStyle: elements.necromae,
         immunity: elements.necromae,
         vulnerability: elements.arborae,
+        ranged: false,
     },
     // Hopeforest
     {
@@ -73,6 +82,7 @@ export const enemies: Enemy[] = [
         attackStyle: elements.impact,
         immunity: null,
         vulnerability: elements.arborae,
+        ranged: true,
     },
     {
         name: "Goblin",
@@ -80,6 +90,7 @@ export const enemies: Enemy[] = [
         attackStyle: elements.infernae,
         immunity: elements.infernae,
         vulnerability: elements.tempestae,
+        ranged: false,
     },
     {
         name: "Bear",
@@ -87,6 +98,7 @@ export const enemies: Enemy[] = [
         attackStyle: elements.impact,
         immunity: null,
         vulnerability: elements.cryonae,
+        ranged: false,
     },
     {
         name: "Wendigo",
@@ -94,6 +106,7 @@ export const enemies: Enemy[] = [
         attackStyle: elements.cryonae,
         immunity: elements.cryonae,
         vulnerability: elements.infernae,
+        ranged: false,
     },
     {
         name: "Viper",
@@ -101,6 +114,7 @@ export const enemies: Enemy[] = [
         attackStyle: elements.tempestae,
         immunity: elements.tempestae,
         vulnerability: elements.cryonae,
+        ranged: true,
     },
     {
         name: "Spriggan",
@@ -108,6 +122,7 @@ export const enemies: Enemy[] = [
         attackStyle: elements.arborae,
         immunity: elements.arborae,
         vulnerability: elements.infernae,
+        ranged: false,
     },
     {
         name: "Bramblelith",
@@ -115,6 +130,7 @@ export const enemies: Enemy[] = [
         attackStyle: elements.arborae,
         immunity: elements.arborae,
         vulnerability: elements.tempestae,
+        ranged: false,
     },
     {
         name: "Shade",
@@ -122,6 +138,7 @@ export const enemies: Enemy[] = [
         attackStyle: elements.necromae,
         immunity: elements.necromae,
         vulnerability: elements.arborae,
+        ranged: false,
     },
     // Mine of Mantuban
     {
@@ -130,6 +147,7 @@ export const enemies: Enemy[] = [
         attackStyle: elements.cryonae,
         immunity: elements.cryonae,
         vulnerability: elements.necromae,
+        ranged: false,
     },
     {
         name: "Goblin Miner",
@@ -137,6 +155,7 @@ export const enemies: Enemy[] = [
         attackStyle: elements.infernae,
         immunity: elements.infernae,
         vulnerability: elements.tempestae,
+        ranged: false,
     },
     {
         name: "Floor Tentacle",
@@ -144,6 +163,7 @@ export const enemies: Enemy[] = [
         attackStyle: elements.tempestae,
         immunity: elements.tempestae,
         vulnerability: elements.infernae,
+        ranged: false,
     },
     {
         name: "Fire Toad",
@@ -151,6 +171,7 @@ export const enemies: Enemy[] = [
         attackStyle: elements.infernae,
         immunity: elements.infernae,
         vulnerability: elements.cryonae,
+        ranged: true,
     },
     {
         name: "Skeleton Miner",
@@ -158,6 +179,7 @@ export const enemies: Enemy[] = [
         attackStyle: elements.necromae,
         immunity: elements.necromae,
         vulnerability: elements.arborae,
+        ranged: false,
     },
     {
         name: "Metalith",
@@ -165,6 +187,7 @@ export const enemies: Enemy[] = [
         attackStyle: elements.cryonae,
         immunity: elements.cryonae,
         vulnerability: elements.necromae,
+        ranged: false,
     },
     {
         name: "Stonewurm",
@@ -172,6 +195,7 @@ export const enemies: Enemy[] = [
         attackStyle: elements.tempestae,
         immunity: elements.tempestae,
         vulnerability: elements.arborae,
+        ranged: false,
     },
     {
         name: "Cockroach",
@@ -179,6 +203,7 @@ export const enemies: Enemy[] = [
         attackStyle: elements.impact,
         immunity: null,
         vulnerability: elements.infernae,
+        ranged: false,
     },
     {
         name: "Wraith",
@@ -186,6 +211,7 @@ export const enemies: Enemy[] = [
         attackStyle: elements.necromae,
         immunity: elements.necromae,
         vulnerability: elements.tempestae,
+        ranged: false,
     },
     {
         name: "Blob",
@@ -193,6 +219,7 @@ export const enemies: Enemy[] = [
         attackStyle: elements.arborae,
         immunity: elements.arborae,
         vulnerability: elements.cryonae,
+        ranged: true,
     },
     // Crenopolis
     {
@@ -201,6 +228,7 @@ export const enemies: Enemy[] = [
         attackStyle: elements.cryonae,
         immunity: elements.cryonae,
         vulnerability: elements.tempestae,
+        ranged: false,
     },
     {
         name: "Street Hag",
@@ -208,6 +236,7 @@ export const enemies: Enemy[] = [
         attackStyle: elements.infernae,
         immunity: elements.infernae,
         vulnerability: elements.arborae,
+        ranged: true,
     },
     {
         name: "Mawchest",
@@ -215,6 +244,7 @@ export const enemies: Enemy[] = [
         attackStyle: elements.tempestae,
         immunity: elements.tempestae,
         vulnerability: elements.cryonae,
+        ranged: false,
     },
     {
         name: "Giant Wasp",
@@ -222,6 +252,7 @@ export const enemies: Enemy[] = [
         attackStyle: elements.arborae,
         immunity: elements.arborae,
         vulnerability: elements.cryonae,
+        ranged: false,
     },
     {
         name: "Sewer Fiend",
@@ -229,6 +260,7 @@ export const enemies: Enemy[] = [
         attackStyle: elements.impact,
         immunity: null,
         vulnerability: elements.cryonae,
+        ranged: true,
     },
     {
         name: "Zombie",
@@ -236,6 +268,7 @@ export const enemies: Enemy[] = [
         attackStyle: elements.necromae,
         immunity: elements.necromae,
         vulnerability: elements.infernae,
+        ranged: false,
     },
     {
         name: "Spectral Stalker",
@@ -243,6 +276,7 @@ export const enemies: Enemy[] = [
         attackStyle: elements.necromae,
         immunity: elements.necromae,
         vulnerability: elements.arborae,
+        ranged: true,
     },
     {
         name: "Spiky Ball",
@@ -250,6 +284,7 @@ export const enemies: Enemy[] = [
         attackStyle: elements.cryonae,
         immunity: elements.cryonae,
         vulnerability: elements.tempestae,
+        ranged: false,
     },
 ];
 
