@@ -31,6 +31,13 @@ const EnemySelector = (
         setSearchTerm(value ? value.name : '');
     }, [value]);
 
+    /**
+     * Handles the change event of an input element and updates the corresponding state variables.
+     *
+     * @param {ChangeEvent<HTMLInputElement>} e - The input change event.
+     * Sets the value of the input field to the local state variable `searchTerm` and resets
+     * the `selectedEnemy` state variable to null if a selection exists.
+     */
     const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(e.target.value);
         if (selectedEnemy) {
@@ -38,12 +45,22 @@ const EnemySelector = (
         }
     };
 
+    /**
+     * Handles the selection of an enemy item.
+     * Updates the search term, sets the selected enemy,
+     * and triggers the provided selection callback.
+     *
+     * @param {Enemy} enemy - The enemy object being selected.
+     */
     const handleSelect = (enemy: Enemy) => {
         setSearchTerm(enemy.name);
         setSelectedEnemy(enemy);
         onSelect(enemy);
     };
 
+    /**
+     * Clears the current selection and resets relevant states.
+     */
     const handleClearSelection = () => {
         setSearchTerm('');
         setSelectedEnemy(null);

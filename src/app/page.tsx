@@ -10,6 +10,17 @@ import PrioritySelector from "@/components/selectors/priority-selector";
 import Recommendations from "@/components/recommendations";
 import {CraftingRecommendations, generateRecommendations} from "@/model/strategist";
 
+/**
+ * Computes the crafting level based on the given faction and corresponding skill levels.
+ *
+ * @param {Faction} faction - The faction for which the crafting level is determined.
+ *                            The faction's `name` property is used to decide the relevant skill level.
+ *                            Possible faction names include 'Cryoknight', 'Guardian', and others.
+ * @param {number} blacksmithLevel - The skill level of the blacksmith, relevant for 'Cryoknight' faction.
+ * @param {number} bonewrightLevel - The skill level of the bonewright, relevant for 'Guardian' faction.
+ * @param {number} stonemasonLevel - The skill level of the stonemason, relevant for 'Hammermage' faction.
+ * @returns {number} The crafting level corresponding to the faction and relevant skill level.
+ */
 const craftingLevel = (
     faction: Faction, blacksmithLevel: number, bonewrightLevel: number, stonemasonLevel: number
 ): number => {

@@ -24,6 +24,13 @@ const roboto = Roboto({
     variable: '--font-text',
 });
 
+/**
+ * RootLayout component defines the overall HTML structure of the application, including the header, footer,
+ * and main content area where children components are rendered.
+ *
+ * @param {Object} props - The properties object.
+ * @param {ReactNode} props.children - The child components or elements to be rendered inside the main content area.
+ */
 export default function RootLayout({children}: Readonly<{ children: ReactNode; }>) {
     return (
         <html lang="en">

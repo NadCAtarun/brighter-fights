@@ -1,9 +1,16 @@
 import {useCallback} from "react";
 
+/**
+ * PrioritySelector is a React component that allows the user to toggle between two available priority options, "speed" and "strength".
+ * The component visually represents the current selection and invokes a callback function when the selection is changed.
+ *
+ * @param {Object} props - The properties object that configures the component's functionality.
+ * @param {'speed' | 'strength'} props.value - The currently selected priority option, either "speed" or "strength".
+ * @param {function} props.onSelect - A callback function called with the new strategy ("speed" or "strength") when the toggle is clicked.
+ */
 const PrioritySelector = (
-    {value, onSelect}: {
-        value: 'speed' | 'strength', onSelect: (strategy: 'speed' | 'strength') => void
-    }) => {
+    {value, onSelect}: { value: 'speed' | 'strength', onSelect: (strategy: 'speed' | 'strength') => void }
+) => {
     const handleToggle = useCallback(() => {
         onSelect(value === 'speed' ? 'strength' : 'speed');
     }, [value, onSelect]);
