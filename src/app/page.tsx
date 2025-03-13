@@ -144,6 +144,12 @@ export default function Home() {
             </div>
 
             {recommendations && <Recommendations {...recommendations}/>}
+            {!recommendations && (
+                <p className="text-xl text-warning p-20">
+                    Please pick an enemy so the app can give you recommendations 🙏
+                    (personalized striping makes it impossible to guess which enemy makes sense for you 🥺)
+                </p>
+            )}
         </>
     );
 }
