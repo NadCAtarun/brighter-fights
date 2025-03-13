@@ -4,7 +4,6 @@ import FactionSelector from "@/components/selectors/faction-selector";
 import {useCallback, useEffect, useState} from "react";
 import EnemySelector from "@/components/selectors/enemy-selector";
 import {Enemy, enemyByName} from "@/model/enemy";
-import RaritySelector from "@/components/selectors/rarity-selector";
 import LevelSelector from "@/components/selectors/level-selector";
 import {Faction, factionByName} from "@/model/faction";
 import PrioritySelector from "@/components/selectors/priority-selector";
@@ -13,7 +12,6 @@ import {generateRecommendations} from "@/model/strategist";
 export default function Home() {
     const [faction, setFaction] = useState<Faction | null>(null);
     const [enemy, setEnemy] = useState<Enemy | null>(null);
-    const [rarity, setRarity] = useState<'Rare' | 'Epic'>('Epic');
     const [priority, setPriority] = useState<'speed' | 'strength'>('speed');
     const [combatLevel, setCombatLevel] = useState(0);
     const [blacksmithLevel, setBlacksmithLevel] = useState(0);
@@ -26,9 +24,6 @@ export default function Home() {
 
         const enemy = localStorage.getItem('enemy') || '';
         setEnemy(enemyByName(enemy));
-
-        const rarity = localStorage.getItem('rarity') || 'Epic';
-        setRarity(rarity === 'Rare' ? 'Rare' : 'Epic');
 
         const priority = localStorage.getItem('priority') || 'speed';
         setPriority(priority === 'speed' ? 'speed' : 'strength');
@@ -56,12 +51,6 @@ export default function Home() {
         (enemy: Enemy | null) => {
             localStorage.setItem('enemy', enemy?.name || '');
             setEnemy(enemy);
-        }, []);
-
-    const handleRarityChange = useCallback(
-        (rarity: 'Rare' | 'Epic') => {
-            localStorage.setItem('rarity', rarity);
-            setRarity(rarity);
         }, []);
 
     const handlePriorityChange = useCallback(
