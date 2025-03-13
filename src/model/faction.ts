@@ -1,18 +1,20 @@
 import {Element, elements} from "./element";
 
 import {
-    cryoknightEquipment, cryoknightEquipmentCategories,
-    Equipment, EquipmentCategory,
-    guardianEquipment, guardianEquipmentCategories,
-    hammermageEquipment, hammermageEquipmentCategories
+    cryoknightMeleeWeapons, cryoknightRangedWeapons, cryoknightShields, cryoknightWeaponCategories,
+    Equipment,
+    guardianMeleeWeapons, guardianRangedWeapons, guardianShields, guardianWeaponCategories,
+    hammermageMeleeWeapons, hammermageRangedWeapons, hammermageShields, hammermageWeaponCategories, WeaponCategory
 } from "@/model/equipment";
 
 export interface Faction {
     name: string;
     craftingProfession: "Blacksmith" | "Bonewright" | "Stonemason";
     vulnerability: Element;
-    equipmentCategories: EquipmentCategory[];
-    equipment: Equipment[];
+    weaponCategories: WeaponCategory[];
+    meleeWeapons: Equipment[];
+    rangedWeapons: Equipment[];
+    shields: Equipment[];
 }
 
 export const factions: Faction[] = [
@@ -20,22 +22,28 @@ export const factions: Faction[] = [
         name: "Cryoknight",
         craftingProfession: "Blacksmith",
         vulnerability: elements.tempestae,
-        equipmentCategories: cryoknightEquipmentCategories,
-        equipment: cryoknightEquipment,
+        weaponCategories: cryoknightWeaponCategories,
+        meleeWeapons: cryoknightMeleeWeapons,
+        rangedWeapons: cryoknightRangedWeapons,
+        shields: cryoknightShields,
     },
     {
         name: "Guardian",
         craftingProfession: "Bonewright",
         vulnerability: elements.cryonae,
-        equipmentCategories: guardianEquipmentCategories,
-        equipment: guardianEquipment,
+        weaponCategories: guardianWeaponCategories,
+        meleeWeapons: guardianMeleeWeapons,
+        rangedWeapons: guardianRangedWeapons,
+        shields: guardianShields,
     },
     {
         name: "Hammermage",
         craftingProfession: "Stonemason",
         vulnerability: elements.arborae,
-        equipmentCategories: hammermageEquipmentCategories,
-        equipment: hammermageEquipment,
+        weaponCategories: hammermageWeaponCategories,
+        meleeWeapons: hammermageMeleeWeapons,
+        rangedWeapons: hammermageRangedWeapons,
+        shields: hammermageShields,
     },
 ];
 

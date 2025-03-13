@@ -8,6 +8,7 @@ import RaritySelector from "@/components/selectors/rarity-selector";
 import LevelSelector from "@/components/selectors/level-selector";
 import {Faction, factionByName} from "@/model/faction";
 import PrioritySelector from "@/components/selectors/priority-selector";
+import {findSuitableShields, findIdealWeapon, findIdealWeaponCategory} from "@/model/strategist";
 
 export default function Home() {
     const [faction, setFaction] = useState<Faction | null>(null);
@@ -114,6 +115,18 @@ export default function Home() {
                 <LevelSelector value={stonemasonLevel} onChange={handleStonemasonLevelChange}
                                profession="Stonemason" maxLevel={500}/>
             </div>
+
+            {faction && enemy && (
+                <div>
+                    <pre>{JSON.stringify(findIdealWeapon(
+                        findIdealWeaponCategory(faction.weaponCategories, 'melee', enemy, priority),
+                        faction.meleeWeapons, combatLevel))}</pre>
+                    <pre>{JSON.stringify(findIdealWeapon(
+                        findIdealWeaponCategory(faction.weaponCategories, 'ranged', enemy, priority),
+                        faction.rangedWeapons, combatLevel))}</pre>
+                    <pre>{JSON.stringify(findSuitableShields(faction.shields, combatLevel))}</pre>
+                </div>
+            )}
         </>
     );
 }

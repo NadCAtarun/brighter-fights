@@ -1,6 +1,6 @@
 import {Element, elements} from "@/model/element";
 
-export interface EquipmentCategory {
+export interface WeaponCategory {
     name: string;
     hands: 1 | 2;
     type: 'melee' | 'ranged';
@@ -8,7 +8,7 @@ export interface EquipmentCategory {
     element: Element
 }
 
-export const cryoknightEquipmentCategories: EquipmentCategory[] = [
+export const cryoknightWeaponCategories: WeaponCategory[] = [
     {
         name: 'Rapier',
         hands: 1,
@@ -95,7 +95,7 @@ export const cryoknightEquipmentCategories: EquipmentCategory[] = [
     },
 ];
 
-export const guardianEquipmentCategories: EquipmentCategory[] = [
+export const guardianWeaponCategories: WeaponCategory[] = [
     {
         name: 'Truncheon',
         hands: 1,
@@ -182,7 +182,7 @@ export const guardianEquipmentCategories: EquipmentCategory[] = [
     },
 ];
 
-export const hammermageEquipmentCategories: EquipmentCategory[] = [
+export const hammermageWeaponCategories: WeaponCategory[] = [
     {
         name: 'Hammerfist',
         hands: 1,
@@ -269,10 +269,12 @@ export const hammermageEquipmentCategories: EquipmentCategory[] = [
     }
 ];
 
-const categoriesByName = new Map([...cryoknightEquipmentCategories, ...guardianEquipmentCategories, ...hammermageEquipmentCategories]
-    .map(category => [category.name, category]));
+const categoriesByName = new Map(
+    [...cryoknightWeaponCategories, ...guardianWeaponCategories, ...hammermageWeaponCategories]
+        .map(category => [category.name, category])
+);
 
-export function categoryByName(category: string): EquipmentCategory | null {
+export function categoryByName(category: string): WeaponCategory | null {
     return categoriesByName.get(category) || null;
 }
 
@@ -289,7 +291,7 @@ export interface Equipment {
     }[]
 }
 
-export const cryoknightEquipment: Equipment[] = [
+const cryoknightEquipment: Equipment[] = [
     {
         "name": "0 to 180 Rapier",
         "category": "Rapier",
@@ -1648,7 +1650,16 @@ export const cryoknightEquipment: Equipment[] = [
     }
 ];
 
-export const guardianEquipment: Equipment[] = [
+export const cryoknightMeleeWeapons = cryoknightEquipment
+    .filter(e => categoryByName(e.category)?.type === 'melee');
+
+export const cryoknightRangedWeapons = cryoknightEquipment
+    .filter(e => categoryByName(e.category)?.type === 'ranged');
+
+export const cryoknightShields = cryoknightEquipment
+    .filter(e => e.category.includes('Shield'));
+
+const guardianEquipment: Equipment[] = [
     {
         "name": "0 to 185 Truncheon",
         "category": "Truncheon",
@@ -3271,7 +3282,16 @@ export const guardianEquipment: Equipment[] = [
     }
 ];
 
-export const hammermageEquipment: Equipment[] = [
+export const guardianMeleeWeapons = guardianEquipment
+    .filter(e => categoryByName(e.category)?.type === 'melee');
+
+export const guardianRangedWeapons = guardianEquipment
+    .filter(e => categoryByName(e.category)?.type === 'ranged');
+
+export const guardianShields = guardianEquipment
+    .filter(e => e.category.includes('Shield'));
+
+const hammermageEquipment: Equipment[] = [
     {
         "name": "0 to 185 Hammerfist",
         "category": "Hammerfist",
@@ -4701,3 +4721,12 @@ export const hammermageEquipment: Equipment[] = [
         ]
     }
 ];
+
+export const hammermageMeleeWeapons = hammermageEquipment
+    .filter(e => categoryByName(e.category)?.type === 'melee');
+
+export const hammermageRangedWeapons = hammermageEquipment
+    .filter(e => categoryByName(e.category)?.type === 'ranged');
+
+export const hammermageShields = hammermageEquipment
+    .filter(e => e.category.includes('Shield'));
