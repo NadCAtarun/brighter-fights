@@ -9,7 +9,7 @@ export interface CraftingRecommendations {
 }
 
 const findIdealWeaponCategory = (
-    categories: WeaponCategory[], type: 'melee' | 'ranged', enemy: Enemy, priority: 'speed' | 'strength'
+    categories: WeaponCategory[], type: 'melee' | 'ranged', enemy: Enemy, priority: string
 ): WeaponCategory => {
     let eligibleCategories = categories
         .filter(c => c.type === type && c.element !== enemy.immunity);
@@ -42,33 +42,48 @@ const findSuitableShields = (
         .sort((a, b) => b.craftingLevel - a.craftingLevel);
 };
 
-export const generateRecommendations =
-    (faction: Faction, enemy: Enemy, priority: string,
-     combatLevel: number, craftingLevel: number): CraftingRecommendations => {
-        const idealMeleeWeapon = findIdealWeapon(
-            findIdealWeaponCategory(faction.weaponCategories, 'melee', enemy, priority),
-            faction.meleeWeapons,
-            combatLevel,
-        );
-        const meleeWeapon = idealMeleeWeapon.craftingLevel <= craftingLevel
-            ? idealMeleeWeapon : `You need to level up ${faction.craftingProfession} to ${idealMeleeWeapon.craftingLevel}`;
+const chooseMeleeWeapon = (
+    faction: Faction, category: WeaponCategory, combatLevel: number, craftingLevel: number
+): Equipment | string => {
+    const idealMeleeWeapon = findIdealWeapon(category, faction.meleeWeapons, combatLevel);
 
-        const idealRangedWeapon = findIdealWeapon(
-            findIdealWeaponCategory(faction.weaponCategories, 'ranged', enemy, priority),
-            faction.rangedWeapons,
-            combatLevel,
-        );
-        const rangedWeapon = idealRangedWeapon.craftingLevel <= craftingLevel
-            ? idealRangedWeapon : `You need to level up ${faction.craftingProfession} to ${idealRangedWeapon.craftingLevel}`;
+    return idealMeleeWeapon.craftingLevel <= craftingLevel
+        ? idealMeleeWeapon : `You need to level up ${faction.craftingProfession} to ${idealMeleeWeapon.craftingLevel}`;
+};
 
+const chooseRangedWeapon = (
+    faction: Faction, category: WeaponCategory, enemy: Enemy, combatLevel: number, craftingLevel: number
+): Equipment | string => {
+    if (enemy.ranged && enemy.attackStyle != faction.rangedOnly) return "A ranged weapon won't be useful in this case.";
+
+    const idealRangedWeapon = findIdealWeapon(category, faction.rangedWeapons, combatLevel,);
+
+    return idealRangedWeapon.craftingLevel <= craftingLevel
+        ? idealRangedWeapon : `You need to level up ${faction.craftingProfession} to ${idealRangedWeapon.craftingLevel}`;
+};
+
+export const generateRecommendations = (
+    faction: Faction, enemy: Enemy, priority: string, combatLevel: number, craftingLevel: number
+): CraftingRecommendations => {
+    const idealMeleeWeaponCategory = findIdealWeaponCategory(faction.weaponCategories, 'melee', enemy, priority);
+    const meleeWeapon = chooseMeleeWeapon(faction, idealMeleeWeaponCategory, combatLevel, craftingLevel);
+
+    const idealRangedWeaponCategory = findIdealWeaponCategory(faction.weaponCategories, 'ranged', enemy, priority);
+    const rangedWeapon = chooseRangedWeapon(faction, idealRangedWeaponCategory, enemy, combatLevel, craftingLevel);
+
+    let shield;
+    if (idealMeleeWeaponCategory.hands === 2
+        && (typeof (rangedWeapon) === 'string' || idealRangedWeaponCategory.hands === 2)) {
+        shield = "You do not need a shield in this context."
+    } else {
         const suitableShields = findSuitableShields(faction.shields, combatLevel);
-        const shield = suitableShields.find(s => s.craftingLevel <= craftingLevel)
+        shield = suitableShields.find(s => s.craftingLevel <= craftingLevel)
             || `You need to level up ${faction.craftingProfession} to ${suitableShields[suitableShields.length - 1].craftingLevel}`;
+    }
 
-        return {
-            meleeWeapon,
-            rangedWeapon,
-            shield,
-        }
-    };
-
+    return {
+        meleeWeapon,
+        rangedWeapon,
+        shield,
+    }
+};

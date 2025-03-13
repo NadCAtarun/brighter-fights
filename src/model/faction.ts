@@ -11,6 +11,7 @@ export interface Faction {
     name: string;
     craftingProfession: "Blacksmith" | "Bonewright" | "Stonemason";
     vulnerability: Element;
+    rangedOnly: Element;
     weaponCategories: WeaponCategory[];
     meleeWeapons: Equipment[];
     rangedWeapons: Equipment[];
@@ -23,6 +24,7 @@ export const factions: Faction[] = [
         craftingProfession: "Blacksmith",
         vulnerability: elements.tempestae,
         weaponCategories: cryoknightWeaponCategories,
+        rangedOnly: elements.arborae,
         meleeWeapons: cryoknightMeleeWeapons,
         rangedWeapons: cryoknightRangedWeapons,
         shields: cryoknightShields,
@@ -32,6 +34,7 @@ export const factions: Faction[] = [
         craftingProfession: "Bonewright",
         vulnerability: elements.cryonae,
         weaponCategories: guardianWeaponCategories,
+        rangedOnly: elements.tempestae,
         meleeWeapons: guardianMeleeWeapons,
         rangedWeapons: guardianRangedWeapons,
         shields: guardianShields,
@@ -40,6 +43,7 @@ export const factions: Faction[] = [
         name: "Hammermage",
         craftingProfession: "Stonemason",
         vulnerability: elements.arborae,
+        rangedOnly: elements.cryonae,
         weaponCategories: hammermageWeaponCategories,
         meleeWeapons: hammermageMeleeWeapons,
         rangedWeapons: hammermageRangedWeapons,
