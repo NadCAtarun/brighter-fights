@@ -1,4 +1,4 @@
-import {ChangeEvent, useEffect, useMemo, useState} from 'react';
+import {ChangeEvent, useEffect, useMemo, useState, useCallback} from 'react';
 import {enemies, Enemy} from '@/model/enemy';
 import indefinite from 'indefinite';
 import {MdClear} from 'react-icons/md';
@@ -8,14 +8,6 @@ import {Faction} from '@/model/faction';
 
 const MAX_MATCHES = 4;
 
-/**
- * Represents a selector component for choosing an enemy from a list based on user input.
- *
- * @param {Object} props - The props object for the EnemySelector component.
- * @param {Enemy | null} props.value - The currently selected enemy, or null if none is selected.
- * @param {Function} props.onSelect - A callback function invoked when an enemy is selected or cleared.
- * @param {Faction | null} props.faction - The faction associated with the selected enemy or the filtering process.
- */
 const EnemySelector = (
     {value, onSelect, faction}: {
         value: Enemy | null;
@@ -31,58 +23,36 @@ const EnemySelector = (
         setSearchTerm(value ? value.name : '');
     }, [value]);
 
-    /**
-     * Handles the change event of an input element and updates the corresponding state variables.
-     *
-     * @param {ChangeEvent<HTMLInputElement>} e - The input change event.
-     * Sets the value of the input field to the local state variable `searchTerm` and resets
-     * the `selectedEnemy` state variable to null if a selection exists.
-     */
-    const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const handleInputChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(e.target.value);
-        if (selectedEnemy) {
-            setSelectedEnemy(null);
-        }
-    };
+        if (selectedEnemy) setSelectedEnemy(null);
+    }, [selectedEnemy]);
 
-    /**
-     * Handles the selection of an enemy item.
-     * Updates the search term, sets the selected enemy,
-     * and triggers the provided selection callback.
-     *
-     * @param {Enemy} enemy - The enemy object being selected.
-     */
-    const handleSelect = (enemy: Enemy) => {
+    const handleSelect = useCallback((enemy: Enemy) => {
         setSearchTerm(enemy.name);
         setSelectedEnemy(enemy);
         onSelect(enemy);
-    };
+    }, [onSelect]);
 
-    /**
-     * Clears the current selection and resets relevant states.
-     */
-    const handleClearSelection = () => {
+    const handleClearSelection = useCallback(() => {
         setSearchTerm('');
         setSelectedEnemy(null);
         onSelect(null);
-    };
+    }, [onSelect]);
 
-    const filteredEnemies = useMemo(
-        () =>
-            enemies.filter((enemy) =>
-                enemy.name.toLowerCase().includes(searchTerm.toLowerCase())
-            ),
-        [searchTerm]
-    );
+    const filteredEnemies = useMemo(() => {
+        return enemies.filter((enemy) =>
+            enemy.name.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+    }, [searchTerm]);
 
-    // Pre-create handlers for each enemy to avoid inline functions
     const enemyHandlers = useMemo(() => {
         const handlers: Record<string, () => void> = {};
         filteredEnemies.forEach((enemy) => {
             handlers[enemy.name] = () => handleSelect(enemy);
         });
         return handlers;
-    }, [filteredEnemies]);
+    }, [filteredEnemies, handleSelect]);
 
     return (
         <div className="w-full max-w-md mx-auto p-4">
@@ -108,17 +78,21 @@ const EnemySelector = (
                         <p>{filteredEnemies.length} possible matches</p>
                     )}
 
-                    {filteredEnemies.length > 0 && filteredEnemies.length <= MAX_MATCHES && (
-                        <ul className="menu bg-base-100 rounded-box p-2">
-                            {filteredEnemies.map((enemy) => (
-                                <li key={enemy.name}>
-                                    <button onClick={enemyHandlers[enemy.name]} className="w-full text-left">
-                                        {enemy.name}
-                                    </button>
-                                </li>
-                            ))}
-                        </ul>
-                    )}
+                    {filteredEnemies.length > 0 &&
+                        filteredEnemies.length <= MAX_MATCHES && (
+                            <ul className="menu bg-base-100 rounded-box p-2">
+                                {filteredEnemies.map((enemy) => (
+                                    <li key={enemy.name}>
+                                        <button
+                                            onClick={enemyHandlers[enemy.name]}
+                                            className="w-full text-left"
+                                        >
+                                            {enemy.name}
+                                        </button>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
                 </div>
             )}
 
