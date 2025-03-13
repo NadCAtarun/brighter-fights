@@ -7,11 +7,13 @@ import {Enemy, enemyByName} from "@/model/enemy";
 import RaritySelector from "@/components/selectors/rarity-selector";
 import LevelSelector from "@/components/selectors/level-selector";
 import {Faction, factionByName} from "@/model/faction";
+import PrioritySelector from "@/components/selectors/priority-selector";
 
 export default function Home() {
     const [faction, setFaction] = useState<Faction | null>(null);
     const [enemy, setEnemy] = useState<Enemy | null>(null);
     const [rarity, setRarity] = useState<'Rare' | 'Epic'>('Epic');
+    const [priority, setPriority] = useState<'speed' | 'strength'>('speed');
     const [combatLevel, setCombatLevel] = useState(0);
     const [blacksmithLevel, setBlacksmithLevel] = useState(0);
     const [bonewrightLevel, setBonewrightLevel] = useState(0);
@@ -26,6 +28,9 @@ export default function Home() {
 
         const rarity = localStorage.getItem('rarity') || 'Epic';
         setRarity(rarity === 'Rare' ? 'Rare' : 'Epic');
+
+        const priority = localStorage.getItem('priority') || 'speed';
+        setPriority(priority === 'speed' ? 'speed' : 'strength');
 
         const combatLevel = localStorage.getItem('combatLevel') || '0';
         setCombatLevel(parseInt(combatLevel));
@@ -58,6 +63,12 @@ export default function Home() {
             setRarity(rarity);
         }, []);
 
+    const handlePriorityChange = useCallback(
+        (priority: 'speed' | 'strength') => {
+            localStorage.setItem('priority', priority);
+            setPriority(priority);
+        }, []);
+
     const handleCombatLevelChange = useCallback(
         (combatLevel: number) => {
             localStorage.setItem('combatLevel', combatLevel.toString());
@@ -87,7 +98,10 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                 <FactionSelector value={faction?.name || ''} onSelect={handleFactionChange}/>
                 <EnemySelector value={enemy} onSelect={handleEnemyChange} faction={faction}/>
-                <RaritySelector value={rarity} onSelect={handleRarityChange}/>
+                <div>
+                    <RaritySelector value={rarity} onSelect={handleRarityChange}/>
+                    <PrioritySelector value={priority} onSelect={handlePriorityChange}/>
+                </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
