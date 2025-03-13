@@ -8,7 +8,7 @@ import RaritySelector from "@/components/selectors/rarity-selector";
 import LevelSelector from "@/components/selectors/level-selector";
 import {Faction, factionByName} from "@/model/faction";
 import PrioritySelector from "@/components/selectors/priority-selector";
-import {findSuitableShields, findIdealWeapon, findIdealWeaponCategory} from "@/model/strategist";
+import {generateRecommendations} from "@/model/strategist";
 
 export default function Home() {
     const [faction, setFaction] = useState<Faction | null>(null);
@@ -99,10 +99,7 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                 <FactionSelector value={faction?.name || ''} onSelect={handleFactionChange}/>
                 <EnemySelector value={enemy} onSelect={handleEnemyChange} faction={faction}/>
-                <div>
-                    <RaritySelector value={rarity} onSelect={handleRarityChange}/>
-                    <PrioritySelector value={priority} onSelect={handlePriorityChange}/>
-                </div>
+                <PrioritySelector value={priority} onSelect={handlePriorityChange}/>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -118,13 +115,10 @@ export default function Home() {
 
             {faction && enemy && (
                 <div>
-                    <pre>{JSON.stringify(findIdealWeapon(
-                        findIdealWeaponCategory(faction.weaponCategories, 'melee', enemy, priority),
-                        faction.meleeWeapons, combatLevel))}</pre>
-                    <pre>{JSON.stringify(findIdealWeapon(
-                        findIdealWeaponCategory(faction.weaponCategories, 'ranged', enemy, priority),
-                        faction.rangedWeapons, combatLevel))}</pre>
-                    <pre>{JSON.stringify(findSuitableShields(faction.shields, combatLevel))}</pre>
+                    <pre>{JSON.stringify(generateRecommendations(faction, enemy, priority, combatLevel,
+                            faction.name === 'Cryoknight' ? blacksmithLevel : faction.name === 'Guardian' ? bonewrightLevel : stonemasonLevel),
+                        null, 2
+                    )}</pre>
                 </div>
             )}
         </>

@@ -9,7 +9,7 @@ const PrioritySelector = ({value, onSelect}: {
     }, [value, onSelect]);
 
     return (
-        <div className="w-full max-w-xs mx-auto flex items-center gap-2 mt-2">
+        <div className="w-full max-w-xs mx-auto flex items-center gap-2">
             <span className="text-base font-medium text-base-content">You want to prioritize</span>
 
             <div className="flex-1 cursor-pointer" onClick={handleToggle}>
