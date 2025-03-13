@@ -1,9 +1,11 @@
+import BackLink from "@/components/back-link";
 import {creditsData} from "@/app/credits/data";
 import Image from "next/image";
-import BackLink from "@/components/back-link";
+import ExternalLink from "@/components/external-link";
 
 /**
- * Page component that renders a list of credits and attributions.
+ * Renders a Page component that includes a BackLink, card-like container for credits and attribution information,
+ * and displays dynamic content based on the creditsData array.
  */
 export default function Page() {
     return (
@@ -21,11 +23,8 @@ export default function Page() {
                                         {item.image &&
                                             <Image src={item.image} alt={item.alt} width={50} height={50}
                                                    className="rounded-full"/>}
-                                        <a href={item.link} target="_blank" rel="noopener noreferrer"
-                                           className="link link-primary">
-                                            {item.name}
-                                        </a>
-                                        &nbsp;- {item.description}
+                                        <ExternalLink url={item.link} label={item.name}/>
+                                        {" "}- {item.description}
                                     </li>
                                 ))}
                             </ul>
@@ -33,7 +32,6 @@ export default function Page() {
                     ))}
                 </div>
             </div>
-
         </>
     );
 }

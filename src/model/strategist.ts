@@ -1,218 +1,168 @@
+import {Equipment, WeaponCategory} from "@/model/equipment";
 import {Enemy} from "@/model/enemy";
-import {Equipment, EquipmentCategory} from "@/model/equipment";
-import {enemiesByName} from "@/model/profession";
-import {
-    craftingProfessionByFactionName,
-    equipmentByFactionName,
-    equipmentCategoriesByFactionName
-} from "@/model/faction";
+import {Faction} from "@/model/faction";
 
-/**
- * Finds the most suitable enemy for a user based on their level and an offset.
- *
- * @param {Enemy[]} enemies - An array of enemy objects to choose from.
- * @param {number} userLevel - The current level of the user.
- * @param {number} offset - An additional offset to adjust combat level compatibility.
- * @return {Enemy | null} - The ideal enemy from the provided list; null if no enemy is eligible.
- */
-function findIdealEnemy(enemies: Enemy[], userLevel: number, offset: number): Enemy | null {
-    const eligibleEnemies = enemies.filter(
-        enemy => enemy.unlockLevel <= userLevel && enemy.combatLevel <= Math.max(0, userLevel + offset));
-
-    if (eligibleEnemies.length === 0) {
-        return null;
-    }
-
-    return eligibleEnemies[eligibleEnemies.length - 1];
-}
-
-/**
- * Calculates the level at which the user should ask for new recommendations.
- *
- * @param {Enemy[]} enemies - An array of enemy objects with defined combat levels.
- * @param {Enemy | null} currentEnemy - The current enemy object or null if no current enemy exists.
- * @param {number} offset - The numeric offset to adjust the calculated combat level.
- * @return {number} The next valid combat level, or 0 if no valid level is found.
- */
-function findNextLevel(enemies: Enemy[], currentEnemy: Enemy | null, offset: number): number {
-    if (!currentEnemy) return 0;
-
-    const futureEnemies = enemies.filter(enemy => enemy.combatLevel > currentEnemy.combatLevel)
-        .sort((a, b) => a.combatLevel - b.combatLevel);
-
-    if (futureEnemies.length === 0) return 0;
-
-    const nextLevel = futureEnemies[0].combatLevel - offset;
-
-    if (nextLevel < 1 || nextLevel > 500) return 0;
-
-    return nextLevel
-}
-
-/**
- * Determines the ideal equipment category for a given faction based on the type of weapon,
- * the enemy's characteristics, and the chosen strategy.
- *
- * @param {EquipmentCategory[]} factionCategories - The list of equipment categories available for the faction.
- * @param {'melee' | 'ranged'} type - The type of weapon being considered (either melee or ranged).
- * @param {Enemy | null} enemy - The enemy being fought, or null if there is no specific enemy.
- * @param {string} strategy - The strategy to use when choosing the weapon category (e.g., "vulnerability", "speed").
- * @return {EquipmentCategory | null} - The most suitable equipment category based on the criteria,
- *                                      or null if no applicable category is found.
- */
-function findIdealWeaponCategory(factionCategories: EquipmentCategory[], type: 'melee' | 'ranged',
-                                 enemy: Enemy | null, strategy: string): EquipmentCategory | null {
-    if (enemy === null) {
-        return null;
-    }
-
-    const eligibleCategories = factionCategories.filter((c) => c.type === type);
-
-    if (strategy === 'vulnerability') {
-        const bestWeaponCategories = eligibleCategories
-            .filter((c) => c.element === enemy.vulnerability)
-            .sort((a, b) => a.speedTier - b.speedTier);
-        if (bestWeaponCategories.length > 0) {
-            return bestWeaponCategories[0];
-        }
-    }
-
-    // Choosing or defaulting to speed strategy
-    const usefulCategories = eligibleCategories
-        .filter((c) => c.element !== enemy.immunity)
-        .sort((a, b) => a.speedTier - b.speedTier);
-
-    return usefulCategories[0];
-}
-
-/**
- * Determines the ideal weapon for a user based on the weapon category, available equipment for the user's faction,
- * user's level, crafting level, and crafting profession.
- *
- * @param {EquipmentCategory | null} weaponCategory - The category of the weapon being sought,
- *                                                    or null if no suitable category was found.
- * @param {Equipment[]} factionEquipment - An array of available equipment for the user's faction.
- * @param {number} userLevel - The level of the user, used to filter weapons that the user can use.
- * @param {number} craftingLevel - The user's level in crafting, used to filter weapons by crafting requirements.
- * @param {string} craftingProfession - The crafting profession associated with the user's crafting level.
- * @return {Equipment | string} The ideal weapon matching the given criteria,
- *                              or a descriptive string if no suitable weapon is found.
- */
-function findIdealWeapon(weaponCategory: EquipmentCategory | null, factionEquipment: Equipment[],
-                         userLevel: number, craftingLevel: number, craftingProfession: string): Equipment | string {
-    if (weaponCategory === null) {
-        return 'Impossible to pick weapons without a target enemy';
-    }
-
-    const eligibleWeapons = factionEquipment.filter((e) =>
-        e.category === weaponCategory.name
-        && e.maxLevel >= userLevel
-    ).sort((a, b) => a.craftingLevel - b.craftingLevel);
-
-    const minCraftingLevel = Math.min(...eligibleWeapons.map((e) => e.craftingLevel));
-
-    if (minCraftingLevel > craftingLevel) {
-        return `You must level up ${craftingProfession} to at least ${minCraftingLevel}`;
-    }
-
-    return eligibleWeapons[0];
-}
-
-/**
- * Finds the ideal shield for the user based on their level, crafting level, and crafting profession.
- *
- * @param {Equipment[]} factionEquipment - An array of equipment objects available for the user's faction.
- * @param {number} userLevel - The level of the user, used to determine eligibility for equipment.
- * @param {number} craftingLevel - The current crafting level of the user.
- * @param {string} craftingProfession - The profession associated with crafting the equipment.
- * @return {Equipment | string} The best suitable shield for the user
- *                              or a message prompting the user to increase their crafting level.
- */
-function findIdealShield(factionEquipment: Equipment[], userLevel: number,
-                         craftingLevel: number, craftingProfession: string): Equipment | string {
-    const eligibleShields = factionEquipment.filter((e) =>
-        e.name.includes('Shield') && e.maxLevel >= userLevel && e.minLevel <= userLevel
-    ).sort((a, b) => b.craftingLevel - a.craftingLevel);
-
-    const minCraftingLevel = Math.min(...eligibleShields.map((e) => e.craftingLevel));
-
-    if (minCraftingLevel > craftingLevel) {
-        return `You must level up ${craftingProfession} to at least ${minCraftingLevel}`;
-    }
-
-    return eligibleShields[0];
-}
-
-export interface Recommendations {
-    enemy: Enemy | null;
-    nextLevel: number;
+export interface CraftingRecommendations {
     meleeWeapon: Equipment | string;
     rangedWeapon: Equipment | string;
     shield: Equipment | string;
 }
 
 /**
- * Provides recommendations based on the given inputs, including an ideal enemy to target,
- * the next level to advance to, and appropriate weapons and shield for combat.
+ * Determines the ideal weapon category based on the specified type, enemy attributes, and priority.
  *
- * @param {string} profession - The profession of the user, used to determine relevant enemies.
- * @param {number} userLevel - The current level of the user.
- * @param {number} offset - The offset used to calculate the ideal enemy or progression level.
- * @param {string} faction - The faction the user belongs to, impacting equipment and crafting options.
- * @param {number} factionLevel - The user's level within the crafting profession associated with their faction.
- * @param {string} strategy - The combat strategy influencing weapon and shield selection.
- * @return {Recommendations} An object containing recommendations including the ideal enemy,
- *                           next progression level, melee weapon, ranged weapon, and shield.
+ * Filters the provided weapon categories to find the most suitable category given the specified
+ * weapon type, enemy's vulnerabilities and immunities, and the player's prioritization criteria.
+ * The function considers the following logic:
+ * - Filters categories that match the desired type and are not immune to the enemy's attributes.
+ * - Prioritizes categories that exploit the enemy's vulnerability, if applicable.
+ * - Further filters based on the priority criteria, such as strength requiring two-handed weapons.
+ * - Sorts the eligible categories by their speed tier and returns the most optimal weapon category.
+ *
+ * @param {WeaponCategory[]} categories - The array of weapon categories to evaluate.
+ * @param {'melee' | 'ranged'} type - The desired type of weapon (either "melee" or "ranged").
+ * @param {Enemy} enemy - The enemy data containing immunity and vulnerability attributes.
+ * @param {string} priority - The priority criterion, such as "strength".
+ * @return {WeaponCategory} The ideal weapon category based on the specified criteria.
  */
-export function getRecommendations(
-    profession: string,
-    userLevel: number,
-    offset: number,
-    faction: string,
-    factionLevel: number,
-    strategy: string,
-): Recommendations {
-    const enemies = enemiesByName(profession);
+const findIdealWeaponCategory = (
+    categories: WeaponCategory[], type: 'melee' | 'ranged', enemy: Enemy, priority: string
+): WeaponCategory => {
+    let eligibleCategories = categories
+        .filter(c => c.type === type && c.element !== enemy.immunity);
 
-    const enemy = findIdealEnemy(enemies, userLevel, offset);
+    if (eligibleCategories.some(c => c.element === enemy.vulnerability)) {
+        eligibleCategories = eligibleCategories.filter(c => c.element === enemy.vulnerability);
+    }
 
-    const nextLevel = findNextLevel(enemies, enemy, offset);
+    if (priority === 'strength' && eligibleCategories.some(c => c.hands === 2)) {
+        eligibleCategories = eligibleCategories.filter(c => c.hands === 2);
+    }
 
-    const meleeWeaponCategory = findIdealWeaponCategory(
-        equipmentCategoriesByFactionName(faction),
-        'melee',
-        enemy,
-        strategy);
-    const meleeWeapon = findIdealWeapon(
-        meleeWeaponCategory,
-        equipmentByFactionName(faction),
-        userLevel,
-        factionLevel,
-        craftingProfessionByFactionName(faction),
-    );
+    return eligibleCategories.sort((a, b) => a.speedTier - b.speedTier)[0];
+};
 
-    const rangedWeaponCategory = findIdealWeaponCategory(
-        equipmentCategoriesByFactionName(faction),
-        'ranged',
-        enemy,
-        strategy);
-    const rangedWeapon = findIdealWeapon(
-        rangedWeaponCategory,
-        equipmentByFactionName(faction),
-        userLevel,
-        factionLevel,
-        craftingProfessionByFactionName(faction),
-    );
+/**
+ * Finds the ideal weapon based on specified criteria.
+ *
+ * This function identifies the most suitable weapon from a list of equipment
+ * based on the provided weapon category and the combat level. Eligible weapons
+ * are filtered by matching the category, minimum level, and maximum level to
+ * the given combat level.
+ *
+ * @param {WeaponCategory} category - The category of weapon to search for.
+ * @param {Equipment[]} equipment - An array of available equipment to evaluate.
+ * @param {number} combatLevel - The combat level of the character, used to filter eligible weapons.
+ * @returns {Equipment} The first eligible weapon matching the criteria.
+ */
+const findIdealWeapon = (
+    category: WeaponCategory, equipment: Equipment[], combatLevel: number
+): Equipment => {
+    const eligibleWeapons = equipment
+        .filter(e => e.category === category.name && e.minLevel <= combatLevel && e.maxLevel >= combatLevel);
 
-    const shield = meleeWeaponCategory?.hands === 1 || rangedWeaponCategory?.hands === 1
-        ? findIdealShield(equipmentByFactionName(faction), userLevel, factionLevel, craftingProfessionByFactionName(faction))
-        : 'No need for a shield, both weapons suggested are two-handed'
+    return eligibleWeapons[0];
+};
+
+/**
+ * Filters and sorts a list of equipment to find shields appropriate for a specific combat level.
+ *
+ * @param {Equipment[]} equipment - The array of equipment objects to search through.
+ * @param {number} combatLevel - The combat level to match suitable shields against.
+ * @returns {Equipment[]} A sorted array of suitable shields where all returned shields have a
+ *                        category including "Shield", a minimum level less than or equal to combatLevel,
+ *                        and a maximum level greater than or equal to combatLevel. The shields
+ *                        are sorted in descending order of craftingLevel.
+ */
+const findSuitableShields = (
+    equipment: Equipment[], combatLevel: number
+): Equipment[] => {
+    return equipment
+        .filter(e => e.category.includes('Shield') && e.minLevel <= combatLevel && e.maxLevel >= combatLevel)
+        .sort((a, b) => b.craftingLevel - a.craftingLevel);
+};
+
+/**
+ * Determines and selects the most suitable melee weapon for the given faction, category,
+ * and character's combat and crafting levels.
+ *
+ * @param {Faction} faction - The faction associated with the melee weapons to choose from.
+ * @param {WeaponCategory} category - The category of the weapon being sought.
+ * @param {number} combatLevel - The combat level of the character, used to find an appropriate weapon.
+ * @param {number} craftingLevel - The crafting level of the character, used to determine crafting eligibility.
+ * @returns {Equipment|string} - Returns the ideal melee weapon if crafting requirements are met, or a message
+ *                               indicating the required crafting level to acquire the weapon.
+ */
+const chooseMeleeWeapon = (
+    faction: Faction, category: WeaponCategory, combatLevel: number, craftingLevel: number
+): Equipment | string => {
+    const idealMeleeWeapon = findIdealWeapon(category, faction.meleeWeapons, combatLevel);
+
+    return idealMeleeWeapon.craftingLevel <= craftingLevel
+        ? idealMeleeWeapon : `You need to level up ${faction.craftingProfession} to ${idealMeleeWeapon.craftingLevel}`;
+};
+
+/**
+ * Determines the most suitable ranged weapon for a given faction and scenario
+ * based on enemy attributes, combat level, and crafting level.
+ *
+ * @param {Faction} faction - The faction for which the weapon is being chosen.
+ *                            Contains details about available weapons and restrictions.
+ * @param {WeaponCategory} category - The category of weapons to consider.
+ * @param {Enemy} enemy - The enemy details, including attack style and ranged capabilities.
+ * @param {number} combatLevel - The player's current combat level to assess weapon accessibility.
+ * @param {number} craftingLevel - The player's current crafting level
+ *                                 to determine crafting eligibility for certain weapons.
+ * @returns {Equipment | string} - Returns the ideal ranged weapon as `Equipment` if conditions are met,
+ *                                 or a string message explaining the unmet requirements.
+ */
+const chooseRangedWeapon = (
+    faction: Faction, category: WeaponCategory, enemy: Enemy, combatLevel: number, craftingLevel: number
+): Equipment | string => {
+    if (enemy.ranged && enemy.attackStyle !== faction.rangedOnly)
+        return `The enemy attacks at range and is not vulnerable to ${faction.rangedOnly.name}`;
+
+    const idealRangedWeapon = findIdealWeapon(category, faction.rangedWeapons, combatLevel,);
+
+    return idealRangedWeapon.craftingLevel <= craftingLevel
+        ? idealRangedWeapon : `You need to level up ${faction.craftingProfession} to ${idealRangedWeapon.craftingLevel}`;
+};
+
+/**
+ * Generates crafting and equipment recommendations for a given faction and combat requirements.
+ *
+ * @function
+ * @param {Faction} faction - The faction for which recommendations are being generated,
+ *                            containing available weapon categories and shields.
+ * @param {Enemy} enemy - The enemy for which the recommendations are being tailored, influencing weapon choices.
+ * @param {string} priority - The priority strategy, guiding the selection of melee and ranged weapons.
+ * @param {number} combatLevel - The combat level of the player, used to determine suitable equipment.
+ * @param {number} craftingLevel - The crafting level of the player, defining access to craftable items.
+ * @returns {CraftingRecommendations} An object containing recommended melee weapon, ranged weapon, and shield
+ *                                    or guidance to improve crafting level.
+ */
+export const generateRecommendations = (
+    faction: Faction, enemy: Enemy, priority: string, combatLevel: number, craftingLevel: number
+): CraftingRecommendations => {
+    const idealMeleeWeaponCategory = findIdealWeaponCategory(faction.weaponCategories, 'melee', enemy, priority);
+    const meleeWeapon = chooseMeleeWeapon(faction, idealMeleeWeaponCategory, combatLevel, craftingLevel);
+
+    const idealRangedWeaponCategory = findIdealWeaponCategory(faction.weaponCategories, 'ranged', enemy, priority);
+    const rangedWeapon = chooseRangedWeapon(faction, idealRangedWeaponCategory, enemy, combatLevel, craftingLevel);
+
+    let shield;
+    if (idealMeleeWeaponCategory.hands === 2
+        && (typeof (rangedWeapon) === 'string' || idealRangedWeaponCategory.hands === 2)) {
+        shield = "The weapons recommended are 2-handed, no need for a shield"
+    } else {
+        const suitableShields = findSuitableShields(faction.shields, combatLevel);
+        shield = suitableShields.find(s => s.craftingLevel <= craftingLevel)
+            || `You need to level up ${faction.craftingProfession} to ${suitableShields[suitableShields.length - 1].craftingLevel}`;
+    }
 
     return {
-        enemy,
-        nextLevel,
         meleeWeapon,
         rangedWeapon,
         shield,
-    };
-}
+    }
+};

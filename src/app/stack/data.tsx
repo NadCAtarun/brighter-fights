@@ -1,8 +1,8 @@
-import {Cloud, Laptop, Palette} from "lucide-react";
+import {LuCloud, LuLaptop, LuPalette} from "react-icons/lu";
 
 const techStack = [
     {
-        icon: <Cloud className="text-primary"/>,
+        icon: <LuCloud className="text-primary"/>,
         label: "Webhost",
         title: "Vercel",
         description: "Seamless serverless deployment platform and global CDN",
@@ -10,7 +10,7 @@ const techStack = [
         logo: "/3rdparty/vercel.svg"
     },
     {
-        icon: <Laptop className="text-secondary"/>,
+        icon: <LuLaptop className="text-secondary"/>,
         label: "Frontend",
         title: "Next.js",
         description: "React framework with powerful static rendering",
@@ -18,7 +18,7 @@ const techStack = [
         logo: "/3rdparty/nextjs.svg"
     },
     {
-        icon: <Palette className="text-primary"/>,
+        icon: <LuPalette className="text-primary"/>,
         label: "Styling",
         title: "Tailwind CSS",
         description: "Cutting-edge utility-first CSS framework",

@@ -1,26 +1,20 @@
-import {ExternalLinkIcon} from "lucide-react";
+import ExternalLink from "@/components/external-link";
 
 /**
  * Header functional component.
  *
- * The title has a large, bold font, and the subtitle includes a link to the
- * "Brighter Shores" website with a small external link icon for better user experience.
+ * This component renders the main header for the application, styled with a flexbox layout.
+ * It includes the main title and a subtitle with a link pointing to the website.
  */
-const Header = () => {
-    return <header className="flex justify-center">
+const Header = () => (
+    <header className="flex justify-center">
         <div className="flex flex-col items-center">
-            <h1 className="text-4xl font-bold font-title text-secondary m-4">✨Brighter Fights✨</h1>
-            <h2 className="text-2xl font-bold font-title mb-4">Combat companion app for
-                <a href="https://www.brightershores.com/"
-                   className="link link-primary mx-2 font-bold"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    Brighter Shores
-                    <ExternalLinkIcon className="w-4 h-4 inline ml-1"/>
-                </a>
+            <h1 className="text-4xl font-bold text-secondary m-4">✨Brighter Fights✨</h1>
+            <h2 className="text-2xl font-bold mb-4">Combat companion app for
+                <ExternalLink url="https://www.brightershores.com/" label="Brighter Shores"/>
             </h2>
         </div>
-    </header>;
-};
+    </header>
+);
 
 export default Header;

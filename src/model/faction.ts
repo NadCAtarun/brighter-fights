@@ -1,69 +1,67 @@
+import {Element, elements} from "./element";
+
 import {
-    cryoknightEquipmentCategories,
-    cryoknightEquipment,
+    cryoknightMeleeWeapons, cryoknightRangedWeapons, cryoknightShields, cryoknightWeaponCategories,
     Equipment,
-    EquipmentCategory,
-    guardianEquipmentCategories, guardianEquipment, hammermageEquipmentCategories, hammermageEquipment
+    guardianMeleeWeapons, guardianRangedWeapons, guardianShields, guardianWeaponCategories,
+    hammermageMeleeWeapons, hammermageRangedWeapons, hammermageShields, hammermageWeaponCategories, WeaponCategory
 } from "@/model/equipment";
 
 export interface Faction {
     name: string;
     craftingProfession: "Blacksmith" | "Bonewright" | "Stonemason";
-    equipmentCategories: EquipmentCategory[];
-    equipment: Equipment[];
+    vulnerability: Element;
+    rangedOnly: Element;
+    weaponCategories: WeaponCategory[];
+    meleeWeapons: Equipment[];
+    rangedWeapons: Equipment[];
+    shields: Equipment[];
 }
 
 export const factions: Faction[] = [
     {
         name: "Cryoknight",
         craftingProfession: "Blacksmith",
-        equipmentCategories: cryoknightEquipmentCategories,
-        equipment: cryoknightEquipment,
+        vulnerability: elements.tempestae,
+        weaponCategories: cryoknightWeaponCategories,
+        rangedOnly: elements.arborae,
+        meleeWeapons: cryoknightMeleeWeapons,
+        rangedWeapons: cryoknightRangedWeapons,
+        shields: cryoknightShields,
     },
     {
         name: "Guardian",
         craftingProfession: "Bonewright",
-        equipmentCategories: guardianEquipmentCategories,
-        equipment: guardianEquipment,
+        vulnerability: elements.cryonae,
+        weaponCategories: guardianWeaponCategories,
+        rangedOnly: elements.tempestae,
+        meleeWeapons: guardianMeleeWeapons,
+        rangedWeapons: guardianRangedWeapons,
+        shields: guardianShields,
     },
     {
         name: "Hammermage",
         craftingProfession: "Stonemason",
-        equipmentCategories: hammermageEquipmentCategories,
-        equipment: hammermageEquipment,
+        vulnerability: elements.arborae,
+        rangedOnly: elements.cryonae,
+        weaponCategories: hammermageWeaponCategories,
+        meleeWeapons: hammermageMeleeWeapons,
+        rangedWeapons: hammermageRangedWeapons,
+        shields: hammermageShields,
     },
 ];
 
-/**
- * Retrieve the crafting profession associated with a given faction
- *
- * @param {string} name - The name of the faction whose crafting profession is to be retrieved.
- * @returns {string} The crafting profession linked to the given faction name, or an empty string
- * if no match or profession is found.
- */
-export const craftingProfessionByFactionName: (name: string) => string = (name: string): string =>
-    factions.find(f => f.name === name)?.craftingProfession || "";
+const factionsByName = new Map(factions.map(faction => [faction.name, faction]));
 
 /**
- * Retrieve a list of equipment categories associated with a given faction name.
+ * Retrieves a faction by its name.
  *
- * @param {string} name - The name of the faction for which to retrieve the equipment categories.
- * @returns {EquipmentCategory[]} An array of equipment categories that belong to the specified faction.
- *                                If no faction matches the given name, an empty array is returned.
- */
-export const equipmentCategoriesByFactionName: (name: string) => EquipmentCategory[] =
-    (name: string): EquipmentCategory[] => factions.find(f => f.name === name)?.equipmentCategories || [];
-
-/**
- * Retrieve the equipment associated with a given faction name.
- *
- * This function searches through the available factions to find the
- * matching faction by its name and returns the list of equipment assigned
- * to that faction. If no matching faction is found, it returns an empty array.
+ * The `factionByName` function searches for a faction based on the provided name string.
+ * If a matching faction is found, it returns the corresponding Faction object.
+ * If no match is found, it returns null.
  *
  * @param {string} name - The name of the faction to look up.
- * @returns {Equipment[]} - The equipment associated with the specified faction,
- *                          or an empty array if the faction is not found.
+ * @returns {Faction | null} The corresponding Faction object if found, or null if no matching faction exists.
  */
-export const equipmentByFactionName: (name: string) => Equipment[] = (name: string): Equipment[] =>
-    factions.find(f => f.name === name)?.equipment || [];
+export const factionByName = (name: string): Faction | null =>
+    factionsByName.get(name) || null;

@@ -1,18 +1,17 @@
 import Link from "next/link";
-import {Bug, ExternalLinkIcon, Lightbulb} from "lucide-react";
+import {LuBug, LuExternalLink, LuLightbulb} from "react-icons/lu";
 
 /**
- * FeedbackButtons is a React functional component that renders two buttons
- * for providing feedback through clickable links. The buttons are fixed
- * in the bottom-right corner of the screen and allow users to either suggest
- * improvements or report bugs.
+ * FeedbackButtons is a React functional component that provides quick links
+ * for users to give feedback in the form of improvement suggestions or bug reports.
  *
- * - The "Suggest an Improvement" button redirects users to a GitHub issue template
- *   for submitting a new feature or improvement suggestion.
- * - The "Report a Bug" button redirects users to a GitHub issue template
- *   for reporting a problem or bug in the application.
+ * The component displays two buttons:
+ * - One for suggesting an improvement.
+ * - Another for reporting a bug.
+ * Both buttons redirect users to pre-filled issue templates on a specified GitHub repository.
  *
- * Both buttons open their respective links in a new browser tab.
+ * The buttons are styled and positioned as a fixed overlay on the bottom-right corner of the page.
+ * The links open in a new tab and include security attributes to mitigate potential vulnerabilities.
  */
 const FeedbackButtons = () => {
     const newIssueUrl = "https://github.com/NadCAtarun/brighter-fights/issues/new";
@@ -27,9 +26,9 @@ const FeedbackButtons = () => {
                 rel="noopener noreferrer"
                 className="btn btn-primary btn-outline gap-2"
             >
-                <Lightbulb className="mr-auto"/>
+                <LuLightbulb className="mr-auto"/>
                 Suggest an Improvement
-                <ExternalLinkIcon className="ml-auto"/>
+                <LuExternalLink className="ml-auto"/>
             </Link>
 
             <Link
@@ -38,9 +37,9 @@ const FeedbackButtons = () => {
                 rel="noopener noreferrer"
                 className="btn btn-error btn-outline gap-2"
             >
-                <Bug className="mr-auto"/>
+                <LuBug className="mr-auto"/>
                 Report a Bug
-                <ExternalLinkIcon className="ml-auto"/>
+                <LuExternalLink className="ml-auto"/>
             </Link>
         </div>
     );

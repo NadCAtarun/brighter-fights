@@ -1,54 +1,53 @@
 import type {Metadata} from "next";
+import {Lora, Roboto} from "next/font/google";
 import "./globals.css";
 import {ReactNode} from "react";
-import {Lora, Roboto} from "next/font/google";
-import {Analytics} from "@vercel/analytics/next";
+import VersionDisplay from "@/components/version-display";
+import FeedbackButtons from "@/components/feedback-buttons";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
-import FeedbackButtons from "@/components/feedback-buttons";
-import VersionDisplay from "@/components/version-display";
 
 export const metadata: Metadata = {
     title: "Brighter Fights",
     description: "Combat companion app for Brighter Shores",
 };
 
-const roboto = Roboto({
-    subsets: ['latin'],
-    variable: '--font-text',
-    weight: '300',
-});
 const lora = Lora({
+    weight: ['400', '700'],
     subsets: ['latin'],
     variable: '--font-title',
 });
 
+const roboto = Roboto({
+    weight: ['400', '500'],
+    subsets: ['latin'],
+    variable: '--font-text',
+});
+
 /**
- * The RootLayout component serves as the root layout wrapper for the web app.
- * It structures the overall HTML document with a Header,
- * main content, FeedbackButtons, and Footer, while applying global themes and styles.
+ * RootLayout component defines the overall HTML structure of the application, including the header, footer,
+ * and main content area where children components are rendered.
  *
  * @param {Object} props - The properties object.
- * @param {ReactNode} props.children - React elements to be rendered within the main content area.
+ * @param {ReactNode} props.children - The child components or elements to be rendered inside the main content area.
  */
-export default function RootLayout({children,}: Readonly<{ children: ReactNode; }>) {
+export default function RootLayout({children}: Readonly<{ children: ReactNode; }>) {
     return (
-        <html lang="en" data-theme="brighter">
-        <body className={`${roboto.variable} ${lora.variable} antialiased bg-base-200`}>
-        <div className="flex flex-col min-h-screen">
-            <Header/>
+        <html lang="en">
+        <body className={`${roboto.variable} ${lora.variable} antialiased min-h-screen flex flex-col`}>
 
-            <main className="font-title flex-grow pb-10" data-theme="brighter">
-                {children}
-                <Analytics/>
-            </main>
+        <Header/>
 
-            <FeedbackButtons/>
+        <main className="bg-base-200 text-base-content flex-1">
+            {children}
+        </main>
 
-            <VersionDisplay/>
+        <FeedbackButtons/>
 
-            <Footer/>
-        </div>
+        <VersionDisplay/>
+
+        <Footer/>
+
         </body>
         </html>
     );

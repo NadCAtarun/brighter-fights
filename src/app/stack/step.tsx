@@ -1,5 +1,6 @@
 import {JSX} from "react";
 import Image from "next/image";
+import ExternalLink from "@/components/external-link";
 
 interface TechStackStepProps {
     icon: JSX.Element;
@@ -26,9 +27,7 @@ function StepDetails(props: { label: string, src: string, title: string, href: s
             {props.label}
             &nbsp;➡
             <Image src={props.src} alt={`${props.title} logo`} width={40} height={40} className="inline-block mx-2"/>
-            <a href={props.href} target="_blank" rel="noopener noreferrer" className="link link-primary">
-                {props.title}
-            </a>
+            <ExternalLink url={props.href} label={props.title}/>
         </h3>
         <p className="text-gray-500">{props.description}</p>
     </div>;
@@ -47,7 +46,7 @@ function StepDetails(props: { label: string, src: string, title: string, href: s
  */
 export default function TechStackStep({icon, label, title, description, url, logo}: TechStackStepProps) {
     return (
-        <li className="step step-primary z-1">
+        <li className="step step-primary relative before:z-0">
             <div className="flex items-center gap-4">
                 <div className="text-2xl">{icon}</div>
                 <StepDetails label={label} src={logo} title={title} href={url} description={description}/>

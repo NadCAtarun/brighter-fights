@@ -1,28 +1,54 @@
-import Image from "next/image";
 import {Enemy} from "@/model/enemy";
-import {ShieldMinus, ShieldPlus} from "lucide-react";
+import {LuShieldMinus, LuShieldPlus} from "react-icons/lu";
+import Image from "next/image";
+import {TbBow} from "react-icons/tb";
+import {PiSword} from "react-icons/pi";
+import {Faction} from "@/model/faction";
+import {AiOutlineWarning} from "react-icons/ai";
 
 /**
- * EnemyProperties is a functional component that renders information about an enemy's vulnerability
- * and immunity based on the provided enemy object. If there is no enemy or the specified properties
- * are not available, it returns null.
+ * A React functional component that renders the properties of an enemy entity,
+ * including attack style, vulnerabilities, immunities, and whether it is ranged or dangerous.
  *
- * When vulnerability and/or immunity data are present, it displays tooltips with associated icons
- * and images indicating the enemy's weaknesses or immunities.
- *
- * @param {Enemy | null} enemy - The enemy object containing vulnerability and immunity details.
+ * @param {Enemy} enemy - The enemy object containing its attributes and attack properties.
+ * @param {Faction|null} faction - The faction object, which may define vulnerabilities relevant to the enemy.
  */
-const EnemyProperties = (enemy: Enemy | null) => {
-    if (!enemy) return null;
-
+const EnemyProperties = (enemy: Enemy, faction: Faction | null) => {
+    const attackStyle = enemy.attackStyle.name;
     const vulnerability = enemy.vulnerability?.name || null;
     const immunity = enemy.immunity?.name || null;
+    const ranged = enemy.ranged;
+    const dangerous = enemy.attackStyle === faction?.vulnerability;
 
     return (
-        <>
+        <div className="w-full flex justify-center">
+            <div className="inline">
+                Properties:
+            </div>
+
+            {ranged ? (
+                <div className="tooltip tooltip-secondary mx-1" data-tip="Has ranged attacks">
+                    <TbBow className="inline-block text-warning text-xl"/>
+                </div>
+            ) : (
+                <div className="tooltip tooltip-secondary mx-1" data-tip="Only melee attacks">
+                    <PiSword className="inline-block text-success text-xl"/>
+                </div>
+            )}
+
+            <div className="tooltip tooltip-secondary mx-1" data-tip={`Attacks with ${attackStyle}`}>
+                <Image
+                    src={`/symbols/${attackStyle.toLowerCase()}.png`}
+                    alt={`Attacks with ${attackStyle}`}
+                    className="inline-block"
+                    width={20}
+                    height={20}
+                />
+            </div>
+
             {vulnerability && (
                 <div className="tooltip tooltip-secondary mx-1" data-tip={`Vulnerable to ${vulnerability}`}>
-                    <ShieldMinus className="inline-block text-error"/>
+                    <LuShieldMinus className="inline-block text-error text-xl"/>
                     <Image
                         src={`/symbols/${vulnerability.toLowerCase()}.png`}
                         alt={`Vulnerable to ${vulnerability}`}
@@ -32,9 +58,10 @@ const EnemyProperties = (enemy: Enemy | null) => {
                     />
                 </div>
             )}
+
             {immunity && (
                 <div className="tooltip tooltip-secondary mx-1" data-tip={`Immune to ${immunity}`}>
-                    <ShieldPlus className="inline-block text-success"/>
+                    <LuShieldPlus className="inline-block text-success text-xl"/>
                     <Image
                         src={`/symbols/${immunity.toLowerCase()}.png`}
                         alt={`Immune to ${immunity}`}
@@ -44,7 +71,13 @@ const EnemyProperties = (enemy: Enemy | null) => {
                     />
                 </div>
             )}
-        </>
+
+            {dangerous && (
+                <div className="tooltip tooltip-secondary mx-1" data-tip="You are vulnerable to this monster's attacks">
+                    <AiOutlineWarning className="inline-block text-warning text-xl"/>
+                </div>
+            )}
+        </div>
     );
 };
 

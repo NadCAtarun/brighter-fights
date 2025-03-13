@@ -1,136 +1,149 @@
-"use client";
+"use client"
 
+import FactionSelector from "@/components/selectors/faction-selector";
 import {useCallback, useEffect, useState} from "react";
-import FactionSelector from "@/components/faction-selector";
-import ProfessionSelector from "@/components/profession-selector";
-import LevelInput from "@/components/level-input";
-import OffsetInput from "@/components/offset-input";
-import StrategySelector from "@/components/strategy-selector";
-import Results from "@/components/results";
-import {getRecommendations} from "@/model/strategist";
-import {Enemy} from "@/model/enemy";
-import {craftingProfessionByFactionName,} from "@/model/faction";
-import {Equipment} from "@/model/equipment";
-import {Toaster} from "react-hot-toast";
-import Maintenance from "@/components/maintenance";
+import EnemySelector from "@/components/selectors/enemy-selector";
+import {Enemy, enemyByName} from "@/model/enemy";
+import LevelSelector from "@/components/selectors/level-selector";
+import {Faction, factionByName} from "@/model/faction";
+import PrioritySelector from "@/components/selectors/priority-selector";
+import Recommendations from "@/components/recommendations";
+import {CraftingRecommendations, generateRecommendations} from "@/model/strategist";
 
 /**
- * The main part of the Brighter Fights apps:
- * It lets users pick a profession, level, faction, faction level, offset, and a strategy,
- * then renders recommendations based on the settings.
- * It provides various interaction handlers to update
- * these preferences and utilizes persistent localStorage
- * to store and retrieve the user configuration.
+ * Computes the crafting level based on the given faction and corresponding skill levels.
+ *
+ * @param {Faction} faction - The faction for which the crafting level is determined.
+ *                            The faction's `name` property is used to decide the relevant skill level.
+ *                            Possible faction names include 'Cryoknight', 'Guardian', and others.
+ * @param {number} blacksmithLevel - The skill level of the blacksmith, relevant for 'Cryoknight' faction.
+ * @param {number} bonewrightLevel - The skill level of the bonewright, relevant for 'Guardian' faction.
+ * @param {number} stonemasonLevel - The skill level of the stonemason, relevant for 'Hammermage' faction.
+ * @returns {number} The crafting level corresponding to the faction and relevant skill level.
+ */
+const craftingLevel = (
+    faction: Faction, blacksmithLevel: number, bonewrightLevel: number, stonemasonLevel: number
+): number => {
+    switch (faction.name) {
+        case 'Cryoknight':
+            return blacksmithLevel;
+        case 'Guardian':
+            return bonewrightLevel;
+        default:
+            return stonemasonLevel;
+    }
+};
+
+/**
+ * Represents the main application component for configuring various parameters
+ * such as faction, enemy, priority, combat level, and crafting professions.
+ * Manages state and handles user interactions to update these settings, while
+ * also calculating crafting recommendations based on the provided inputs.
  */
 export default function Home() {
-    const [profession, setProfession] = useState('Guard');
-    const [userLevel, setUserLevel] = useState(0);
-    const [faction, setFaction] = useState('Cryoknight');
-    const [factionLevel, setFactionLevel] = useState(0);
-    const [offset, setOffset] = useState(0);
-    const [strategy, setStrategy] = useState('vulnerability');
-    const [results, setResults] = useState<{
-        enemy: Enemy | null;
-        nextLevel: number;
-        meleeWeapon: Equipment | string;
-        rangedWeapon: Equipment | string;
-        shield: Equipment | string;
-    } | null>(null);
+    const [faction, setFaction] = useState<Faction | null>(null);
+    const [enemy, setEnemy] = useState<Enemy | null>(null);
+    const [priority, setPriority] = useState<'speed' | 'strength'>('speed');
+    const [combatLevel, setCombatLevel] = useState(0);
+    const [blacksmithLevel, setBlacksmithLevel] = useState(0);
+    const [bonewrightLevel, setBonewrightLevel] = useState(0);
+    const [stonemasonLevel, setStonemasonLevel] = useState(0);
+    const [recommendations, setRecommendations] = useState<CraftingRecommendations | null>(null);
 
     useEffect(() => {
-        const profession = localStorage.getItem('profession') || 'Guard';
-        setProfession(profession || 'Guard');
+        const factionName = localStorage.getItem('faction') || '';
+        const faction = factionByName(factionName);
+        setFaction(faction);
 
-        const userLevel = parseInt(localStorage.getItem('userLevel') || '0');
-        setUserLevel(userLevel);
+        const enemyName = localStorage.getItem('enemy') || '';
+        const enemy = enemyByName(enemyName);
+        setEnemy(enemy);
 
-        const faction = localStorage.getItem('faction') || 'Cryoknight';
-        setFaction(faction || 'Cryoknight');
+        const priority = localStorage.getItem('priority') || 'speed';
+        setPriority(priority === 'speed' ? 'speed' : 'strength');
 
-        const factionLevel = parseInt(localStorage.getItem('factionLevel') || '0');
-        setFactionLevel(parseInt(localStorage.getItem('factionLevel') || '0'));
+        const combatLevel = parseInt(localStorage.getItem('combatLevel') || '0');
+        setCombatLevel(combatLevel);
 
-        const offset = parseInt(localStorage.getItem('offset') || '0');
-        setOffset(offset);
+        const blacksmithLevel = parseInt(localStorage.getItem('blacksmithLevel') || '0');
+        setBlacksmithLevel(blacksmithLevel);
 
-        const strategy = localStorage.getItem('strategy') || 'vulnerability';
-        setStrategy(localStorage.getItem('strategy') || 'vulnerability');
+        const bonewrightLevel = parseInt(localStorage.getItem('bonewrightLevel') || '0');
+        setBonewrightLevel(bonewrightLevel);
 
-        setResults(getRecommendations(
-            profession,
-            userLevel,
-            offset,
-            faction,
-            factionLevel,
-            strategy,
-        ));
-    }, [profession, userLevel, faction, factionLevel, offset, strategy]);
+        const stonemasonLevel = parseInt(localStorage.getItem('stonemasonLevel') || '0');
+        setStonemasonLevel(stonemasonLevel);
 
-    const handleProfessionChange = useCallback(
-        (profession: string) => {
-            localStorage.setItem('profession', profession);
-            setProfession(profession);
-        }, []);
-
-    const handleUserLevelChange = useCallback(
-        (level: number) => {
-            const clampedLevel = Math.max(0, Math.min(level, 500));
-            localStorage.setItem('userLevel', clampedLevel.toString());
-            setUserLevel(clampedLevel);
-        }, []);
+        if (faction && enemy) {
+            setRecommendations(generateRecommendations(faction, enemy, priority, combatLevel,
+                craftingLevel(faction, blacksmithLevel, bonewrightLevel, stonemasonLevel)))
+        } else {
+            setRecommendations(null);
+        }
+    }, [faction, enemy, priority, combatLevel, blacksmithLevel, bonewrightLevel, stonemasonLevel]);
 
     const handleFactionChange = useCallback(
         (faction: string) => {
             localStorage.setItem('faction', faction);
-            setFaction(faction);
+            setFaction(factionByName(faction));
         }, []);
 
-    const handleFactionLevelChange = useCallback(
-        (level: number) => {
-            const clampedLevel = Math.max(0, Math.min(level, 500));
-            localStorage.setItem('factionLevel', clampedLevel.toString());
-            setFactionLevel(clampedLevel);
+    const handleEnemyChange = useCallback(
+        (enemy: Enemy | null) => {
+            localStorage.setItem('enemy', enemy?.name || '');
+            setEnemy(enemy);
         }, []);
 
-    const handleStrategyChange = useCallback(
-        (strategy: string) => {
-            localStorage.setItem('strategy', strategy);
-            setStrategy(strategy);
+    const handlePriorityChange = useCallback(
+        (priority: 'speed' | 'strength') => {
+            localStorage.setItem('priority', priority);
+            setPriority(priority);
         }, []);
 
-    const handleOffsetChange = useCallback(
-        (offset: number) => {
-            localStorage.setItem('offset', offset.toString());
-            setOffset(offset);
+    const handleCombatLevelChange = useCallback(
+        (combatLevel: number) => {
+            localStorage.setItem('combatLevel', combatLevel.toString());
+            setCombatLevel(combatLevel);
         }, []);
 
+    const handleBlacksmithLevelChange = useCallback(
+        (blacksmithLevel: number) => {
+            localStorage.setItem('blacksmithLevel', blacksmithLevel.toString());
+            setBlacksmithLevel(blacksmithLevel);
+        }, []);
 
-    if (process.env.NEXT_PUBLIC_MAINTENANCE_MODE === 'true') {
-        return <Maintenance/>;
-    }
+    const handleBonewrightLevelChange = useCallback(
+        (bonewrightLevel: number) => {
+            localStorage.setItem('bonewrightLevel', bonewrightLevel.toString());
+            setBonewrightLevel(bonewrightLevel);
+        }, []);
+
+    const handleStonemasonLevelChange = useCallback(
+        (stonemasonLevel: number) => {
+            localStorage.setItem('stonemasonLevel', stonemasonLevel.toString());
+            setStonemasonLevel(stonemasonLevel);
+        }, []);
 
     return (
-        <div className="container mx-auto p-4 font-text">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <ProfessionSelector value={profession} onSelect={handleProfessionChange}/>
-                <LevelInput
-                    value={userLevel}
-                    onChange={handleUserLevelChange}
-                    targetProfession={profession}
-                />
-                <FactionSelector value={faction} onSelect={handleFactionChange}/>
-                <LevelInput
-                    value={factionLevel}
-                    onChange={handleFactionLevelChange}
-                    targetProfession={craftingProfessionByFactionName(faction)}
-                />
-                <StrategySelector value={strategy} onSelect={handleStrategyChange}/>
-                <OffsetInput value={offset} onChange={handleOffsetChange}/>
+        <>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                <FactionSelector value={faction?.name || ''} onSelect={handleFactionChange}/>
+                <EnemySelector value={enemy} onSelect={handleEnemyChange} faction={faction}/>
+                <PrioritySelector value={priority} onSelect={handlePriorityChange}/>
             </div>
 
-            <Toaster/>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <LevelSelector value={combatLevel} onChange={handleCombatLevelChange}
+                               profession="Combat" maxLevel={2000}/>
+                <LevelSelector value={blacksmithLevel} onChange={handleBlacksmithLevelChange}
+                               profession="Blacksmith" maxLevel={500}/>
+                <LevelSelector value={bonewrightLevel} onChange={handleBonewrightLevelChange}
+                               profession="Bonewright" maxLevel={500}/>
+                <LevelSelector value={stonemasonLevel} onChange={handleStonemasonLevelChange}
+                               profession="Stonemason" maxLevel={500}/>
+            </div>
 
-            {results && <Results onLevelClick={handleUserLevelChange} recs={results}/>}
-        </div>
+            {recommendations && <Recommendations {...recommendations}/>}
+        </>
     );
 }

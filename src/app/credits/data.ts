@@ -7,14 +7,14 @@ const creditsData = [
                 description: "Data source (enemies, equipment, and symbols)",
                 alt: "Tempestae symbol",
                 link: "https://brightershoreswiki.org/",
-                image: "/symbols/tempestae.png"
+                image: "/3rdparty/wiki.png"
             },
             {
-                name: "Lucide Icons",
+                name: "React Icons",
                 description: "SVG vector icons",
-                alt: "Lucide Icons",
-                link: "https://lucide.dev/",
-                image: "/3rdparty/lucide.svg"
+                alt: "React Icons",
+                link: "https://react-icons.github.io/react-icons/",
+                image: "/3rdparty/reacticons.svg"
             }
         ],
     },
