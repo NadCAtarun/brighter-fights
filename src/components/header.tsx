@@ -1,5 +1,11 @@
 import ExternalLink from "@/components/external-link";
 
+/**
+ * Header functional component.
+ *
+ * This component renders the main header for the application, styled with a flexbox layout.
+ * It includes the main title and a subtitle with a link pointing to the website.
+ */
 const Header = () => (
     <header className="flex justify-center">
         <div className="flex flex-col items-center">

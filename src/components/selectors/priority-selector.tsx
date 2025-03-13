@@ -1,9 +1,9 @@
 import {useCallback} from "react";
 
-const PrioritySelector = ({value, onSelect}: {
-    value: 'speed' | 'strength',
-    onSelect: (strategy: 'speed' | 'strength') => void
-}) => {
+const PrioritySelector = (
+    {value, onSelect}: {
+        value: 'speed' | 'strength', onSelect: (strategy: 'speed' | 'strength') => void
+    }) => {
     const handleToggle = useCallback(() => {
         onSelect(value === 'speed' ? 'strength' : 'speed');
     }, [value, onSelect]);

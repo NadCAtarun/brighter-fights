@@ -6,6 +6,13 @@ import {PiSword} from "react-icons/pi";
 import {Faction} from "@/model/faction";
 import {AiOutlineWarning} from "react-icons/ai";
 
+/**
+ * A React functional component that renders the properties of an enemy entity,
+ * including attack style, vulnerabilities, immunities, and whether it is ranged or dangerous.
+ *
+ * @param {Enemy} enemy - The enemy object containing its attributes and attack properties.
+ * @param {Faction|null} faction - The faction object, which may define vulnerabilities relevant to the enemy.
+ */
 const EnemyProperties = (enemy: Enemy, faction: Faction | null) => {
     const attackStyle = enemy.attackStyle.name;
     const vulnerability = enemy.vulnerability?.name || null;

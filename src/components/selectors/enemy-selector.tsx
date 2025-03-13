@@ -8,90 +8,102 @@ import {Faction} from "@/model/faction";
 
 const MAX_MATCHES = 4;
 
-const EnemySelector =
-    ({value, onSelect, faction}:
-     { value: Enemy | null; onSelect: (enemy: Enemy | null) => void; faction: Faction | null; }) => {
-        const [searchTerm, setSearchTerm] = useState('');
-        const [selectedEnemy, setSelectedEnemy] = useState<Enemy | null>(value);
+/**
+ * Represents a selector component for choosing an enemy from a list based on user input.
+ *
+ * @param {Object} props - The props object for the EnemySelector component.
+ * @param {Enemy | null} props.value - The currently selected enemy, or null if none is selected.
+ * @param {Function} props.onSelect - A callback function invoked when an enemy is selected or cleared.
+ * @param {Faction | null} props.faction - The faction associated with the selected enemy or the filtering process.
+ */
+const EnemySelector = (
+    {value, onSelect, faction}: {
+        value: Enemy | null;
+        onSelect: (enemy: Enemy | null) => void;
+        faction: Faction | null;
+    }
+) => {
+    const [searchTerm, setSearchTerm] = useState('');
+    const [selectedEnemy, setSelectedEnemy] = useState<Enemy | null>(value);
 
-        useEffect(() => {
-            setSelectedEnemy(value);
-            setSearchTerm(value ? value.name : '');
-        }, [value]);
+    useEffect(() => {
+        setSelectedEnemy(value);
+        setSearchTerm(value ? value.name : '');
+    }, [value]);
 
-        const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-            setSearchTerm(e.target.value);
-            if (selectedEnemy) {
-                setSelectedEnemy(null);
-            }
-        };
-
-        const handleSelect = (enemy: Enemy) => {
-            setSearchTerm(enemy.name);
-            setSelectedEnemy(enemy);
-            onSelect(enemy);
-        };
-
-        const handleClearSelection = () => {
-            setSearchTerm('');
+    const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setSearchTerm(e.target.value);
+        if (selectedEnemy) {
             setSelectedEnemy(null);
-            onSelect(null);
-        };
-
-        const filteredEnemies = enemies.filter((enemy) =>
-            enemy.name.toLowerCase().includes(searchTerm.toLowerCase())
-        );
-
-        return (
-            <div className="w-full max-w-md mx-auto p-4">
-                {!selectedEnemy && (
-                    <div className="relative">
-                        <input
-                            type="text"
-                            placeholder="Search enemy by name..."
-                            className="input input-bordered w-full mb-2"
-                            value={searchTerm}
-                            onChange={handleInputChange}
-                        />
-                    </div>
-                )}
-
-                {!selectedEnemy && searchTerm && (
-                    <div>
-                        {filteredEnemies.length === 0 && <p className="text-red-500">No enemy found by that name 🥺</p>}
-
-                        {filteredEnemies.length > MAX_MATCHES && <p>{filteredEnemies.length} possible matches</p>}
-
-                        {filteredEnemies.length > 0 && filteredEnemies.length <= MAX_MATCHES && (
-                            <ul className="menu bg-base-100 rounded-box p-2">
-                                {filteredEnemies.map((enemy) => (
-                                    <li key={enemy.name}>
-                                        <button onClick={() => handleSelect(enemy)} className="w-full text-left">
-                                            {enemy.name}
-                                        </button>
-                                    </li>
-                                ))}
-                            </ul>
-                        )}
-                    </div>
-                )}
-
-                {selectedEnemy && (
-                    <div className="mt-4 flex justify-center items-center gap-4">
-                        <div className="inline-flex items-center">
-                            <span>You are fighting {indefinite(selectedEnemy.name, {articleOnly: true})} </span>
-                            <ExternalLink url={selectedEnemy.url} label={selectedEnemy.name}/>
-                        </div>
-                        <button className="btn btn-outline btn-sm" onClick={handleClearSelection}>
-                            <MdClear/>
-                            Pick another
-                        </button>
-                    </div>
-                )}
-
-                {selectedEnemy && EnemyProperties(selectedEnemy, faction)}
-            </div>
-        );
+        }
     };
+
+    const handleSelect = (enemy: Enemy) => {
+        setSearchTerm(enemy.name);
+        setSelectedEnemy(enemy);
+        onSelect(enemy);
+    };
+
+    const handleClearSelection = () => {
+        setSearchTerm('');
+        setSelectedEnemy(null);
+        onSelect(null);
+    };
+
+    const filteredEnemies = enemies.filter((enemy) =>
+        enemy.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    return (
+        <div className="w-full max-w-md mx-auto p-4">
+            {!selectedEnemy && (
+                <div className="relative">
+                    <input
+                        type="text"
+                        placeholder="Search enemy by name..."
+                        className="input input-bordered w-full mb-2"
+                        value={searchTerm}
+                        onChange={handleInputChange}
+                    />
+                </div>
+            )}
+
+            {!selectedEnemy && searchTerm && (
+                <div>
+                    {filteredEnemies.length === 0 && <p className="text-red-500">No enemy found by that name 🥺</p>}
+
+                    {filteredEnemies.length > MAX_MATCHES && <p>{filteredEnemies.length} possible matches</p>}
+
+                    {filteredEnemies.length > 0 && filteredEnemies.length <= MAX_MATCHES && (
+                        <ul className="menu bg-base-100 rounded-box p-2">
+                            {filteredEnemies.map((enemy) => (
+                                <li key={enemy.name}>
+                                    <button onClick={() => handleSelect(enemy)} className="w-full text-left">
+                                        {enemy.name}
+                                    </button>
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+                </div>
+            )}
+
+            {selectedEnemy && (
+                <div className="mt-4 flex justify-center items-center gap-4">
+                    <div className="inline-flex items-center">
+                        <span>You are fighting {indefinite(selectedEnemy.name, {articleOnly: true})} </span>
+                        <ExternalLink url={selectedEnemy.url} label={selectedEnemy.name}/>
+                    </div>
+                    <button className="btn btn-outline btn-sm" onClick={handleClearSelection}>
+                        <MdClear/>
+                        Pick another
+                    </button>
+                </div>
+            )}
+
+            {selectedEnemy && EnemyProperties(selectedEnemy, faction)}
+        </div>
+    );
+};
 
 export default EnemySelector;

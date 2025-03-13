@@ -274,9 +274,15 @@ const categoriesByName = new Map(
         .map(category => [category.name, category])
 );
 
-export function categoryByName(category: string): WeaponCategory | null {
-    return categoriesByName.get(category) || null;
-}
+/**
+ * Retrieves the weapon category corresponding to the given category name.
+ *
+ * @param {string} category - The name of the category to retrieve.
+ * @returns {WeaponCategory | null} The weapon category associated with the provided name,
+ * or null if the category does not exist.
+ */
+export const categoryByName = (category: string): WeaponCategory | null =>
+    categoriesByName.get(category) || null;
 
 export interface Equipment {
     name: string;

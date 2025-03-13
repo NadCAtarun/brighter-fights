@@ -1,6 +1,11 @@
 import Link from "next/link";
 import ExternalLink from "@/components/external-link";
 
+/**
+ * Footer component representing the footer section of the application.
+ * This component includes navigation links, a brief description of the app's development,
+ * and external links to the developer's personal site and the GitHub repository for the source code.
+ */
 const Footer = () => (
     <footer className="footer bg-base-100 text-base-content mt-2 p-6 mb-28 lg:mb-0">
         <div className="container mx-auto flex flex-col items-center">

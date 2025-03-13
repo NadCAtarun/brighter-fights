@@ -1,7 +1,16 @@
 import {categoryByName} from "@/model/equipment";
 import Image from "next/image";
 
-const EquipmentProperties = ({categoryName}: { categoryName: string }) => {
+/**
+ * A functional component that renders equipment properties based on the provided category name.
+ * The component displays tooltips and icons representing the category's element name and the number of hands required.
+ *
+ * @param {Object} props - The props object supplying data to the component.
+ * @param {string} props.categoryName - The name of the equipment category used to fetch related properties and assets.
+ */
+const EquipmentProperties = (
+    {categoryName}: { categoryName: string }
+) => {
     const category = categoryByName(categoryName);
     if (!category) return null;
 

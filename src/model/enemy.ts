@@ -290,6 +290,11 @@ export const enemies: Enemy[] = [
 
 const enemiesByName = new Map(enemies.map(enemy => [enemy.name, enemy]));
 
-export function enemyByName(name: string): Enemy | null {
-    return enemiesByName.get(name) || null;
-}
+/**
+ * Retrieves an enemy object by its name from the collection of enemies.
+ *
+ * @param {string} name - The name of the enemy to look up.
+ * @returns {Enemy|null} The enemy object if found, or null if no enemy with the given name exists in the collection.
+ */
+export const enemyByName = (name: string): Enemy | null =>
+    enemiesByName.get(name) || null;

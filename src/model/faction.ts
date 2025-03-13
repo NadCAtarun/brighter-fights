@@ -53,6 +53,15 @@ export const factions: Faction[] = [
 
 const factionsByName = new Map(factions.map(faction => [faction.name, faction]));
 
-export function factionByName(name: string): Faction | null {
-    return factionsByName.get(name) || null;
-}
+/**
+ * Retrieves a faction by its name.
+ *
+ * The `factionByName` function searches for a faction based on the provided name string.
+ * If a matching faction is found, it returns the corresponding Faction object.
+ * If no match is found, it returns null.
+ *
+ * @param {string} name - The name of the faction to look up.
+ * @returns {Faction | null} The corresponding Faction object if found, or null if no matching faction exists.
+ */
+export const factionByName = (name: string): Faction | null =>
+    factionsByName.get(name) || null;

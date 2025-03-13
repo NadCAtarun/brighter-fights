@@ -63,6 +63,19 @@ const chooseRangedWeapon = (
         ? idealRangedWeapon : `You need to level up ${faction.craftingProfession} to ${idealRangedWeapon.craftingLevel}`;
 };
 
+/**
+ * Generates crafting and equipment recommendations for a given faction and combat requirements.
+ *
+ * @function
+ * @param {Faction} faction - The faction for which recommendations are being generated,
+ *                            containing available weapon categories and shields.
+ * @param {Enemy} enemy - The enemy for which the recommendations are being tailored, influencing weapon choices.
+ * @param {string} priority - The priority strategy, guiding the selection of melee and ranged weapons.
+ * @param {number} combatLevel - The combat level of the player, used to determine suitable equipment.
+ * @param {number} craftingLevel - The crafting level of the player, defining access to craftable items.
+ * @returns {CraftingRecommendations} An object containing recommended melee weapon, ranged weapon, and shield
+ *                                    or guidance to improve crafting level.
+ */
 export const generateRecommendations = (
     faction: Faction, enemy: Enemy, priority: string, combatLevel: number, craftingLevel: number
 ): CraftingRecommendations => {

@@ -2,7 +2,16 @@ import {useCallback} from "react";
 import {factions} from "@/model/faction";
 import Image from "next/image";
 
-const FactionSelector = ({value, onSelect}: { value: string; onSelect: (faction: string) => void }) => {
+/**
+ * A component that allows the user to select a faction from a list of options.
+ *
+ * @param {Object} props - The properties object.
+ * @param {string} props.value - The currently selected faction.
+ * @param {function} props.onSelect - A callback function triggered when a faction is selected. It receives the name of the selected faction as an argument.
+ */
+const FactionSelector = (
+    {value, onSelect}: { value: string; onSelect: (faction: string) => void }
+) => {
     const handleSelect = useCallback((factionName: string) => {
         onSelect(value === factionName ? '' : factionName);
     }, [onSelect, value]);

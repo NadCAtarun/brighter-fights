@@ -3,6 +3,10 @@ import {creditsData} from "@/app/credits/data";
 import Image from "next/image";
 import ExternalLink from "@/components/external-link";
 
+/**
+ * Renders a Page component that includes a BackLink, card-like container for credits and attribution information,
+ * and displays dynamic content based on the creditsData array.
+ */
 export default function Page() {
     return (
         <>

@@ -3,6 +3,13 @@ import EquipmentProperties from "@/components/equipment-properties";
 import CraftingMaterials from "@/components/crafting-materials";
 import ExternalLink from "@/components/external-link";
 
+/**
+ * Functional React component that displays crafting recommendations for melee weapons, ranged weapons, and shields.
+ * The recommendations can either be a string (displayed as a warning message) or an object with crafting details.
+ *
+ * @param {CraftingRecommendations} recs - An object containing crafting recommendations,
+ * including meleeWeapon, rangedWeapon, and shield, which can be strings or detailed objects.
+ */
 const Recommendations = (recs: CraftingRecommendations) => {
     return (
         <div className="p-10">

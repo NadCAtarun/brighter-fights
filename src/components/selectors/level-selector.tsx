@@ -1,8 +1,22 @@
 import {ChangeEvent, useCallback} from "react";
 import Image from "next/image";
 
-const LevelSelector = ({value, onChange, profession, maxLevel = 500}:
-                       { value: number; onChange: (level: number) => void; profession: string; maxLevel: number; }) => {
+/**
+ * LevelSelector is a React functional component designed to allow users to input or adjust a numerical "level" value.
+ * It displays both a number input field and a range slider for setting the level, with appropriate constraints based
+ * on the provided properties. The component dynamically updates based on changes and invokes the callback function
+ * when the value changes.
+ *
+ * @param {object} props - The properties passed to the component.
+ * @param {number} props.value - The current level value to display in the input and slider.
+ * @param {function} props.onChange - Callback function triggered when the level value changes, takes the updated value as a parameter.
+ * @param {string} props.profession - The profession name to be displayed, which also determines the corresponding icon.
+ * @param {number} [props.maxLevel=500] - The maximum achievable level value (default is 500).
+ */
+const LevelSelector = (
+    {value, onChange, profession, maxLevel = 500}:
+    { value: number; onChange: (level: number) => void; profession: string; maxLevel: number; }
+) => {
     const handleLevelChange = useCallback(
         (e: ChangeEvent<HTMLInputElement>) => {
             onChange(Math.min(Math.max(Number(e.target.value), 0), maxLevel));

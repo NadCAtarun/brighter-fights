@@ -10,18 +10,25 @@ import PrioritySelector from "@/components/selectors/priority-selector";
 import Recommendations from "@/components/recommendations";
 import {CraftingRecommendations, generateRecommendations} from "@/model/strategist";
 
-const craftingLevel =
-    (faction: Faction, blacksmithLevel: number, bonewrightLevel: number, stonemasonLevel: number): number => {
-        switch (faction.name) {
-            case 'Cryoknight':
-                return blacksmithLevel;
-            case 'Guardian':
-                return bonewrightLevel;
-            default:
-                return stonemasonLevel;
-        }
-    };
+const craftingLevel = (
+    faction: Faction, blacksmithLevel: number, bonewrightLevel: number, stonemasonLevel: number
+): number => {
+    switch (faction.name) {
+        case 'Cryoknight':
+            return blacksmithLevel;
+        case 'Guardian':
+            return bonewrightLevel;
+        default:
+            return stonemasonLevel;
+    }
+};
 
+/**
+ * Represents the main application component for configuring various parameters
+ * such as faction, enemy, priority, combat level, and crafting professions.
+ * Manages state and handles user interactions to update these settings, while
+ * also calculating crafting recommendations based on the provided inputs.
+ */
 export default function Home() {
     const [faction, setFaction] = useState<Faction | null>(null);
     const [enemy, setEnemy] = useState<Enemy | null>(null);
