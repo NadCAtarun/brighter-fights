@@ -1,6 +1,55 @@
 import {ChangeEvent, useCallback} from "react";
 import Image from "next/image";
 
+function LevelInput(props: {
+    profession: string,
+    max: number,
+    value: number,
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+}) {
+    return <div className="px-2">
+        <input
+            id={`${props.profession}-level`}
+            type="number"
+            min={0}
+            max={props.max}
+            className="input input-bordered input-primary w-full mb-2"
+            value={props.value}
+            onChange={props.onChange}
+        />
+        <input
+            type="range"
+            className="range range-primary w-full"
+            value={props.value}
+            min={0}
+            max={props.max}
+            onChange={props.onChange}
+        />
+        <div className="flex justify-between text-xs px-1">
+            <span>0</span>
+            <span>{props.max}</span>
+        </div>
+    </div>;
+}
+
+function LevelLabel(props: { profession: string, s: string }) {
+    return <label
+        className="label flex justify-center items-center pb-1"
+        htmlFor={`${props.profession}-level`}
+    >
+                  <span className="label-text text-xl flex items-center">
+                    <Image
+                        src={`/symbols/${props.s}.png`}
+                        alt={props.profession}
+                        className="inline-block mr-1"
+                        width={24}
+                        height={24}
+                    />
+                    Your <strong className="mx-1">{props.profession}</strong>level
+                  </span>
+    </label>;
+}
+
 /**
  * LevelSelector is a React functional component designed to allow users to input or adjust a numerical "level" value.
  * It displays both a number input field and a range slider for setting the level, with appropriate constraints based
@@ -27,45 +76,9 @@ const LevelSelector = (
     return (
         <div className="flex flex-col items-center max-w-[300px] mx-auto py-3">
             <div className="form-control w-full">
-                <label
-                    className="label flex justify-center items-center pb-1"
-                    htmlFor={`${profession}-level`}
-                >
-                  <span className="label-text text-xl flex items-center">
-                    <Image
-                        src={`/symbols/${profession.toLowerCase()}.png`}
-                        alt={profession}
-                        className="inline-block mr-1"
-                        width={24}
-                        height={24}
-                    />
-                    Your <strong className="mx-1">{profession}</strong>level
-                  </span>
-                </label>
+                <LevelLabel profession={profession} s={profession.toLowerCase()}/>
 
-                <div className="px-2">
-                    <input
-                        id={`${profession}-level`}
-                        type="number"
-                        min={0}
-                        max={maxLevel}
-                        className="input input-bordered input-primary w-full mb-2"
-                        value={value}
-                        onChange={handleLevelChange}
-                    />
-                    <input
-                        type="range"
-                        className="range range-primary w-full"
-                        value={value}
-                        min={0}
-                        max={maxLevel}
-                        onChange={handleLevelChange}
-                    />
-                    <div className="flex justify-between text-xs px-1">
-                        <span>0</span>
-                        <span>{maxLevel}</span>
-                    </div>
-                </div>
+                <LevelInput profession={profession} max={maxLevel} value={value} onChange={handleLevelChange}/>
             </div>
         </div>
     );
