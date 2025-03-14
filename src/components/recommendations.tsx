@@ -13,7 +13,7 @@ import ExternalLink from "@/components/external-link";
 const Recommendations = (recs: CraftingRecommendations) => {
     return (
         <div className="p-10">
-            <h2 className="text-2xl font-bold font-title mb-3">Recommendations</h2>
+            <h2 className="text-2xl font-bold font-title mb-3">Crafting recommendations</h2>
 
             {typeof recs.meleeWeapon === 'string' && (<p className="text-xl text-warning">{recs.meleeWeapon}</p>)}
             {typeof recs.meleeWeapon === 'object' && (

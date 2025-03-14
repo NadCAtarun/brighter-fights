@@ -144,10 +144,15 @@ export default function Home() {
             </div>
 
             {recommendations && <Recommendations {...recommendations}/>}
-            {!recommendations && (
+            {!recommendations && !enemy && (
                 <p className="text-xl text-warning p-20">
                     Please pick an enemy so the app can give you recommendations 🙏
                     (personalized striping makes it impossible to guess which enemy makes sense for you 🥺)
+                </p>
+            )}
+            {!recommendations && enemy && !faction && (
+                <p className="text-xl text-warning p-20">
+                    Please pick a faction, as crafting recommendations depend on which faction you belong to 🤗
                 </p>
             )}
         </>
