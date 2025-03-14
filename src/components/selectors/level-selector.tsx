@@ -20,19 +20,21 @@ const LevelInput = (
         onChange: (e: ChangeEvent<HTMLInputElement>) => void
     }
 ) =>
-    <div className="px-2">
-        <input
-            id={`${props.profession}-level`}
-            type="number"
-            min={0}
-            max={props.max}
-            className="input input-bordered input-primary w-full mb-2"
-            value={props.value}
-            onChange={props.onChange}
-        />
+    <>
+        <div className="flex justify-center">
+            <input
+                id={`${props.profession}-level`}
+                type="number"
+                min={0}
+                max={props.max}
+                className="input input-bordered input-primary w-1/2 mb-2 text-center text-xl"
+                value={props.value}
+                onChange={props.onChange}
+            />
+        </div>
         <input
             type="range"
-            className="range range-primary w-full"
+            className="range range-primary"
             value={props.value}
             min={0}
             max={props.max}
@@ -42,7 +44,7 @@ const LevelInput = (
             <span>0</span>
             <span>{props.max}</span>
         </div>
-    </div>
+    </>
 
 /**
  * Renders a label component for displaying the level of a specific profession.
