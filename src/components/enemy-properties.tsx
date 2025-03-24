@@ -5,6 +5,7 @@ import {TbBow} from "react-icons/tb";
 import {PiSword} from "react-icons/pi";
 import {Faction} from "@/model/faction";
 import {AiOutlineWarning} from "react-icons/ai";
+import DangerRating from "@/components/danger-rating";
 
 /**
  * A React functional component that renders the properties of an enemy entity,
@@ -18,65 +19,63 @@ const EnemyProperties = (enemy: Enemy, faction: Faction | null) => {
     const vulnerability = enemy.vulnerability?.name || null;
     const immunity = enemy.immunity?.name || null;
     const ranged = enemy.ranged;
-    const dangerous = enemy.attackStyle === faction?.vulnerability;
 
     return (
-        <div className="w-full flex justify-center">
-            <div className="inline">
-                Properties:
-            </div>
-
-            {ranged ? (
-                <div className="tooltip tooltip-secondary mx-1" data-tip="Has ranged attacks">
-                    <TbBow className="inline-block text-warning text-xl"/>
+        <div>
+            <div className="w-full flex justify-center">
+                <div className="inline">
+                    Properties:
                 </div>
-            ) : (
-                <div className="tooltip tooltip-secondary mx-1" data-tip="Only melee attacks">
-                    <PiSword className="inline-block text-success text-xl"/>
-                </div>
-            )}
 
-            <div className="tooltip tooltip-secondary mx-1" data-tip={`Attacks with ${attackStyle}`}>
-                <Image
-                    src={`/symbols/${attackStyle.toLowerCase()}.png`}
-                    alt={`Attacks with ${attackStyle}`}
-                    className="inline-block"
-                    width={20}
-                    height={20}
-                />
-            </div>
+                {ranged ? (
+                    <div className="tooltip tooltip-secondary mx-1" data-tip="Has ranged attacks">
+                        <TbBow className="inline-block text-warning text-xl"/>
+                    </div>
+                ) : (
+                    <div className="tooltip tooltip-secondary mx-1" data-tip="Only melee attacks">
+                        <PiSword className="inline-block text-success text-xl"/>
+                    </div>
+                )}
 
-            {vulnerability && (
-                <div className="tooltip tooltip-secondary mx-1" data-tip={`Vulnerable to ${vulnerability}`}>
-                    <LuShieldMinus className="inline-block text-error text-xl"/>
+                <div className="tooltip tooltip-secondary mx-1" data-tip={`Attacks with ${attackStyle}`}>
                     <Image
-                        src={`/symbols/${vulnerability.toLowerCase()}.png`}
-                        alt={`Vulnerable to ${vulnerability}`}
+                        src={`/symbols/${attackStyle.toLowerCase()}.png`}
+                        alt={`Attacks with ${attackStyle}`}
                         className="inline-block"
                         width={20}
                         height={20}
                     />
                 </div>
-            )}
 
-            {immunity && (
-                <div className="tooltip tooltip-secondary mx-1" data-tip={`Immune to ${immunity}`}>
-                    <LuShieldPlus className="inline-block text-success text-xl"/>
-                    <Image
-                        src={`/symbols/${immunity.toLowerCase()}.png`}
-                        alt={`Immune to ${immunity}`}
-                        className="inline-block"
-                        width={20}
-                        height={20}
-                    />
-                </div>
-            )}
+                {vulnerability && (
+                    <div className="tooltip tooltip-secondary mx-1" data-tip={`Vulnerable to ${vulnerability}`}>
+                        <LuShieldMinus className="inline-block text-error text-xl"/>
+                        <Image
+                            src={`/symbols/${vulnerability.toLowerCase()}.png`}
+                            alt={`Vulnerable to ${vulnerability}`}
+                            className="inline-block"
+                            width={20}
+                            height={20}
+                        />
+                    </div>
+                )}
 
-            {dangerous && (
-                <div className="tooltip tooltip-secondary mx-1" data-tip="You are vulnerable to this monster's attacks">
-                    <AiOutlineWarning className="inline-block text-warning text-xl"/>
-                </div>
-            )}
+                {immunity && (
+                    <div className="tooltip tooltip-secondary mx-1" data-tip={`Immune to ${immunity}`}>
+                        <LuShieldPlus className="inline-block text-success text-xl"/>
+                        <Image
+                            src={`/symbols/${immunity.toLowerCase()}.png`}
+                            alt={`Immune to ${immunity}`}
+                            className="inline-block"
+                            width={20}
+                            height={20}
+                        />
+                    </div>
+                )}
+            </div>
+            <div className="w-full flex justify-center">
+                {faction && DangerRating(enemy, faction)}
+            </div>
         </div>
     );
 };
