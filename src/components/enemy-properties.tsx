@@ -4,7 +4,6 @@ import Image from "next/image";
 import {TbBow} from "react-icons/tb";
 import {PiSword} from "react-icons/pi";
 import {Faction} from "@/model/faction";
-import {AiOutlineWarning} from "react-icons/ai";
 import DangerRating from "@/components/danger-rating";
 
 /**
