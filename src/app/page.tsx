@@ -9,6 +9,7 @@ import {Faction, factionByName} from "@/model/faction";
 import PrioritySelector from "@/components/selectors/priority-selector";
 import Recommendations from "@/components/recommendations";
 import {CraftingRecommendations, generateRecommendations} from "@/model/strategist";
+import RaritySelector from "@/components/selectors/rarity-selector";
 
 /**
  * Computes the crafting level based on the given faction and corresponding skill levels.
@@ -44,6 +45,7 @@ export default function Home() {
     const [faction, setFaction] = useState<Faction | null>(null);
     const [enemy, setEnemy] = useState<Enemy | null>(null);
     const [priority, setPriority] = useState<'speed' | 'strength'>('speed');
+    const [rarity, setRarity] = useState<'rare' | 'epic'>('rare');
     const [combatLevel, setCombatLevel] = useState(0);
     const [blacksmithLevel, setBlacksmithLevel] = useState(0);
     const [bonewrightLevel, setBonewrightLevel] = useState(0);
@@ -61,6 +63,9 @@ export default function Home() {
 
         const priority = localStorage.getItem('priority') || 'speed';
         setPriority(priority === 'speed' ? 'speed' : 'strength');
+
+        const rarity = localStorage.getItem('rarity') || 'rare';
+        setRarity(rarity === 'rare' ? 'rare' : 'epic');
 
         const combatLevel = parseInt(localStorage.getItem('combatLevel') || '0');
         setCombatLevel(combatLevel);
@@ -80,7 +85,7 @@ export default function Home() {
         } else {
             setRecommendations(null);
         }
-    }, [faction, enemy, priority, combatLevel, blacksmithLevel, bonewrightLevel, stonemasonLevel]);
+    }, [faction, enemy, priority, rarity, combatLevel, blacksmithLevel, bonewrightLevel, stonemasonLevel]);
 
     const handleFactionChange = useCallback(
         (faction: string) => {
@@ -98,6 +103,12 @@ export default function Home() {
         (priority: 'speed' | 'strength') => {
             localStorage.setItem('priority', priority);
             setPriority(priority);
+        }, []);
+
+    const handleRarityChange = useCallback(
+        (rarity: 'rare' | 'epic') => {
+            localStorage.setItem('rarity', rarity);
+            setRarity(rarity);
         }, []);
 
     const handleCombatLevelChange = useCallback(
@@ -129,7 +140,10 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                 <FactionSelector value={faction?.name || ''} onSelect={handleFactionChange}/>
                 <EnemySelector value={enemy} onSelect={handleEnemyChange} faction={faction}/>
-                <PrioritySelector value={priority} onSelect={handlePriorityChange}/>
+                <div className="flex flex-col space-y-2 my-auto">
+                    <PrioritySelector value={priority} onSelect={handlePriorityChange}/>
+                    <RaritySelector value={rarity} onSelect={handleRarityChange}/>
+                </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
