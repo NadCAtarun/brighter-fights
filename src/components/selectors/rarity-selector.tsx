@@ -1,5 +1,9 @@
 import {useCallback} from "react";
 
+/**
+ * RaritySelector is a React component that allows the user to toggle between two available rarity options, "rare" and "epic".
+ * The component visually represents the current selection and invokes a callback function when the selection is changed.
+ */
 const RaritySelector = (
     {value, onSelect}: { value: 'rare' | 'epic', onSelect: (rarity: 'rare' | 'epic') => void }
 ) => {
