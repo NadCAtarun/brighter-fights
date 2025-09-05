@@ -251,7 +251,7 @@ export const enemies: Enemy[] = [
         url: "https://brightershoreswiki.org/w/Giant_Wasp",
         attackStyle: elements.arborae,
         immunity: elements.arborae,
-        vulnerability: elements.cryonae,
+        vulnerability: elements.necromae,
         ranged: false,
     },
     {
