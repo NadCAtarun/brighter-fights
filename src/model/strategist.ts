@@ -99,7 +99,9 @@ const chooseMeleeWeapon = (
     const idealMeleeWeapon = findIdealWeapon(category, faction.meleeWeapons, combatLevel);
 
     return idealMeleeWeapon.craftingLevel <= craftingLevel
-        ? idealMeleeWeapon : `You need to level up ${faction.craftingProfession} to ${idealMeleeWeapon.craftingLevel}`;
+        ? idealMeleeWeapon : `You need to level up ${faction.craftingProfession} to at least ${idealMeleeWeapon.craftingLevel}`
+        + ` to craft a melee weapon level ${combatLevel}`;
+
 };
 
 /**
@@ -120,12 +122,14 @@ const chooseRangedWeapon = (
     faction: Faction, category: WeaponCategory, enemy: Enemy, combatLevel: number, craftingLevel: number
 ): Equipment | string => {
     if (enemy.ranged && enemy.vulnerability !== faction.rangedOnly)
-        return `The enemy attacks at range and is not vulnerable to ${faction.rangedOnly.name}, you should attack in melee exclusively`;
+        return `The enemy attacks at range and is not vulnerable to ${faction.rangedOnly.name} (the only element you cannot craft melee weapons for),`
+            + " you should attack in melee exclusively";
 
     const idealRangedWeapon = findIdealWeapon(category, faction.rangedWeapons, combatLevel,);
 
     return idealRangedWeapon.craftingLevel <= craftingLevel
-        ? idealRangedWeapon : `You need to level up ${faction.craftingProfession} to ${idealRangedWeapon.craftingLevel}`;
+        ? idealRangedWeapon : `You need to level up ${faction.craftingProfession} to at least ${idealRangedWeapon.craftingLevel}`
+        + ` to craft a ranged weapon level ${combatLevel}`;
 };
 
 /**
@@ -157,7 +161,8 @@ export const generateRecommendations = (
     } else {
         const suitableShields = findSuitableShields(faction.shields, combatLevel);
         shield = suitableShields.find(s => s.craftingLevel <= craftingLevel)
-            || `You need to level up ${faction.craftingProfession} to ${suitableShields[suitableShields.length - 1].craftingLevel}`;
+            || `You need to level up ${faction.craftingProfession} to at least ${suitableShields[suitableShields.length - 1].craftingLevel}`
+            + ` to craft a shield level ${combatLevel}`;
     }
 
     return {
