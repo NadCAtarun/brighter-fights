@@ -123,7 +123,7 @@ const chooseRangedWeapon = (
 ): Equipment | string => {
     if (enemy.ranged && enemy.vulnerability !== faction.rangedOnly)
         return `The enemy attacks at range and is not vulnerable to ${faction.rangedOnly.name} (the only element you cannot craft melee weapons for),`
-            + ` you should attack in melee exclusively`;
+            + " you should attack in melee exclusively";
 
     const idealRangedWeapon = findIdealWeapon(category, faction.rangedWeapons, combatLevel,);
 
