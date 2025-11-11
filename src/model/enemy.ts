@@ -160,9 +160,9 @@ export const enemies: Enemy[] = [
     {
         name: "Floor Tentacle",
         url: "https://brightershoreswiki.org/w/Floor_Tentacle",
-        attackStyle: elements.tempestae,
-        immunity: elements.tempestae,
-        vulnerability: elements.infernae,
+        attackStyle: elements.necromae,
+        immunity: elements.necromae,
+        vulnerability: elements.tempestae,
         ranged: false,
     },
     {
@@ -176,8 +176,8 @@ export const enemies: Enemy[] = [
     {
         name: "Skeleton Miner",
         url: "https://brightershoreswiki.org/w/Skeleton_Miner",
-        attackStyle: elements.necromae,
-        immunity: elements.necromae,
+        attackStyle: elements.tempestae,
+        immunity: elements.tempestae,
         vulnerability: elements.arborae,
         ranged: false,
     },
@@ -210,7 +210,7 @@ export const enemies: Enemy[] = [
         url: "https://brightershoreswiki.org/w/Wraith",
         attackStyle: elements.necromae,
         immunity: elements.necromae,
-        vulnerability: elements.tempestae,
+        vulnerability: elements.infernae,
         ranged: false,
     },
     {
